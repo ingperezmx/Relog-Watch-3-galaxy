@@ -1,4 +1,4 @@
-﻿# Port Nativo: Carátula MoveToBeActive (Estilo Garmin Vivomove) para Galaxy Watch 3
+# Port Nativo: Carátula MoveToBeActive (Estilo Garmin Vivomove) para Galaxy Watch 3
 
 Se ha adaptado e instalado exitosamente la carátula de código abierto **MoveToBeActive** (original de Garmin Connect IQ / Monkey C por *fevieira27*) al motor nativo **Samsung Noblesse XML** del **Samsung Galaxy Watch 3** (`SM-R840`, Tizen OS `5.5.0.2`, pantalla AMOLED de 360×360 px).
 
@@ -6,7 +6,7 @@ Se ha adaptado e instalado exitosamente la carátula de código abierto **MoveTo
 
 ## 1. Vista Previa del Renderizado en Pantalla (360×360 px)
 
-![MoveToBeActive Galaxy Watch 3](file:///C:/Users/user/.gemini/antigravity/brain/4e029f08-114e-4ce8-90a1-d16963cf9144/mtba_composed_preview.png)
+![MoveToBeActive Galaxy Watch 3](assets/movetobeactive_preview.png)
 
 ---
 
@@ -27,23 +27,24 @@ Se ha adaptado e instalado exitosamente la carátula de código abierto **MoveTo
 
 ### Complicaciones y Sensores en Tiempo Real
 1. **Columna Izquierda:**
-   - **Calorías:** Icono de llama extraído del paquete de recursos original + valor dinámico de Samsung Health (`pedometer.activeCalorie`). Toque interactivo abre Samsung Health.
-   - **Distancia:** Icono de geolocalización / ruta + distancia calculada (`pedometer.distance`). Toque interactivo abre Samsung Health.
-   - **Pasos:** Icono de huellas + conteo dinámico (`pedometer.step`) en color verde lima. Toque interactivo abre el podómetro.
+   - **Calorías:** Icono de llama + valor corregido en kilocalorías activas (`pedometer.activeKiloCalorie` kcal). Toque interactivo abre Samsung Health.
+   - **Distancia:** Icono de geolocalización / ruta + distancia calculada en kilómetros (`pedometer.distance` km). Toque interactivo abre Samsung Health.
+   - **Pasos:** Icono de huellas + número dinámico exacto de pasos y porcentaje de meta cumplida (`pedometer.step (XX%)`) en verde lima. Toque interactivo abre el podómetro.
 2. **Columna Derecha:**
    - **Frecuencia Cardíaca:** Icono de corazón carmesí + pulso en tiempo real (`heartrate.recent` bpm). Toque interactivo abre el monitor de ritmo cardíaco.
-   - **Batería:** Icono de batería horizontal + porcentaje dinámico (`battery.percent%`) en verde lima. Toque interactivo abre el gestor de batería.
+   - **Batería:** Icono de batería + porcentaje dinámico numérico (`battery.percent%`) en verde lima. Toque interactivo abre el gestor de batería.
    - **Notificaciones:** Icono de mensaje + contador dinámico de mensajes no leídos (`notification.count`). Toque interactivo abre las notificaciones.
 3. **Zona Inferior:**
    - **Clima:** Icono de condición meteorológica (sol, nubes, lluvia) + temperatura actual dinámica (`weather.currentTemperature°`). Toque interactivo abre el reporte del clima.
    - **Ciudad:** Nombre de la localidad en gris tenue (`weather.cityName`).
    - **Fecha Completa:** Día de la semana y fecha (`EEE, MMM d`) en verde lima brillante (`#AAFF00`). Toque interactivo abre la agenda de eventos.
 
-### Modo Siempre Encendido (AOD / Ambient Mode)
-- Cumple rigurosamente con la norma de protección AMOLED y OPR reducido (< 15%).
-- Fondo negro con las marcas de 12 horas y numerales 12-3-6-9.
-- Manecillas simplificadas con rotación por minuto para máximo ahorro de batería.
-- Indicador esencial de batería y fecha.
+### Optimización y Consumo de Batería Extrema
+- **Desactivación de Audio en Segundo Plano:** Se eliminó el bloque `<sounds>` que ejecutaba el audio del tic-tac analógico (`sounds/3600BPH_1sec_Tick.wav` / `Tock.wav`) cada segundo, ahorrando batería al no despertar el amplificador de sonido ni el DSP del reloj.
+- **Modo Siempre Encendido (AOD / Ambient Mode):**
+  - Cumple rigurosamente con la norma de protección AMOLED y OPR reducido (< 2.5%).
+  - Fondo negro puro `#000000` con píxeles físicos apagados (consumo 0 mW).
+  - Solo manecillas flotantes (hora y minuto) sin segundero ni complicaciones activas en reposo.
 
 ---
 
@@ -63,8 +64,7 @@ El reloj ahora dispone de **tres carátulas nativas activas** en su carrusel de 
 
 ## 4. Repositorio GitHub Sincronizado
 
-Todos los archivos fuente, imágenes de alta resolución optimizadas, definiciones XML y configuraciones han sido versionados en el repositorio del usuario:
+Todos los archivos fuente, imágenes de alta resolución optimizadas, definiciones XML y configuraciones han sido versionados en el repositorio:
 
 - **Repositorio:** [ingperezmx/Reloj-Galaxy-Watch-3-Tizen](https://github.com/ingperezmx/Reloj-Galaxy-Watch-3-Tizen)
-- **Directorio nuevo:** [`tizen-native-movetobeactive`](https://github.com/ingperezmx/Reloj-Galaxy-Watch-3-Tizen/tree/main/tizen-native-movetobeactive)
-- **Commit:** `356cb89` (*feat(watchface): Port MoveToBeActive (Garmin Vivomove style) native watchface for Galaxy Watch 3*)
+- **Directorio:** [`tizen-native-movetobeactive`](https://github.com/ingperezmx/Reloj-Galaxy-Watch-3-Tizen/tree/main/tizen-native-movetobeactive)

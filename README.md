@@ -36,11 +36,12 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
 - **Dial:** Fondo negro puro AMOLED (`#000000`), 60 marcas con índices horarios en verde lima Vivomove (`#AAFF00`) en horas 1, 2, 4, 5, 7, 8, 10 y 11; numerales `12`, `3`, `6` y `9`.
 - **Manecillas:** Horaria blanca biselada, minutero verde lima y segundero mecánico con animación de latido continuo (`animation="tick"`).
 - **Logotipo:** Insignia oficial de `GARMIN` con triángulo cian/azul (`#00C4FF`).
-- **Métricas en Vivo:**
-  - **Izquierda:** Calorías (`pedometer.activeCalorie`), Distancia (`pedometer.distance`), Pasos (`pedometer.step`).
-  - **Derecha:** Ritmo Cardíaco (`heartrate.recent` bpm), Batería (`battery.percent%`), Notificaciones (`notification.count`).
+- **Métricas en Vivo (Números y Porcentajes Optimizados):**
+  - **Izquierda:** Calorías activas en kcal (`pedometer.activeKiloCalorie`), Distancia en kilómetros calculada (`pedometer.distance`), Pasos con número exacto y porcentaje de meta cumplida (`pedometer.step (XX%)`).
+  - **Derecha:** Ritmo Cardíaco en tiempo real (`heartrate.recent` bpm), Batería con número y porcentaje (`battery.percent%`), Notificaciones no leídas (`notification.count`).
   - **Inferior:** Clima (icono dinámico + `weather.currentTemperature°`), Ciudad (`weather.cityName`), Fecha completa interactiva (`EEE, MMM d`).
-- **AOD (Always-On Display):** Consumo ultra bajo con solo las manecillas flotantes sobre negro puro AMOLED.
+- **Optimización de Batería Extrema:** Eliminado el servicio de audio en segundo plano (tic-tac analógico continuo) para evitar despertar el DSP de sonido cada segundo; visualización con píxeles negros apagados.
+- **AOD (Always-On Display):** Consumo ultra bajo con solo las manecillas flotantes sobre negro puro AMOLED (OPR < 2.5%).
 
 ---
 

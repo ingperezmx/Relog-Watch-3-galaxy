@@ -1,3 +1,11 @@
+# Build outputs & packages
 /out
+*.tmp
+*.bak
+.manifest.tmp
+author-signature.xml
+signature1.xml
 
+# System files
 .DS_Store
+Thumbs.db

@@ -4,9 +4,7 @@
 	<metadata key="preview_time" value="10:08:32"/>
 	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
 
-	<sounds>
-		<sound name="second-hand-tick" type="auto-play-second-hand-tick" play_policy="odd-even" filepath="sounds/3600BPH_1sec_Tick.wav:sounds/3600BPH_1sec_Tock.wav"/>
-	</sounds>
+	<!-- Audio disabled for zero-battery drain (prevents waking audio hardware 60 times/min) -->
 
 	<groups>
 		<!-- 1. Background Dial (Ticks, Accents, 12-3-6-9 Numerals, Garmin Logo) -->
@@ -25,7 +23,7 @@
 				<font code="AT270307"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
-					<format source="pedometer.activeCalorie"/>
+					<format source="pedometer.activeKiloCalorie"/> kcal
 				</text>
 			</part>
 			<action on_event="tap" type="launch">
@@ -42,7 +40,7 @@
 				<font code="AT270307"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
-					<format source="pedometer.distance" unit="auto"/>
+					<format expr="true"><expr><![CDATA[ Math.round(_[pedometer.distance]/100)/10 ]]></expr></format> km
 				</text>
 			</part>
 			<action on_event="tap" type="launch">
@@ -50,16 +48,16 @@
 			</action>
 		</group>
 
-		<!-- 4. Left Row 3: Steps -->
-		<group name="comp-steps" x="48" y="170" width="94" height="24">
+		<!-- 4. Left Row 3: Steps (Numbers & Percentage) -->
+		<group name="comp-steps" x="38" y="170" width="125" height="24">
 			<part type="image" x="0" y="0" width="21" height="24">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_ic_steps.png"/>
 			</part>
-			<part type="text" x="24" y="0" width="70" height="24">
+			<part type="text" x="24" y="0" width="100" height="24">
 				<font code="AT270307"/>
 				<color code="#aaff00100%"/>
 				<text align="left">
-					<format source="pedometer.step"/>
+					<format source="pedometer.step"/> (<format expr="true"><expr><![CDATA[ Math.round(_[pedometer.stepPercent]) ]]></expr></format>%)
 				</text>
 			</part>
 			<action on_event="tap" type="launch">

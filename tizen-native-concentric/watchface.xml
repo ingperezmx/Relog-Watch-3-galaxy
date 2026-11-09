@@ -34,7 +34,7 @@
 				<color code="#ffffff25%"/>
 			</part>
 			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" animation="glideEaseOut" duration="500" line_cap="round" center_x="180" center_y="180" start_angle="285" end_angle="345" start_value="0" end_value="100" source="battery.percent" radius="106" thickness="3"/>
+				<draw path="arc" animation="glideEaseOut" duration="200" line_cap="round" center_x="180" center_y="180" start_angle="285" end_angle="345" start_value="0" end_value="100" source="battery.percent" radius="106" thickness="3"/>
 				<color code="#79b1f3100%"/>
 			</part>
 			<part type="text" x="175" y="72" width="70" height="28">
@@ -43,7 +43,7 @@
 				<text align="center">
 					<inline-image width="14" height="18" filepath="U06/u06_battery_icon.png" code="#79b1f3100%"/>
 					<inline-image width="3" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
-					<format source="battery.percent"/>
+					<format source="battery.percent"/>%
 				</text>
 			</part>
 			<action on_event="tap" type="launch">
@@ -58,7 +58,7 @@
 				<color code="#ffffff25%"/>
 			</part>
 			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" animation="glideEaseOut" duration="500" line_cap="round" center_x="180" center_y="180" start_angle="195" end_angle="255" start_value="0" end_value="10000" source="pedometer.step" radius="106" thickness="3"/>
+				<draw path="arc" animation="glideEaseOut" duration="200" line_cap="round" center_x="180" center_y="180" start_angle="195" end_angle="255" start_value="0" end_value="10000" source="pedometer.step" radius="106" thickness="3"/>
 				<color code="#79b1f3100%"/>
 			</part>
 			<part type="text" x="65" y="98" width="80" height="28">
@@ -82,7 +82,7 @@
 				<color code="#ffffff25%"/>
 			</part>
 			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" animation="glideEaseOut" duration="500" line_cap="round" center_x="180" center_y="180" start_angle="105" end_angle="165" start_value="0" end_value="800" source="pedometer.activeCalorie" radius="106" thickness="3"/>
+				<draw path="arc" animation="glideEaseOut" duration="200" line_cap="round" center_x="180" center_y="180" start_angle="105" end_angle="165" start_value="0" end_value="800" source="pedometer.activeCalorie" radius="106" thickness="3"/>
 				<color code="#79b1f3100%"/>
 			</part>
 			<part type="text" x="75" y="234" width="80" height="28">
@@ -106,7 +106,7 @@
 				<color code="#ffffff25%"/>
 			</part>
 			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" animation="glideEaseOut" duration="500" line_cap="round" center_x="180" center_y="180" start_angle="15" end_angle="75" start_value="-10" end_value="40" source="weather.currentTemperature" radius="106" thickness="3"/>
+				<draw path="arc" animation="glideEaseOut" duration="200" line_cap="round" center_x="180" center_y="180" start_angle="15" end_angle="75" start_value="-10" end_value="40" source="weather.currentTemperature" radius="106" thickness="3"/>
 				<color code="#79b1f3100%"/>
 			</part>
 			<part type="text" x="195" y="226" width="70" height="28">
