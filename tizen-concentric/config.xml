@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://watchfacedesigns.com/ConcentricWatch" version="1.0.0" viewmodes="maximized">
+    <tizen:application id="concentric.ConcentricWatch" package="concentric" required_version="4.0" ambient_support="enable"/>
+    <content src="index.html"/>
+    <feature name="http://tizen.org/feature/screen.size.all"/>
+    <feature name="http://tizen.org/feature/screen.shape.circle"/>
+    <icon src="icon.png"/>
+    <name>Concentric</name>
+    <tizen:category name="http://tizen.org/category/wearable_clock"/>
+    <tizen:privilege name="http://tizen.org/privilege/alarm"/>
+    <tizen:privilege name="http://tizen.org/privilege/power"/>
+    <tizen:profile name="wearable"/>
+    <tizen:setting background-support="disable" encryption="disable" hwkey-event="enable"/>
+</widget>
