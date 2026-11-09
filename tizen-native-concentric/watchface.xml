@@ -1,43 +1,139 @@
 <?xml version="1.0" encoding="utf-8"?>
 <watchface schema_version="0.1" name="Concentric" width="360" height="360">
 	<metadata key="clock-type" value="com.samsung.watchface-noblesse-u6"/>
-	<metadata key="preview_time" value="12:45:00"/>
-	<metadata key="model_samsung_health_save_values_to_pref" value="false"/>
+	<metadata key="preview_time" value="09:13:00"/>
+	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
 	<groups>
-		<!-- 1. Pure Black Background -->
+		<!-- 1. Pure Pitch Black AMOLED Background -->
 		<group name="bg" x="0" y="0" width="360" height="360">
 			<part type="background" x="0" y="0" width="360" height="360">
 				<color r="0" g="0" b="0" a="255"/>
 			</part>
 		</group>
 
-		<!-- 2. Concentric Rotating Minutes Dial -->
-		<group name="minutes-dial" x="0" y="0" width="360" height="360">
-			<part type="image" x="0" y="0" width="360" height="360">
-				<image filepath="GalleryBackgrounds/concentric/concentric_minutes_dial.png"/>
-				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
-			</part>
-		</group>
-
-		<!-- 3. Concentric Rotating Seconds Dial (Smooth 60fps sweep) -->
+		<!-- 2. Concentric Outer Seconds Wheel (Smooth 60fps sweep) -->
 		<group name="seconds-dial" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
-				<image filepath="GalleryBackgrounds/concentric/concentric_seconds_dial.png"/>
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u6/concentric_seconds_dial.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 4. Concentric Pill Outline & Dark Center Mask -->
-		<group name="pill-overlay" x="0" y="0" width="360" height="360">
+		<!-- 3. Concentric Inner Minutes Wheel (Smooth rotation) -->
+		<group name="minutes-dial" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
-				<image filepath="GalleryBackgrounds/concentric/concentric_pill_overlay.png"/>
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u6/concentric_minutes_dial.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
 			</part>
 		</group>
 
-		<!-- 5. Digital Time (Hour + Minute inside pill) -->
+		<!-- 4. Top-Right Complication: Battery Arc & Percentage -->
+		<group name="comp-tr-battery" x="0" y="0" width="360" height="360">
+			<part type="draw" x="0" y="0" width="360" height="360">
+				<draw path="arc" center_x="180" center_y="180" start_angle="285" end_angle="345" radius="106" thickness="3"/>
+				<color code="#ffffff25%"/>
+			</part>
+			<part type="draw" x="0" y="0" width="360" height="360">
+				<draw path="arc" animation="glideEaseOut" duration="500" line_cap="round" center_x="180" center_y="180" start_angle="285" end_angle="345" start_value="0" end_value="100" source="battery.percent" radius="106" thickness="3"/>
+				<color code="#79b1f3100%"/>
+			</part>
+			<part type="text" x="180" y="74" width="70" height="24">
+				<font code="AT10101"/>
+				<color code="#79b1f3100%"/>
+				<text align="center">
+					<inline-image width="14" height="18" filepath="U06/u06_battery_icon.png" code="#79b1f3100%"/>
+					<inline-image width="3" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
+					<format source="battery.percent"/>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="battery"/>
+			</action>
+		</group>
+
+		<!-- 5. Top-Left Complication: Steps Arc & Count -->
+		<group name="comp-tl-steps" x="0" y="0" width="360" height="360">
+			<part type="draw" x="0" y="0" width="360" height="360">
+				<draw path="arc" center_x="180" center_y="180" start_angle="195" end_angle="255" radius="106" thickness="3"/>
+				<color code="#ffffff25%"/>
+			</part>
+			<part type="draw" x="0" y="0" width="360" height="360">
+				<draw path="arc" animation="glideEaseOut" duration="500" line_cap="round" center_x="180" center_y="180" start_angle="195" end_angle="255" start_value="0" end_value="10000" source="pedometer.step" radius="106" thickness="3"/>
+				<color code="#79b1f3100%"/>
+			</part>
+			<part type="text" x="70" y="100" width="75" height="24">
+				<font code="AT10101"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<inline-image width="14" height="16" filepath="U06/u06_step_icon.png" code="#79b1f3100%"/>
+					<inline-image width="3" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
+					<format source="pedometer.step"/>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="pedometer"/>
+			</action>
+		</group>
+
+		<!-- 6. Bottom-Left Complication: Calories Arc & Count -->
+		<group name="comp-bl-calories" x="0" y="0" width="360" height="360">
+			<part type="draw" x="0" y="0" width="360" height="360">
+				<draw path="arc" center_x="180" center_y="180" start_angle="105" end_angle="165" radius="106" thickness="3"/>
+				<color code="#ffffff25%"/>
+			</part>
+			<part type="draw" x="0" y="0" width="360" height="360">
+				<draw path="arc" animation="glideEaseOut" duration="500" line_cap="round" center_x="180" center_y="180" start_angle="105" end_angle="165" start_value="0" end_value="800" source="pedometer.activeCalorie" radius="106" thickness="3"/>
+				<color code="#79b1f3100%"/>
+			</part>
+			<part type="text" x="80" y="235" width="75" height="24">
+				<font code="AT10101"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<format source="pedometer.activeCalorie"/>
+					<inline-image width="3" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
+					<inline-image width="14" height="18" filepath="A02/classic_edge_ic_calories.png" code="#79b1f3100%"/>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="shealth"/>
+			</action>
+		</group>
+
+		<!-- 7. Bottom-Right Complication: Weather Arc & Temperature -->
+		<group name="comp-br-weather" x="0" y="0" width="360" height="360">
+			<part type="draw" x="0" y="0" width="360" height="360">
+				<draw path="arc" center_x="180" center_y="180" start_angle="15" end_angle="75" radius="106" thickness="3"/>
+				<color code="#ffffff25%"/>
+			</part>
+			<part type="draw" x="0" y="0" width="360" height="360">
+				<draw path="arc" animation="glideEaseOut" duration="500" line_cap="round" center_x="180" center_y="180" start_angle="15" end_angle="75" start_value="-10" end_value="40" source="weather.currentTemperature" radius="106" thickness="3"/>
+				<color code="#79b1f3100%"/>
+			</part>
+			<part type="text" x="195" y="228" width="65" height="24">
+				<font code="AT10101"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<format source="weather.currentTemperature"/>°
+					<inline-image width="3" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
+					<inline-image width="16" height="16" filepath="A05/Complications/Weather/informative_analog_ic_weather_sunny.png" code="#79b1f3100%"/>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="weather"/>
+			</action>
+		</group>
+
+		<!-- 8. Concentric Pill Outline & Framing -->
+		<group name="pill-overlay" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u6/concentric_pill_overlay.png"/>
+			</part>
+		</group>
+
+		<!-- 9. Digital Time: Hour in center, Minute and Second inside pill -->
 		<group name="time" x="0" y="0" width="360" height="360">
-			<!-- Digital Hour: Large geometric font (92px), positioned left of pill -->
-			<part type="text" x="20" y="134" width="200" height="92">
+			<!-- Digital Hour: Large geometric font (92px), left of pill -->
+			<part type="text" x="15" y="134" width="190" height="92">
 				<font code="AT10305"/>
 				<color code="#ffffff100%"/>
 				<text align="right">
@@ -52,12 +148,21 @@
 				</text>
 			</part>
 
-			<!-- Digital Minute: Crisp geometric font (42px), centered inside the pill -->
-			<part type="text" x="232" y="156" width="65" height="48">
+			<!-- Digital Minute: Crisp geometric font (42px), inside left of pill -->
+			<part type="text" x="212" y="156" width="55" height="48">
 				<font code="AT19004"/>
 				<color code="#ffffff100%"/>
 				<text align="center">
 					<icu-skeleton english_number="true">mm</icu-skeleton>
+				</text>
+			</part>
+
+			<!-- Digital Second: Crisp font (28px), inside right of pill (aligned with 3 o'clock outer ring) -->
+			<part type="text" x="268" y="164" width="40" height="34">
+				<font code="AT10101"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<icu-skeleton english_number="true">ss</icu-skeleton>
 				</text>
 			</part>
 		</group>
@@ -65,31 +170,27 @@
 
 	<!-- Ambient Always-On Display (AOD) Mode -->
 	<groups type="ambient-fullcolor">
-		<!-- 1. Ambient Background -->
 		<group name="ambient-bg" x="0" y="0" width="360" height="360" hide_when_transparent_background="true">
 			<part type="background" x="0" y="0" width="360" height="360">
 				<color r="0" g="0" b="0" a="255"/>
 			</part>
 		</group>
 
-		<!-- 2. Ambient Minutes Dial (rotates by minute, no second animation for max battery life) -->
 		<group name="ambient-minutes-dial" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
-				<image filepath="GalleryBackgrounds/concentric/concentric_minutes_dial.png"/>
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u6/concentric_minutes_dial.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute"/>
 			</part>
 		</group>
 
-		<!-- 3. Ambient Pill Outline -->
 		<group name="ambient-pill" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
-				<image filepath="GalleryBackgrounds/concentric/concentric_aod_pill.png"/>
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u6/concentric_aod_pill.png"/>
 			</part>
 		</group>
 
-		<!-- 4. Ambient Time -->
 		<group name="ambient-time" x="0" y="0" width="360" height="360">
-			<part type="text" x="20" y="134" width="200" height="92">
+			<part type="text" x="15" y="134" width="190" height="92">
 				<font code="AT10305"/>
 				<color code="#ffffff100%"/>
 				<text align="right">
@@ -103,7 +204,7 @@
 					</condition>
 				</text>
 			</part>
-			<part type="text" x="232" y="156" width="65" height="48">
+			<part type="text" x="212" y="156" width="55" height="48">
 				<font code="AT19004"/>
 				<color code="#ffffff100%"/>
 				<text align="center">
