@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Application type="clock">
+	<PackageName>com.samsung.watchface-noblesse-u1</PackageName>
+	<DisplayName>@WDS_CLOCK_MBODY_MY_PHOTOPLUS_M_WATCH_FACE</DisplayName>
+	<Preview/>
+	<Result version="2.0">
+		<Item name="background">
+			<Selection id="photo_clock_bg"/>
+		</Item>
+		<Item name="color">
+			<Selection id="White"/>
+		</Item>
+		<Item name="clocktype">
+			<Selection id="small_bottom"/>
+		</Item>
+	</Result>
+</Application>

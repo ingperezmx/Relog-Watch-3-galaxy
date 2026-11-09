@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<watchface schema_version="0.1" name="Terminal" width="360" height="360">
+	<metadata key="clock-type" value="com.samsung.watchface-noblesse-u1"/>
+	<metadata key="preview_time" value="12:56:53"/>
+	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
+	<groups>
+		<!-- 1. Pure AMOLED Pitch Black Background -->
+		<group name="bg" x="0" y="0" width="360" height="360">
+			<part type="background" x="0" y="0" width="360" height="360">
+				<color r="0" g="0" b="0" a="255"/>
+			</part>
+		</group>
+
+		<!-- 2. Terminal Header: sudo@watch: ~ $ now -->
+		<group name="prompt" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="70" width="268" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">sudo@watch: ~ $ now</text>
+			</part>
+		</group>
+
+		<!-- 3. Line [date] -->
+		<group name="line-date" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="98" width="100" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">[date]</text>
+			</part>
+			<part type="text" x="150" y="98" width="164" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<icu-skeleton locale="en_US" english_number="true" best_pattern="1">EEE, MMM d</icu-skeleton>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="event"/>
+			</action>
+		</group>
+
+		<!-- 4. Line [time] -->
+		<group name="line-time" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="126" width="100" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">[time]</text>
+			</part>
+			<part type="text" x="150" y="126" width="164" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<condition source="is24hour">
+						<compare eq="1">
+							<icu-skeleton english_number="true">HH:mm:ss</icu-skeleton>
+						</compare>
+						<default>
+							<icu-skeleton english_number="true">hh:mm:ss a</icu-skeleton>
+						</default>
+					</condition>
+				</text>
+			</part>
+		</group>
+
+		<!-- 5. Line [step] -->
+		<group name="line-step" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="154" width="100" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">[step]</text>
+			</part>
+			<part type="text" x="150" y="154" width="164" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<format source="pedometer.step"/> - <format source="pedometer.stepPercent"/>%
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="pedometer"/>
+			</action>
+		</group>
+
+		<!-- 6. Line [battery] -->
+		<group name="line-battery" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="182" width="100" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">[battery]</text>
+			</part>
+			<part type="text" x="150" y="182" width="164" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<format source="battery.percent"/>%
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="battery"/>
+			</action>
+		</group>
+
+		<!-- 7. Line [heart-rate] -->
+		<group name="line-hr" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="210" width="100" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">[heart-rate]</text>
+			</part>
+			<part type="text" x="150" y="210" width="164" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<condition source="heartrate.recent">
+						<compare ne="0">
+							<format source="heartrate.recent"/> bpm
+						</compare>
+						<default>-- bpm</default>
+					</condition>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="heartrate"/>
+			</action>
+		</group>
+
+		<!-- 8. Line [moon] -->
+		<group name="line-moon" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="238" width="100" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">[moon]</text>
+			</part>
+			<part type="text" x="150" y="238" width="164" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<condition source="moonphase.type">
+						<compare eq="0">New Moon</compare>
+						<compare eq="1">Evening Crescent</compare>
+						<compare eq="2">First Quarter</compare>
+						<compare eq="3">Waxing Gibbous</compare>
+						<compare eq="4">Full Moon</compare>
+						<compare eq="5">Waning Gibbous</compare>
+						<compare eq="6">Last Quarter</compare>
+						<compare eq="7">Morning Crescent</compare>
+						<default>Evening Crescent</default>
+					</condition>
+				</text>
+			</part>
+		</group>
+	</groups>
+
+	<!-- Ambient Always-On Display (AOD) Mode -->
+	<groups type="ambient-fullcolor">
+		<group name="ambient-bg" x="0" y="0" width="360" height="360" hide_when_transparent_background="true">
+			<part type="background" x="0" y="0" width="360" height="360">
+				<color r="0" g="0" b="0" a="255"/>
+			</part>
+		</group>
+
+		<group name="ambient-prompt" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="70" width="268" height="26">
+				<font code="AT109103"/>
+				<color code="#888888100%"/>
+				<text align="left">sudo@watch: ~ $ now</text>
+			</part>
+		</group>
+
+		<group name="ambient-date" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="98" width="100" height="26">
+				<font code="AT109103"/>
+				<color code="#888888100%"/>
+				<text align="left">[date]</text>
+			</part>
+			<part type="text" x="150" y="98" width="164" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<icu-skeleton locale="en_US" english_number="true" best_pattern="1">EEE, MMM d</icu-skeleton>
+				</text>
+			</part>
+		</group>
+
+		<group name="ambient-time" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="126" width="100" height="26">
+				<font code="AT109103"/>
+				<color code="#888888100%"/>
+				<text align="left">[time]</text>
+			</part>
+			<part type="text" x="150" y="126" width="164" height="26">
+				<font code="AT109103"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<condition source="is24hour">
+						<compare eq="1">
+							<icu-skeleton english_number="true">HH:mm</icu-skeleton>
+						</compare>
+						<default>
+							<icu-skeleton english_number="true">hh:mm a</icu-skeleton>
+						</default>
+					</condition>
+				</text>
+			</part>
+		</group>
+
+		<group name="ambient-battery" x="0" y="0" width="360" height="360">
+			<part type="text" x="46" y="154" width="100" height="26">
+				<font code="AT109103"/>
+				<color code="#888888100%"/>
+				<text align="left">[battery]</text>
+			</part>
+			<part type="text" x="150" y="154" width="164" height="26">
+				<font code="AT109103"/>
+				<color code="#888888100%"/>
+				<text align="left">
+					<format source="battery.percent"/>%
+				</text>
+			</part>
+		</group>
+	</groups>
+</watchface>
