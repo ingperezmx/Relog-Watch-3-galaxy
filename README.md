@@ -6,12 +6,25 @@ Colección completa de carátulas nativas de alto rendimiento optimizadas para l
 
 ---
 
-## 📸 Muestra Visual de las Carátulas
+## 📸 Muestra Visual de las Carátulas (Pantalla Activa)
 
 | **MoveToBeActive (Garmin Vivomove)** | **Terminal Watchface (28px CLI)** | **Concentric (Google Pixel)** |
 |:---:|:---:|:---:|
 | ![MoveToBeActive](assets/movetobeactive_preview.png) | ![Terminal](assets/terminal_preview.png) | ![Concentric](assets/concentric_preview.png) |
 | *Analógico híbrido con suite de salud y clima* | *Consola minimalista hacker a 28 px* | *Doble disco concéntrico fluido a 60 fps* |
+
+---
+
+## 🌙 Modo Siempre Encendido (AOD / Ambient Display)
+
+![Galaxy Watch 3 AOD Showcase](assets/showcase_triple_aod.png)
+
+Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físicamente apagados para máxima autonomía y protección de pantalla:
+
+| **MoveToBeActive (AOD)** | **Terminal Watchface (AOD)** | **Concentric (AOD)** |
+|:---:|:---:|:---:|
+| ![MoveToBeActive AOD](assets/movetobeactive_aod_preview.png) | ![Terminal AOD](assets/terminal_aod_preview.png) | ![Concentric AOD](assets/concentric_aod_preview.png) |
+| *Solo manecillas analógicas flotantes* | *sudo@watch ~ root + [time]* | *Solo números centrales de hora y minutos* |
 
 ---
 
