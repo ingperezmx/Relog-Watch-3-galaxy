@@ -27,22 +27,14 @@
 			</part>
 		</group>
 
-		<!-- 4. Top-Right Complication: Battery Arc & Percentage -->
-		<group name="comp-tr-battery" x="0" y="0" width="360" height="360">
-			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" center_x="180" center_y="180" start_angle="285" end_angle="345" radius="106" thickness="3"/>
-				<color code="#ffffff25%"/>
-			</part>
-			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" animation="glideEaseOut" duration="200" line_cap="round" center_x="180" center_y="180" start_angle="285" end_angle="345" start_value="0" end_value="100" source="battery.percent" radius="106" thickness="3"/>
-				<color code="#79b1f3100%"/>
-			</part>
-			<part type="text" x="175" y="72" width="70" height="28">
+		<!-- 4. Top-Right Complication: Battery (Clean Numbers & Percentage, Zero Bars) -->
+		<group name="comp-tr-battery" x="170" y="70" width="85" height="32">
+			<part type="text" x="0" y="0" width="85" height="32">
 				<font code="AT250081"/>
-				<color code="#79b1f3100%"/>
+				<color code="#ffffff100%"/>
 				<text align="center">
-					<inline-image width="14" height="18" filepath="U06/u06_battery_icon.png" code="#79b1f3100%"/>
-					<inline-image width="3" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
+					<inline-image width="14" height="18" filepath="U06/u06_battery_icon.png" code="#ffffff100%"/>
+					<inline-image width="4" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
 					<format source="battery.percent"/>%
 				</text>
 			</part>
@@ -51,23 +43,15 @@
 			</action>
 		</group>
 
-		<!-- 5. Top-Left Complication: Steps Arc & Count -->
-		<group name="comp-tl-steps" x="0" y="0" width="360" height="360">
-			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" center_x="180" center_y="180" start_angle="195" end_angle="255" radius="106" thickness="3"/>
-				<color code="#ffffff25%"/>
-			</part>
-			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" animation="glideEaseOut" duration="200" line_cap="round" center_x="180" center_y="180" start_angle="195" end_angle="255" start_value="0" end_value="10000" source="pedometer.step" radius="106" thickness="3"/>
-				<color code="#79b1f3100%"/>
-			</part>
-			<part type="text" x="65" y="98" width="80" height="28">
+		<!-- 5. Top-Left Complication: Steps (Clean Numbers & Percentage, Zero Bars) -->
+		<group name="comp-tl-steps" x="50" y="96" width="105" height="32">
+			<part type="text" x="0" y="0" width="105" height="32">
 				<font code="AT250081"/>
 				<color code="#ffffff100%"/>
 				<text align="center">
-					<inline-image width="14" height="16" filepath="U06/u06_step_icon.png" code="#79b1f3100%"/>
-					<inline-image width="3" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
-					<format source="pedometer.step"/>
+					<inline-image width="14" height="16" filepath="U06/u06_step_icon.png" code="#ffffff100%"/>
+					<inline-image width="4" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
+					<format source="pedometer.step"/> (<format expr="true"><expr><![CDATA[ Math.round(_[pedometer.stepPercent]) ]]></expr></format>%)
 				</text>
 			</part>
 			<action on_event="tap" type="launch">
@@ -75,23 +59,15 @@
 			</action>
 		</group>
 
-		<!-- 6. Bottom-Left Complication: Calories Arc & Count -->
-		<group name="comp-bl-calories" x="0" y="0" width="360" height="360">
-			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" center_x="180" center_y="180" start_angle="105" end_angle="165" radius="106" thickness="3"/>
-				<color code="#ffffff25%"/>
-			</part>
-			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" animation="glideEaseOut" duration="200" line_cap="round" center_x="180" center_y="180" start_angle="105" end_angle="165" start_value="0" end_value="800" source="pedometer.activeCalorie" radius="106" thickness="3"/>
-				<color code="#79b1f3100%"/>
-			</part>
-			<part type="text" x="75" y="234" width="80" height="28">
+		<!-- 6. Bottom-Left Complication: Calories (Clean Numbers & Kcal, Zero Bars) -->
+		<group name="comp-bl-calories" x="60" y="232" width="95" height="32">
+			<part type="text" x="0" y="0" width="95" height="32">
 				<font code="AT250081"/>
 				<color code="#ffffff100%"/>
 				<text align="center">
-					<format source="pedometer.activeCalorie"/>
-					<inline-image width="3" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
-					<inline-image width="14" height="18" filepath="A02/classic_edge_ic_calories.png" code="#79b1f3100%"/>
+					<format source="pedometer.activeKiloCalorie"/> kcal
+					<inline-image width="4" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
+					<inline-image width="14" height="18" filepath="A02/classic_edge_ic_calories.png" code="#ffffff100%"/>
 				</text>
 			</part>
 			<action on_event="tap" type="launch">
@@ -99,23 +75,15 @@
 			</action>
 		</group>
 
-		<!-- 7. Bottom-Right Complication: Weather Arc & Temperature -->
-		<group name="comp-br-weather" x="0" y="0" width="360" height="360">
-			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" center_x="180" center_y="180" start_angle="15" end_angle="75" radius="106" thickness="3"/>
-				<color code="#ffffff25%"/>
-			</part>
-			<part type="draw" x="0" y="0" width="360" height="360">
-				<draw path="arc" animation="glideEaseOut" duration="200" line_cap="round" center_x="180" center_y="180" start_angle="15" end_angle="75" start_value="-10" end_value="40" source="weather.currentTemperature" radius="106" thickness="3"/>
-				<color code="#79b1f3100%"/>
-			</part>
-			<part type="text" x="195" y="226" width="70" height="28">
+		<!-- 7. Bottom-Right Complication: Weather (Clean Temperature, Zero Bars) -->
+		<group name="comp-br-weather" x="195" y="226" width="75" height="32">
+			<part type="text" x="0" y="0" width="75" height="32">
 				<font code="AT250081"/>
 				<color code="#ffffff100%"/>
 				<text align="center">
 					<format source="weather.currentTemperature"/>°
-					<inline-image width="3" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
-					<inline-image width="16" height="16" filepath="A05/Complications/Weather/informative_analog_ic_weather_sunny.png" code="#79b1f3100%"/>
+					<inline-image width="4" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
+					<inline-image width="16" height="16" filepath="A05/Complications/Weather/informative_analog_ic_weather_sunny.png" code="#ffffff100%"/>
 				</text>
 			</part>
 			<action on_event="tap" type="launch">

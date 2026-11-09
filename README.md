@@ -66,7 +66,7 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
   - Anillo exterior de segundos con barrido fluido continuo a 60 fps (`second.millisecond`).
   - Anillo interior de minutos con rotación suave.
   - Cápsula central con hora digital en gran tamaño (92 px).
-  - 4 complicaciones en los cuadrantes: batería, pasos, calorías activas y clima.
+  - 4 complicaciones limpias sin barras perimetrales intrusivas: batería con porcentaje explícito (`XX%`), pasos con número exacto y porcentaje (`XXXX (XX%)`), calorías activas en kcal y clima.
 - **AOD (Always-On Display):** Modo minimalista con únicamente los números centrales de la hora y minutos (sin ruedas ni cápsula).
 
 ---
