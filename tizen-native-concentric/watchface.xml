@@ -43,35 +43,40 @@
 			</action>
 		</group>
 
-		<!-- 5. Top-Left Complication: Steps (Symmetric & High-Visibility Electric Cyan) -->
-		<group name="comp-tl-steps" x="45" y="96" width="105" height="32">
+		<!-- 5. Top-Left Complication: Date "DIA/MES" (Symmetric & High-Visibility Electric Cyan) -->
+		<group name="comp-tl-date" x="45" y="96" width="105" height="32">
 			<part type="text" x="0" y="0" width="105" height="32">
 				<font code="AT250081"/>
 				<color code="#00e5ff100%"/>
 				<text align="center">
-					<inline-image width="14" height="16" filepath="U06/u06_step_icon.png" code="#00e5ff100%"/>
-					<inline-image width="4" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
-					<format source="pedometer.step"/> (<format expr="true"><expr><![CDATA[ Math.round(_[pedometer.stepPercent]) ]]></expr></format>%)
+					<icu-skeleton english_number="true">dd/MM</icu-skeleton>
 				</text>
 			</part>
 			<action on_event="tap" type="launch">
-				<launch preset="pedometer"/>
+				<launch preset="event"/>
 			</action>
 		</group>
 
-		<!-- 6. Bottom-Left Complication: Calories (Symmetric & High-Visibility Warm Coral) -->
-		<group name="comp-bl-calories" x="45" y="232" width="105" height="32">
+		<!-- 6. Bottom-Left Complication: Heart Rate (Symmetric & High-Visibility Crimson Red) -->
+		<group name="comp-bl-heartrate" x="45" y="232" width="105" height="32">
 			<part type="text" x="0" y="0" width="105" height="32">
 				<font code="AT250081"/>
-				<color code="#ff9500100%"/>
+				<color code="#ff3366100%"/>
 				<text align="center">
-					<format source="pedometer.activeKiloCalorie"/> kcal
+					<inline-image width="14" height="14" filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u6/concentric_ic_heart.png" code="#ff3366100%"/>
 					<inline-image width="4" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
-					<inline-image width="14" height="18" filepath="A02/classic_edge_ic_calories.png" code="#ff9500100%"/>
+					<condition source="heartrate.recent">
+						<compare eq="0">
+							-- bpm
+						</compare>
+						<default>
+							<format source="heartrate.recent"/> bpm
+						</default>
+					</condition>
 				</text>
 			</part>
 			<action on_event="tap" type="launch">
-				<launch preset="shealth"/>
+				<launch preset="heartrate"/>
 			</action>
 		</group>
 
