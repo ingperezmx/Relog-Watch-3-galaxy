@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<watchface schema_version="0.1" name="Concentric" width="360" height="360">
+	<metadata key="clock-type" value="com.samsung.watchface-noblesse-u6"/>
+	<metadata key="preview_time" value="12:45:00"/>
+	<metadata key="model_samsung_health_save_values_to_pref" value="false"/>
+	<groups>
+		<!-- 1. Pure Black Background -->
+		<group name="bg" x="0" y="0" width="360" height="360">
+			<part type="background" x="0" y="0" width="360" height="360">
+				<color r="0" g="0" b="0" a="255"/>
+			</part>
+		</group>
+
+		<!-- 2. Concentric Rotating Minutes Dial -->
+		<group name="minutes-dial" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="GalleryBackgrounds/concentric/concentric_minutes_dial.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
+			</part>
+		</group>
+
+		<!-- 3. Concentric Rotating Seconds Dial (Smooth 60fps sweep) -->
+		<group name="seconds-dial" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="GalleryBackgrounds/concentric/concentric_seconds_dial.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
+			</part>
+		</group>
+
+		<!-- 4. Concentric Pill Outline & Dark Center Mask -->
+		<group name="pill-overlay" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="GalleryBackgrounds/concentric/concentric_pill_overlay.png"/>
+			</part>
+		</group>
+
+		<!-- 5. Digital Time (Hour + Minute inside pill) -->
+		<group name="time" x="0" y="0" width="360" height="360">
+			<!-- Digital Hour: Large geometric font (92px), positioned left of pill -->
+			<part type="text" x="20" y="134" width="200" height="92">
+				<font code="AT10305"/>
+				<color code="#ffffff100%"/>
+				<text align="right">
+					<condition source="is24hour">
+						<compare eq="1">
+							<icu-skeleton english_number="true">HH</icu-skeleton>
+						</compare>
+						<default>
+							<icu-skeleton english_number="true">hh</icu-skeleton>
+						</default>
+					</condition>
+				</text>
+			</part>
+
+			<!-- Digital Minute: Crisp geometric font (42px), centered inside the pill -->
+			<part type="text" x="232" y="156" width="65" height="48">
+				<font code="AT19004"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<icu-skeleton english_number="true">mm</icu-skeleton>
+				</text>
+			</part>
+		</group>
+	</groups>
+
+	<!-- Ambient Always-On Display (AOD) Mode -->
+	<groups type="ambient-fullcolor">
+		<!-- 1. Ambient Background -->
+		<group name="ambient-bg" x="0" y="0" width="360" height="360" hide_when_transparent_background="true">
+			<part type="background" x="0" y="0" width="360" height="360">
+				<color r="0" g="0" b="0" a="255"/>
+			</part>
+		</group>
+
+		<!-- 2. Ambient Minutes Dial (rotates by minute, no second animation for max battery life) -->
+		<group name="ambient-minutes-dial" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="GalleryBackgrounds/concentric/concentric_minutes_dial.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute"/>
+			</part>
+		</group>
+
+		<!-- 3. Ambient Pill Outline -->
+		<group name="ambient-pill" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="GalleryBackgrounds/concentric/concentric_aod_pill.png"/>
+			</part>
+		</group>
+
+		<!-- 4. Ambient Time -->
+		<group name="ambient-time" x="0" y="0" width="360" height="360">
+			<part type="text" x="20" y="134" width="200" height="92">
+				<font code="AT10305"/>
+				<color code="#ffffff100%"/>
+				<text align="right">
+					<condition source="is24hour">
+						<compare eq="1">
+							<icu-skeleton english_number="true">HH</icu-skeleton>
+						</compare>
+						<default>
+							<icu-skeleton english_number="true">hh</icu-skeleton>
+						</default>
+					</condition>
+				</text>
+			</part>
+			<part type="text" x="232" y="156" width="65" height="48">
+				<font code="AT19004"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<icu-skeleton english_number="true">mm</icu-skeleton>
+				</text>
+			</part>
+		</group>
+	</groups>
+</watchface>
