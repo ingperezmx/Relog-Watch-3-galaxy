@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<watchface>
+	<metadata key="clock-type" value="com.samsung.watchface-noblesse-a7"/>
+	<metadata key="preview_time" value="10:08:32"/>
+	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
+
+	<sounds>
+		<sound name="second-hand-tick" type="auto-play-second-hand-tick" play_policy="odd-even" filepath="sounds/3600BPH_1sec_Tick.wav:sounds/3600BPH_1sec_Tock.wav"/>
+	</sounds>
+
+	<groups>
+		<!-- 1. Background Dial (Ticks, Accents, 12-3-6-9 Numerals, Garmin Logo) -->
+		<group name="bg" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_bg.png"/>
+			</part>
+		</group>
+
+		<!-- 2. Left Row 1: Calories -->
+		<group name="comp-cal" x="48" y="114" width="94" height="24">
+			<part type="image" x="2" y="0" width="14" height="24">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_ic_cal.png"/>
+			</part>
+			<part type="text" x="22" y="0" width="72" height="24">
+				<font code="AT270307"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<format source="pedometer.activeCalorie"/>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="shealth"/>
+			</action>
+		</group>
+
+		<!-- 3. Left Row 2: Distance -->
+		<group name="comp-dist" x="48" y="142" width="94" height="24">
+			<part type="image" x="0" y="0" width="22" height="24">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_ic_dist.png"/>
+			</part>
+			<part type="text" x="24" y="0" width="70" height="24">
+				<font code="AT270307"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<format source="pedometer.distance" unit="auto"/>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="pedometer"/>
+			</action>
+		</group>
+
+		<!-- 4. Left Row 3: Steps -->
+		<group name="comp-steps" x="48" y="170" width="94" height="24">
+			<part type="image" x="0" y="0" width="21" height="24">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_ic_steps.png"/>
+			</part>
+			<part type="text" x="24" y="0" width="70" height="24">
+				<font code="AT270307"/>
+				<color code="#aaff00100%"/>
+				<text align="left">
+					<format source="pedometer.step"/>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="pedometer"/>
+			</action>
+		</group>
+
+		<!-- 5. Right Row 1: Heart Rate -->
+		<group name="comp-hr" x="218" y="114" width="94" height="24">
+			<part type="image" x="0" y="0" width="24" height="24">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_ic_heart.png"/>
+			</part>
+			<part type="text" x="26" y="0" width="68" height="24">
+				<font code="AT270307"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<condition expr="true">
+						<exprs>
+							<expr name="show_data"><![CDATA[ _[privacylock.isLocked] == 0 && _[heartrate.recent] != 0 ]]></expr>
+						</exprs>
+						<compare expr="show_data">
+							<format source="heartrate.recent"/>
+						</compare>
+						<default>--</default>
+					</condition>
+				</text>
+			</part>
+			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo">
+				<launch preset="heartrate"/>
+			</action>
+		</group>
+
+		<!-- 6. Right Row 2: Battery -->
+		<group name="comp-batt" x="218" y="142" width="94" height="24">
+			<part type="image" x="0" y="0" width="24" height="24">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_ic_batt.png"/>
+			</part>
+			<part type="text" x="26" y="0" width="68" height="24">
+				<font code="AT270307"/>
+				<color code="#aaff00100%"/>
+				<text align="left">
+					<format source="battery.percent"/>%
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="battery"/>
+			</action>
+		</group>
+
+		<!-- 7. Right Row 3: Notifications -->
+		<group name="comp-notif" x="218" y="170" width="94" height="24">
+			<part type="image" x="0" y="0" width="24" height="24">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_ic_notif.png"/>
+			</part>
+			<part type="text" x="26" y="0" width="68" height="24">
+				<font code="AT270307"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<format source="notification.count"/>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="event"/>
+			</action>
+		</group>
+
+		<!-- 8. Bottom Weather: Temperature & Icon -->
+		<group name="comp-weather" x="110" y="206" width="140" height="28">
+			<part type="image" x="22" y="3" width="22" height="22">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_ic_sunny.png"/>
+			</part>
+			<part type="text" x="48" y="0" width="70" height="28">
+				<font code="AT270001"/>
+				<color code="#ffffff100%"/>
+				<text align="left">
+					<format source="weather.currentTemperature"/>°
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="weather"/>
+			</action>
+		</group>
+
+		<!-- 9. Bottom Location Name -->
+		<group name="comp-city" x="40" y="234" width="280" height="20">
+			<part type="text" x="0" y="0" width="280" height="20">
+				<font code="AT10605"/>
+				<color code="#b0b0b0100%"/>
+				<text align="center">
+					<upper><format source="weather.cityName"/></upper>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="weather"/>
+			</action>
+		</group>
+
+		<!-- 10. Bottom Full Date -->
+		<group name="comp-date" x="40" y="254" width="280" height="24">
+			<part type="text" x="0" y="0" width="280" height="24">
+				<font code="AT270307"/>
+				<color code="#aaff00100%"/>
+				<text align="center">
+					<upper><icu-skeleton english_number="true">EEE, MMM d</icu-skeleton></upper>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="event"/>
+			</action>
+		</group>
+
+		<!-- 11. Analog Hands -->
+		<group name="hands" x="0" y="0" width="360" height="360">
+			<!-- Hour Hand (White) -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_hand_hour.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
+			</part>
+
+			<!-- Minute Hand (Lime) -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_hand_min.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
+			</part>
+
+			<!-- Second Hand (Needle) -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_hand_sec.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second" animation="tick" tick_frame="2" tick_angle="0"/>
+			</part>
+
+			<!-- Center Pivot Cap -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_pivot.png"/>
+			</part>
+		</group>
+	</groups>
+
+	<!-- Ambient Always-On Display (AOD) Mode -->
+	<groups type="ambient-fullcolor">
+		<!-- AOD Background -->
+		<group name="aod-bg" x="0" y="0" width="360" height="360" hide_when_transparent_background="true">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_bg_aod.png"/>
+			</part>
+		</group>
+
+		<!-- AOD Minimal Battery & Date -->
+		<group name="aod-battery" x="130" y="235" width="100" height="24">
+			<part type="text" x="0" y="0" width="100" height="24">
+				<font code="AT10603"/>
+				<color code="#aaaaaa100%"/>
+				<text align="center">
+					<format source="battery.percent"/>%
+				</text>
+			</part>
+		</group>
+
+		<group name="aod-date" x="60" y="258" width="240" height="24">
+			<part type="text" x="0" y="0" width="240" height="24">
+				<font code="AT10603"/>
+				<color code="#888888100%"/>
+				<text align="center">
+					<upper><icu-skeleton english_number="true">EEE, MMM d</icu-skeleton></upper>
+				</text>
+			</part>
+		</group>
+
+		<!-- AOD Hands -->
+		<group name="aod-hands" x="0" y="0" width="360" height="360">
+			<!-- Hour Hand -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_hand_hour.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
+			</part>
+
+			<!-- Minute Hand -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_hand_min.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute"/>
+			</part>
+
+			<!-- Pivot -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a7/mtba_pivot.png"/>
+			</part>
+		</group>
+	</groups>
+</watchface>
