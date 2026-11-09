@@ -55,7 +55,7 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
   - `[batt]` — Nivel y estado de batería en % (abre Estado de Batería).
   - `[temp]` — Temperatura meteorológica actual (abre Clima).
   - `[hr]  ` — Frecuencia cardíaca en tiempo real (abre Ritmo Cardíaco).
-- **AOD (Always-On Display):** Modo minimalista centrado con únicamente `sudo@watch ~ root` y la hora (`[time]`) en tipografía uniforme de 30 px.
+- **AOD (Always-On Display):** Modo minimalista centrado con únicamente `sudo@watch ~ root` y la hora (`[time]`) en tipografía nativa de **34 px** (`AT24002`) con espaciado equilibrado y compacto entre etiqueta y hora.
 
 ---
 
