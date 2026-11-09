@@ -27,13 +27,13 @@
 			</part>
 		</group>
 
-		<!-- 4. Top-Right Complication: Battery (Clean Numbers & Percentage, Zero Bars) -->
-		<group name="comp-tr-battery" x="170" y="70" width="85" height="32">
-			<part type="text" x="0" y="0" width="85" height="32">
+		<!-- 4. Top-Right Complication: Battery (Symmetric & High-Visibility Electric Lime) -->
+		<group name="comp-tr-battery" x="215" y="96" width="95" height="32">
+			<part type="text" x="0" y="0" width="95" height="32">
 				<font code="AT250081"/>
-				<color code="#ffffff100%"/>
+				<color code="#aaff00100%"/>
 				<text align="center">
-					<inline-image width="14" height="18" filepath="U06/u06_battery_icon.png" code="#ffffff100%"/>
+					<inline-image width="14" height="18" filepath="U06/u06_battery_icon.png" code="#aaff00100%"/>
 					<inline-image width="4" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
 					<format source="battery.percent"/>%
 				</text>
@@ -43,13 +43,13 @@
 			</action>
 		</group>
 
-		<!-- 5. Top-Left Complication: Steps (Clean Numbers & Percentage, Zero Bars) -->
-		<group name="comp-tl-steps" x="50" y="96" width="105" height="32">
+		<!-- 5. Top-Left Complication: Steps (Symmetric & High-Visibility Electric Cyan) -->
+		<group name="comp-tl-steps" x="45" y="96" width="105" height="32">
 			<part type="text" x="0" y="0" width="105" height="32">
 				<font code="AT250081"/>
-				<color code="#ffffff100%"/>
+				<color code="#00e5ff100%"/>
 				<text align="center">
-					<inline-image width="14" height="16" filepath="U06/u06_step_icon.png" code="#ffffff100%"/>
+					<inline-image width="14" height="16" filepath="U06/u06_step_icon.png" code="#00e5ff100%"/>
 					<inline-image width="4" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
 					<format source="pedometer.step"/> (<format expr="true"><expr><![CDATA[ Math.round(_[pedometer.stepPercent]) ]]></expr></format>%)
 				</text>
@@ -59,15 +59,15 @@
 			</action>
 		</group>
 
-		<!-- 6. Bottom-Left Complication: Calories (Clean Numbers & Kcal, Zero Bars) -->
-		<group name="comp-bl-calories" x="60" y="232" width="95" height="32">
-			<part type="text" x="0" y="0" width="95" height="32">
+		<!-- 6. Bottom-Left Complication: Calories (Symmetric & High-Visibility Warm Coral) -->
+		<group name="comp-bl-calories" x="45" y="232" width="105" height="32">
+			<part type="text" x="0" y="0" width="105" height="32">
 				<font code="AT250081"/>
-				<color code="#ffffff100%"/>
+				<color code="#ff9500100%"/>
 				<text align="center">
 					<format source="pedometer.activeKiloCalorie"/> kcal
 					<inline-image width="4" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
-					<inline-image width="14" height="18" filepath="A02/classic_edge_ic_calories.png" code="#ffffff100%"/>
+					<inline-image width="14" height="18" filepath="A02/classic_edge_ic_calories.png" code="#ff9500100%"/>
 				</text>
 			</part>
 			<action on_event="tap" type="launch">
@@ -75,15 +75,15 @@
 			</action>
 		</group>
 
-		<!-- 7. Bottom-Right Complication: Weather (Clean Temperature, Zero Bars) -->
-		<group name="comp-br-weather" x="195" y="226" width="75" height="32">
-			<part type="text" x="0" y="0" width="75" height="32">
+		<!-- 7. Bottom-Right Complication: Weather (Symmetric & High-Visibility Sun Yellow) -->
+		<group name="comp-br-weather" x="215" y="232" width="95" height="32">
+			<part type="text" x="0" y="0" width="95" height="32">
 				<font code="AT250081"/>
-				<color code="#ffffff100%"/>
+				<color code="#ffd600100%"/>
 				<text align="center">
 					<format source="weather.currentTemperature"/>°
 					<inline-image width="4" height="1" filepath="A04/space.png" r="255" g="255" b="255" a="0"/>
-					<inline-image width="16" height="16" filepath="A05/Complications/Weather/informative_analog_ic_weather_sunny.png" code="#ffffff100%"/>
+					<inline-image width="16" height="16" filepath="A05/Complications/Weather/informative_analog_ic_weather_sunny.png" code="#ffd600100%"/>
 				</text>
 			</part>
 			<action on_event="tap" type="launch">
