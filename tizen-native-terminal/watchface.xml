@@ -13,7 +13,7 @@
 
 		<!-- 2. Terminal Header: sudo@watch ~ root -->
 		<group name="prompt" x="0" y="0" width="360" height="360">
-			<part type="text" x="0" y="56" width="360" height="26">
+			<part type="text" x="0" y="40" width="360" height="26">
 				<font code="AT10603"/>
 				<color code="#888888100%"/>
 				<text align="center">sudo@watch ~ root</text>
@@ -22,12 +22,12 @@
 
 		<!-- 3. Line [date] -->
 		<group name="line-date" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="96" width="105" height="38">
+			<part type="text" x="26" y="80" width="105" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">[date]</text>
 			</part>
-			<part type="text" x="138" y="96" width="195" height="38">
+			<part type="text" x="138" y="80" width="195" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
@@ -41,12 +41,12 @@
 
 		<!-- 4. Line [time] -->
 		<group name="line-time" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="136" width="105" height="38">
+			<part type="text" x="26" y="120" width="105" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">[time]</text>
 			</part>
-			<part type="text" x="138" y="136" width="205" height="38">
+			<part type="text" x="138" y="120" width="205" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
@@ -64,12 +64,12 @@
 
 		<!-- 5. Line [batt] -->
 		<group name="line-battery" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="176" width="105" height="38">
+			<part type="text" x="26" y="160" width="105" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">[batt]</text>
 			</part>
-			<part type="text" x="138" y="176" width="195" height="38">
+			<part type="text" x="138" y="160" width="195" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
@@ -83,12 +83,12 @@
 
 		<!-- 6. Line [temp] -->
 		<group name="line-temp" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="216" width="105" height="38">
+			<part type="text" x="26" y="200" width="105" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">[temp]</text>
 			</part>
-			<part type="text" x="138" y="216" width="195" height="38">
+			<part type="text" x="138" y="200" width="195" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
@@ -107,12 +107,12 @@
 
 		<!-- 7. Line [hr] -->
 		<group name="line-hr" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="256" width="105" height="38">
+			<part type="text" x="26" y="240" width="105" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">[hr]</text>
 			</part>
-			<part type="text" x="138" y="256" width="195" height="38">
+			<part type="text" x="138" y="240" width="195" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
@@ -140,7 +140,7 @@
 
 		<!-- Minimal AOD Header: sudo@watch ~ root -->
 		<group name="ambient-prompt" x="0" y="0" width="360" height="360">
-			<part type="text" x="0" y="130" width="360" height="28">
+			<part type="text" x="0" y="114" width="360" height="28">
 				<font code="AT10603"/>
 				<color code="#777777100%"/>
 				<text align="center">sudo@watch ~ root</text>
@@ -149,12 +149,12 @@
 
 		<!-- Minimal AOD Time -->
 		<group name="ambient-time" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="170" width="105" height="38">
+			<part type="text" x="26" y="154" width="105" height="38">
 				<font code="A1T0232"/>
 				<color code="#666666100%"/>
 				<text align="left">[time]</text>
 			</part>
-			<part type="text" x="138" y="170" width="205" height="38">
+			<part type="text" x="138" y="154" width="205" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
