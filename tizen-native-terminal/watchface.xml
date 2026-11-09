@@ -13,22 +13,22 @@
 
 		<!-- 2. Terminal Header: sudo@watch: ~ $ now -->
 		<group name="prompt" x="0" y="0" width="360" height="360">
-			<part type="text" x="0" y="74" width="360" height="30">
-				<font code="AT21021"/>
-				<color code="#ffffff100%"/>
+			<part type="text" x="0" y="78" width="360" height="32">
+				<font code="AT109107"/>
+				<color code="#aaaaaa100%"/>
 				<text align="center">sudo@watch: ~ $ now</text>
 			</part>
 		</group>
 
 		<!-- 3. Line [date] -->
 		<group name="line-date" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="108" width="140" height="30">
-				<font code="AT21021"/>
+			<part type="text" x="36" y="118" width="125" height="34">
+				<font code="AT10211"/>
 				<color code="#ffffff100%"/>
 				<text align="left">[date]</text>
 			</part>
-			<part type="text" x="176" y="108" width="160" height="30">
-				<font code="AT21021"/>
+			<part type="text" x="166" y="118" width="165" height="34">
+				<font code="AT10211"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
 					<icu-skeleton locale="en_US" english_number="true" best_pattern="1">EEE, MMM d</icu-skeleton>
@@ -41,13 +41,13 @@
 
 		<!-- 4. Line [time] -->
 		<group name="line-time" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="142" width="140" height="30">
-				<font code="AT21021"/>
+			<part type="text" x="36" y="158" width="125" height="34">
+				<font code="AT10211"/>
 				<color code="#ffffff100%"/>
 				<text align="left">[time]</text>
 			</part>
-			<part type="text" x="176" y="142" width="160" height="30">
-				<font code="AT21021"/>
+			<part type="text" x="166" y="158" width="165" height="34">
+				<font code="AT10211"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
 					<condition source="is24hour">
@@ -62,34 +62,15 @@
 			</part>
 		</group>
 
-		<!-- 5. Line [step] -->
-		<group name="line-step" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="176" width="140" height="30">
-				<font code="AT21021"/>
-				<color code="#ffffff100%"/>
-				<text align="left">[step]</text>
-			</part>
-			<part type="text" x="176" y="176" width="160" height="30">
-				<font code="AT21021"/>
-				<color code="#ffffff100%"/>
-				<text align="left">
-					<format source="pedometer.step"/> - <format source="pedometer.stepPercent"/>%
-				</text>
-			</part>
-			<action on_event="tap" type="launch">
-				<launch preset="pedometer"/>
-			</action>
-		</group>
-
-		<!-- 6. Line [battery] -->
+		<!-- 5. Line [battery] -->
 		<group name="line-battery" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="210" width="140" height="30">
-				<font code="AT21021"/>
+			<part type="text" x="36" y="198" width="125" height="34">
+				<font code="AT10211"/>
 				<color code="#ffffff100%"/>
 				<text align="left">[battery]</text>
 			</part>
-			<part type="text" x="176" y="210" width="160" height="30">
-				<font code="AT21021"/>
+			<part type="text" x="166" y="198" width="165" height="34">
+				<font code="AT10211"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
 					<format source="battery.percent"/>%
@@ -100,15 +81,15 @@
 			</action>
 		</group>
 
-		<!-- 7. Line [heart-rate] -->
+		<!-- 6. Line [heart-rate] -->
 		<group name="line-hr" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="244" width="146" height="30">
-				<font code="AT21021"/>
+			<part type="text" x="36" y="238" width="160" height="34">
+				<font code="AT10211"/>
 				<color code="#ffffff100%"/>
 				<text align="left">[heart-rate]</text>
 			</part>
-			<part type="text" x="176" y="244" width="160" height="30">
-				<font code="AT21021"/>
+			<part type="text" x="200" y="238" width="135" height="34">
+				<font code="AT10211"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
 					<condition source="heartrate.recent">
@@ -134,21 +115,21 @@
 		</group>
 
 		<group name="ambient-prompt" x="0" y="0" width="360" height="360">
-			<part type="text" x="0" y="74" width="360" height="30">
-				<font code="AT21021"/>
-				<color code="#888888100%"/>
+			<part type="text" x="0" y="78" width="360" height="32">
+				<font code="AT109107"/>
+				<color code="#666666100%"/>
 				<text align="center">sudo@watch: ~ $ now</text>
 			</part>
 		</group>
 
 		<group name="ambient-date" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="108" width="140" height="30">
-				<font code="AT21021"/>
-				<color code="#888888100%"/>
+			<part type="text" x="36" y="118" width="125" height="34">
+				<font code="AT10211"/>
+				<color code="#666666100%"/>
 				<text align="left">[date]</text>
 			</part>
-			<part type="text" x="176" y="108" width="160" height="30">
-				<font code="AT21021"/>
+			<part type="text" x="166" y="118" width="165" height="34">
+				<font code="AT10211"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
 					<icu-skeleton locale="en_US" english_number="true" best_pattern="1">EEE, MMM d</icu-skeleton>
@@ -157,13 +138,13 @@
 		</group>
 
 		<group name="ambient-time" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="142" width="140" height="30">
-				<font code="AT21021"/>
-				<color code="#888888100%"/>
+			<part type="text" x="36" y="158" width="125" height="34">
+				<font code="AT10211"/>
+				<color code="#666666100%"/>
 				<text align="left">[time]</text>
 			</part>
-			<part type="text" x="176" y="142" width="160" height="30">
-				<font code="AT21021"/>
+			<part type="text" x="166" y="158" width="165" height="34">
+				<font code="AT10211"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
 					<condition source="is24hour">
@@ -179,16 +160,36 @@
 		</group>
 
 		<group name="ambient-battery" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="176" width="140" height="30">
-				<font code="AT21021"/>
-				<color code="#888888100%"/>
+			<part type="text" x="36" y="198" width="125" height="34">
+				<font code="AT10211"/>
+				<color code="#666666100%"/>
 				<text align="left">[battery]</text>
 			</part>
-			<part type="text" x="176" y="176" width="160" height="30">
-				<font code="AT21021"/>
-				<color code="#888888100%"/>
+			<part type="text" x="166" y="198" width="165" height="34">
+				<font code="AT10211"/>
+				<color code="#ffffff100%"/>
 				<text align="left">
 					<format source="battery.percent"/>%
+				</text>
+			</part>
+		</group>
+
+		<group name="ambient-hr" x="0" y="0" width="360" height="360">
+			<part type="text" x="36" y="238" width="160" height="34">
+				<font code="AT10211"/>
+				<color code="#666666100%"/>
+				<text align="left">[heart-rate]</text>
+			</part>
+			<part type="text" x="200" y="238" width="135" height="34">
+				<font code="AT10211"/>
+				<color code="#888888100%"/>
+				<text align="left">
+					<condition source="heartrate.recent">
+						<compare ne="0">
+							<format source="heartrate.recent"/> bpm
+						</compare>
+						<default>-- bpm</default>
+					</condition>
 				</text>
 			</part>
 		</group>
