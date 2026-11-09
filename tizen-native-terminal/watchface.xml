@@ -11,12 +11,12 @@
 			</part>
 		</group>
 
-		<!-- 2. Terminal Header: sudo@watch: ~ $ now -->
+		<!-- 2. Terminal Header: sudo@watch ~ root -->
 		<group name="prompt" x="0" y="0" width="360" height="360">
 			<part type="text" x="0" y="56" width="360" height="26">
 				<font code="AT10603"/>
 				<color code="#888888100%"/>
-				<text align="center">sudo@watch: ~ $ now</text>
+				<text align="center">sudo@watch ~ root</text>
 			</part>
 		</group>
 
@@ -130,7 +130,7 @@
 		</group>
 	</groups>
 
-	<!-- Ambient Always-On Display (AOD) Mode -->
+	<!-- Ambient Always-On Display (AOD) Mode: Solo la hora y sudo@watch ~ root -->
 	<groups type="ambient-fullcolor">
 		<group name="ambient-bg" x="0" y="0" width="360" height="360" hide_when_transparent_background="true">
 			<part type="background" x="0" y="0" width="360" height="360">
@@ -138,36 +138,23 @@
 			</part>
 		</group>
 
+		<!-- Minimal AOD Header: sudo@watch ~ root -->
 		<group name="ambient-prompt" x="0" y="0" width="360" height="360">
-			<part type="text" x="0" y="56" width="360" height="26">
+			<part type="text" x="0" y="130" width="360" height="28">
 				<font code="AT10603"/>
-				<color code="#555555100%"/>
-				<text align="center">sudo@watch: ~ $ now</text>
+				<color code="#777777100%"/>
+				<text align="center">sudo@watch ~ root</text>
 			</part>
 		</group>
 
-		<group name="ambient-date" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="96" width="105" height="38">
-				<font code="A1T0232"/>
-				<color code="#666666100%"/>
-				<text align="left">[date]</text>
-			</part>
-			<part type="text" x="138" y="96" width="195" height="38">
-				<font code="A1T0232"/>
-				<color code="#ffffff100%"/>
-				<text align="left">
-					<icu-skeleton locale="en_US" english_number="true" best_pattern="1">EEE, MMM d</icu-skeleton>
-				</text>
-			</part>
-		</group>
-
+		<!-- Minimal AOD Time -->
 		<group name="ambient-time" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="136" width="105" height="38">
+			<part type="text" x="26" y="170" width="105" height="38">
 				<font code="A1T0232"/>
 				<color code="#666666100%"/>
 				<text align="left">[time]</text>
 			</part>
-			<part type="text" x="138" y="136" width="205" height="38">
+			<part type="text" x="138" y="170" width="205" height="38">
 				<font code="A1T0232"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
@@ -178,61 +165,6 @@
 						<default>
 							<icu-skeleton english_number="true">hh:mm a</icu-skeleton>
 						</default>
-					</condition>
-				</text>
-			</part>
-		</group>
-
-		<group name="ambient-battery" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="176" width="105" height="38">
-				<font code="A1T0232"/>
-				<color code="#666666100%"/>
-				<text align="left">[batt]</text>
-			</part>
-			<part type="text" x="138" y="176" width="195" height="38">
-				<font code="A1T0232"/>
-				<color code="#ffffff100%"/>
-				<text align="left">
-					<format source="battery.percent"/>%
-				</text>
-			</part>
-		</group>
-
-		<group name="ambient-temp" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="216" width="105" height="38">
-				<font code="A1T0232"/>
-				<color code="#666666100%"/>
-				<text align="left">[temp]</text>
-			</part>
-			<part type="text" x="138" y="216" width="195" height="38">
-				<font code="A1T0232"/>
-				<color code="#ffffff100%"/>
-				<text align="left">
-					<condition source="weather.currentTemperature">
-						<compare ge="999">--°</compare>
-						<default>
-							<format source="weather.currentTemperature"/>°
-						</default>
-					</condition>
-				</text>
-			</part>
-		</group>
-
-		<group name="ambient-hr" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="256" width="105" height="38">
-				<font code="A1T0232"/>
-				<color code="#666666100%"/>
-				<text align="left">[hr]</text>
-			</part>
-			<part type="text" x="138" y="256" width="195" height="38">
-				<font code="A1T0232"/>
-				<color code="#888888100%"/>
-				<text align="left">
-					<condition source="heartrate.recent">
-						<compare ne="0">
-							<format source="heartrate.recent"/> bpm
-						</compare>
-						<default>-- bpm</default>
 					</condition>
 				</text>
 			</part>

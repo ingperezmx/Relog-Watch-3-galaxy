@@ -168,7 +168,7 @@
 		</group>
 	</groups>
 
-	<!-- Ambient Always-On Display (AOD) Mode -->
+	<!-- Ambient Always-On Display (AOD) Mode: Solo numeros centrales (hora, minutos) sin ruedas -->
 	<groups type="ambient-fullcolor">
 		<group name="ambient-bg" x="0" y="0" width="360" height="360" hide_when_transparent_background="true">
 			<part type="background" x="0" y="0" width="360" height="360">
@@ -176,20 +176,8 @@
 			</part>
 		</group>
 
-		<group name="ambient-minutes-dial" x="0" y="0" width="360" height="360">
-			<part type="image" x="0" y="0" width="360" height="360">
-				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u6/concentric_minutes_dial.png"/>
-				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute"/>
-			</part>
-		</group>
-
-		<group name="ambient-pill" x="0" y="0" width="360" height="360">
-			<part type="image" x="0" y="0" width="360" height="360">
-				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u6/concentric_aod_pill.png"/>
-			</part>
-		</group>
-
 		<group name="ambient-time" x="0" y="0" width="360" height="360">
+			<!-- Digital Hour -->
 			<part type="text" x="15" y="134" width="190" height="92">
 				<font code="AT10305"/>
 				<color code="#ffffff100%"/>
@@ -204,10 +192,12 @@
 					</condition>
 				</text>
 			</part>
-			<part type="text" x="236" y="156" width="50" height="48">
+
+			<!-- Digital Minute -->
+			<part type="text" x="220" y="156" width="65" height="48">
 				<font code="AT19004"/>
 				<color code="#ffffff100%"/>
-				<text align="center">
+				<text align="left">
 					<icu-skeleton english_number="true">mm</icu-skeleton>
 				</text>
 			</part>

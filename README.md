@@ -27,19 +27,21 @@ Colección completa de carátulas nativas de alto rendimiento optimizadas para l
   - **Izquierda:** Calorías (`pedometer.activeCalorie`), Distancia (`pedometer.distance`), Pasos (`pedometer.step`).
   - **Derecha:** Ritmo Cardíaco (`heartrate.recent` bpm), Batería (`battery.percent%`), Notificaciones (`notification.count`).
   - **Inferior:** Clima (icono dinámico + `weather.currentTemperature°`), Ciudad (`weather.cityName`), Fecha completa interactiva (`EEE, MMM d`).
-- **AOD (Always-On Display):** Consumo ultra bajo (< 15% OPR) con manecillas optimizadas e indicadores esenciales.
+- **AOD (Always-On Display):** Consumo ultra bajo con solo las manecillas flotantes sobre negro puro AMOLED.
 
 ---
 
 ### 2. Terminal Watchface (28 px)
 - **Directorio:** [`tizen-native-terminal/`](tizen-native-terminal/)
 - **Slot Nativo:** `com.samsung.watchface-noblesse-u1`
-- **Diseño:** Fuente monoespaciada aumentada a **28 px** (`A1T0232`), con etiquetas alineadas uniformemente a 6 caracteres:
+- **Encabezado:** `sudo@watch ~ root` en pantalla activa y AOD.
+- **Diseño:** Fuente monoespaciada aumentada a **28 px** (`A1T0232`), con etiquetas alineadas uniformemente:
   - `[date]` — Fecha interactiva (abre Calendario).
   - `[time]` — Hora digital en formato 12h/24h con segundos parpadeantes (abre Alarma).
   - `[batt]` — Nivel y estado de batería en % (abre Estado de Batería).
   - `[temp]` — Temperatura meteorológica actual (abre Clima).
   - `[hr]  ` — Frecuencia cardíaca en tiempo real (abre Ritmo Cardíaco).
+- **AOD (Always-On Display):** Modo minimalista centrado con únicamente `sudo@watch ~ root` y la hora (`[time]`).
 
 ---
 
@@ -51,6 +53,7 @@ Colección completa de carátulas nativas de alto rendimiento optimizadas para l
   - Anillo interior de minutos con rotación suave.
   - Cápsula central con hora digital en gran tamaño (92 px).
   - 4 complicaciones en los cuadrantes: batería, pasos, calorías activas y clima.
+- **AOD (Always-On Display):** Modo minimalista con únicamente los números centrales de la hora y minutos (sin ruedas ni cápsula).
 
 ---
 
