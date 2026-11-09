@@ -138,24 +138,24 @@
 			</part>
 		</group>
 
-		<!-- Minimal AOD Header: sudo@watch ~ root (28px) -->
+		<!-- Minimal AOD Header: sudo@watch ~ root (30px) -->
 		<group name="ambient-prompt" x="0" y="0" width="360" height="360">
-			<part type="text" x="0" y="114" width="360" height="38">
-				<font code="A1T0232"/>
+			<part type="text" x="0" y="110" width="360" height="42">
+				<font code="AT250061"/>
 				<color code="#888888100%"/>
 				<text align="center">sudo@watch ~ root</text>
 			</part>
 		</group>
 
-		<!-- Minimal AOD Time (28px) -->
+		<!-- Minimal AOD Time (30px) -->
 		<group name="ambient-time" x="0" y="0" width="360" height="360">
-			<part type="text" x="26" y="160" width="105" height="38">
-				<font code="A1T0232"/>
+			<part type="text" x="26" y="160" width="105" height="42">
+				<font code="AT250061"/>
 				<color code="#666666100%"/>
 				<text align="left">[time]</text>
 			</part>
-			<part type="text" x="138" y="160" width="205" height="38">
-				<font code="A1T0232"/>
+			<part type="text" x="138" y="160" width="205" height="42">
+				<font code="AT250061"/>
 				<color code="#ffffff100%"/>
 				<text align="left">
 					<condition source="is24hour">
