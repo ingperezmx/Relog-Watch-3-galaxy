@@ -1,31 +1,65 @@
-# Relog Watch 3 Galaxy — Concentric Watch Face (Wear OS & Tizen 5.5 Port)
+# Relog Watch 3 Galaxy — Colección de Carátulas Nativas (Tizen 5.5 / SM-R840)
 
-<img src='https://play-lh.googleusercontent.com/Qp-fN1rU6bimstpohGY03DlDPMRdYapLK0CXH-utB6HJQhtCLxBERs47vjFP4rvVU-w=w832-h470' style="width:600px;" />
+Este repositorio contiene la colección de carátulas nativas optimizadas para el **Samsung Galaxy Watch 3 (`SM-R840`, Tizen OS 5.5.0.2)**, incluyendo scripts de instalación automatizada vía SDB (Wi-Fi).
 
-Este repositorio contiene:
-1. El proyecto original **Concentric Watch Face** (diseño del Google Pixel Watch en *Watch Face Format* en [`res/raw/watchface.xml`](res/raw/watchface.xml)).
-2. **Port nativo para Tizen OS 5.5 (`SM-R840` Samsung Galaxy Watch 3)** en la carpeta [`tizen-concentric/`](tizen-concentric/) y empaquetado como [`Concentric.wgt`](Concentric.wgt).
+---
 
-## Características del Port para Tizen (`tizen-concentric/`)
-- **Rotación concéntrica en tiempo real:** Usa las texturas originales (`index_minutes_0.png`, `index_seconds_0.png`, `minute_border.png`, `minute_border_pill.png`) y las tipografías `Inter Medium` / `Roboto`.
-- **Soporte para el bisel físico giratorio (`rotarydetent`):** Al girar el bisel del Galaxy Watch 3 cambias entre los 15 colores oficiales de Pixel Concentric (*Cloud, Snow, Watermelon, Tangerine Red, Gold, Sunshine, Mint, Peppermint, Lime, Turquoise, Ocean, Azure, Aquamarine, Lavender, Rose*).
-- **Toque en pantalla:** Tocar el lado izquierdo alterna entre formato **12h / 24h**; tocar el lado derecho cambia el color de acento.
-- **Modo Always-On Display (`ambientmodechanged`):** Cambia automáticamente al borde tipo cápsula (`minute_border_pill.png`) y oculta el segundero para ahorrar batería.
+## 🌟 Carátulas Disponibles
 
-## Datos del Reloj (`SM-R840`)
-- **Modelo:** `SM-R840` (Galaxy Watch 3 - F79D, Tizen `5.5.0.2`)
-- **DUID del dispositivo:** `1.0#XLCEfI4yHeUrkqGn3qVNGXVytss=`
+### 1. MoveToBeActive (Estilo Garmin Vivomove)
+- **Directorio:** [`tizen-native-movetobeactive/`](tizen-native-movetobeactive/)
+- **Slot Nativo:** `com.samsung.watchface-noblesse-a7`
+- **Características:**
+  - Manecilla horaria blanca con punta biselada y minutero en acento verde lima (`#AAFF00`).
+  - Segundero mecánico con animación de latido (`animation="tick"`).
+  - Dial con 60 marcas e índices horarios verdes en 1, 2, 4, 5, 7, 8, 10 y 11; numerales cardinales `12`, `3`, `6` y `9`.
+  - Logotipo oficial de `GARMIN` con triángulo cian/azul (`#00C4FF`).
+  - Suite de complicaciones: Pasos, Calorías, Distancia, Ritmo Cardíaco, Batería, Notificaciones, Clima (icono + temperatura), Ciudad y Fecha completa.
+  - Modo Always-On Display (AOD) optimizado para bajo consumo AMOLED.
 
-## Cómo firmar e instalar `Concentric.wgt` en el Galaxy Watch 3
-Los relojes comerciales de Samsung requieren que el paquete `.wgt` esté firmado con un certificado de **Samsung Certificate Extension** (`samsung_tizen_dev_public.pem`) vinculado al DUID `1.0#XLCEfI4yHeUrkqGn3qVNGXVytss=`:
+### 2. Terminal Watchface
+- **Directorio:** [`tizen-native-terminal/`](tizen-native-terminal/)
+- **Slot Nativo:** `com.samsung.watchface-noblesse-u1`
+- **Características:**
+  - Estilo consola minimalista a **28 px**.
+  - 5 líneas de telemetría: Fecha (`[date]`), Hora (`[time]`), Batería (`[batt]`), Clima (`[temp]`) y Ritmo Cardíaco (`[hr]`).
+  - Toque interactivo en cada línea para abrir su aplicación correspondiente en el reloj.
 
-1. Genera un perfil de certificado Samsung (`author.p12` + `distributor.p12` con el DUID `1.0#XLCEfI4yHeUrkqGn3qVNGXVytss=`) desde **Tizen Certificate Manager** o **Galaxy Watch Studio**.
-2. Empaqueta y firma con Tizen CLI:
-   ```bash
-   tizen package -t wgt -s <TuPerfilSamsung> -- ./tizen-concentric
-   ```
-3. Instala por Wi-Fi con SDB:
-   ```bash
-   sdb connect 192.168.100.77:26101
-   sdb install ./tizen-concentric/Concentric.wgt
-   ```
+### 3. Concentric (Google Pixel Watch)
+- **Directorio:** [`tizen-native-concentric/`](tizen-native-concentric/)
+- **Slot Nativo:** `com.samsung.watchface-noblesse-u6`
+- **Características:**
+  - Discos concéntricos de minutos y segundos en barrido fluido a 60 fps.
+  - Complicaciones circulares integradas (batería, pasos, calorías y clima).
+  - Proyecto web original en [`tizen-concentric/`](tizen-concentric/) y paquete empaquetado [`Concentric.wgt`](Concentric.wgt).
+
+---
+
+## 🚀 Instalación Automatizada en el Reloj
+
+### Opción A: Instalar solo MoveToBeActive
+- **En Windows (PowerShell):**
+  ```powershell
+  .\install_movetobeactive.ps1 -DeviceIp "192.168.100.77:26101"
+  ```
+- **En Linux / macOS / Git Bash:**
+  ```bash
+  chmod +x install_movetobeactive.sh
+  ./install_movetobeactive.sh 192.168.100.77:26101
+  ```
+
+### Opción B: Desplegar el Carrusel Triple Completo (MoveToBeActive + Terminal + Concentric)
+- **En Windows (PowerShell):**
+  ```powershell
+  .\instalar_todas_las_caratulas.ps1 -DeviceIp "192.168.100.77:26101"
+  ```
+- **En Linux / macOS / Git Bash:**
+  ```bash
+  chmod +x instalar_todas_las_caratulas.sh
+  ./instalar_todas_las_caratulas.sh 192.168.100.77:26101
+  ```
+
+---
+
+## 🔄 Cómo cambiar entre carátulas en el reloj
+Mantén presionada la pantalla del reloj durante 2 segundos para abrir el carrusel selector y gira el bisel físico para elegir entre **MoveToBeActive**, **Terminal** o **Concentric**.
