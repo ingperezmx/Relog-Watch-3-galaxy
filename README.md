@@ -70,62 +70,117 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
 
 ---
 
-## 🚀 Guía de Instalación en el Reloj vía SDB (Wi-Fi)
+## 🛠️ Guía Completa de Instalación Local Paso a Paso
 
-Asegúrate de que la depuración SDB esté activada en el reloj (**Ajustes > Acerca del reloj > Depuración activada**) y conectado a la misma red Wi-Fi:
+Sigue estos sencillos pasos para clonar el repositorio, configurar tu Galaxy Watch 3 e instalar las carátulas localmente desde tu computadora.
 
-### Opción 1: Instalar solo MoveToBeActive
-- **En Windows (PowerShell):**
-  ```powershell
-  .\install_movetobeactive.ps1 -DeviceIp "192.168.100.77:26101"
-  ```
-- **En Linux / macOS / Git Bash:**
-  ```bash
-  chmod +x install_movetobeactive.sh
-  ./install_movetobeactive.sh 192.168.100.77:26101
-  ```
-
----
-
-### Opción 2: Instalar solo Terminal Watchface
-- **En Windows (PowerShell):**
-  ```powershell
-  .\install_terminal.ps1 -DeviceIp "192.168.100.77:26101"
-  ```
-- **En Linux / macOS / Git Bash:**
-  ```bash
-  chmod +x install_terminal.sh
-  ./install_terminal.sh 192.168.100.77:26101
-  ```
+### 1. Prerrequisitos en tu Computadora (PC / Mac / Linux)
+1. **Clonar este Repositorio con Git:**
+   Abre una terminal (PowerShell, Git Bash o Terminal) y ejecuta:
+   ```bash
+   git clone https://github.com/ingperezmx/Reloj-Galaxy-Watch-3-Tizen.git
+   cd Reloj-Galaxy-Watch-3-Tizen
+   ```
+2. **Herramienta SDB (`sdb`):**
+   El comando `sdb` (Samsung Smart Development Bridge) es el puente oficial de comunicación con Tizen.
+   - **Opción A (Oficial con Tizen Studio):** Descarga [Tizen Studio](https://developer.samsung.com/galaxy-watch-design/studio/overview.html). La herramienta se ubica en:
+     - Windows: `C:\tizen-studio\tools\sdb.exe`
+     - macOS / Linux: `~/tizen-studio/tools/sdb`
+   - **Opción B (Binario portable):** Si tienes el binario `sdb` en otra ubicación, puedes agregarlo al `PATH` de tu sistema o pasarlo como parámetro `-SdbPath "C:\ruta\a\sdb.exe"` en los scripts de PowerShell.
 
 ---
 
-### Opción 3: Instalar solo Concentric
-- **En Windows (PowerShell):**
-  ```powershell
-  .\install_concentric.ps1 -DeviceIp "192.168.100.77:26101"
-  ```
-- **En Linux / macOS / Git Bash:**
-  ```bash
-  chmod +x install_concentric.sh
-  ./install_concentric.sh 192.168.100.77:26101
-  ```
+### 2. Configuración en el Reloj (Samsung Galaxy Watch 3)
+1. **Habilitar Modo de Desarrollador:**
+   - En el reloj, entra a **Ajustes > Acerca del reloj > Software**.
+   - Toca repetidamente **Versión de software** (5 veces seguidas) hasta que aparezca el mensaje en pantalla: *"Modo de desarrollador activado"*.
+2. **Activar Depuración SDB:**
+   - Vuelve a **Ajustes > Acerca del reloj**.
+   - Desplázate hacia abajo hasta **Depuración** y asegúrate de que esté en **Activado**.
+3. **Conectar a la misma red Wi-Fi:**
+   - Ve a **Ajustes > Conexiones > Wi-Fi**.
+   - Configura el Wi-Fi en **Siempre activado** y conéctate a la **misma red Wi-Fi** donde está tu computadora (ambos dispositivos deben estar en la misma red local).
+4. **Consultar la IP del Reloj:**
+   - En **Ajustes > Conexiones > Wi-Fi**, pulsa sobre tu red Wi-Fi conectada y baja hasta ver **Dirección IP** (ejemplo: `192.168.100.77` o `192.168.1.15`).
+5. **Reiniciar el Reloj (Obligatorio en Tizen):**
+   - Mantén presionado el botón inferior derecho (**Power/Home**) durante 8 segundos hasta que la pantalla muestre *"Reiniciando..."* (Rebooting).
+   > **Nota importante:** Tizen requiere este reinicio para activar el daemon de escucha SDB en el puerto Wi-Fi.
 
 ---
 
-### Opción 4: Desplegar el Carrusel Triple Completo (Recomendado)
-Instala las 3 carátulas simultáneamente y las deja activas para alternar entre ellas con el bisel físico del reloj:
+### 3. Conexión y Autorización RSA (Primera Vez)
+1. Con el reloj ya reiniciado y conectado al Wi-Fi, abre tu terminal en la PC y ejecuta:
+   ```bash
+   sdb connect <IP_DEL_RELOJ>:26101
+   ```
+   *(Ejemplo: `sdb connect 192.168.100.77:26101`)*
+2. **Mira inmediatamente la pantalla del reloj**:
+   - Aparecerá un cuadro emergente:
+     > **"¿Permitir depuración SDB desde este equipo?"**  
+     > *(Huella digital RSA: ...)*
+   - Marca la casilla **"Permitir siempre desde este equipo"** y pulsa la palomita **✔**.
+3. Verifica la autorización ejecutando:
+   ```bash
+   sdb devices
+   ```
+   Debe mostrar el identificador de tu reloj con el estado `device` (no `unauthorized`).
+
+---
+
+### 4. Scripts de Instalación Local
+
+#### 🏆 Opción 1: Carrusel Triple Completo (Recomendado)
+Instala las 3 carátulas simultáneamente en el reloj y las deja disponibles en el carrusel para alternar entre ellas con el bisel físico:
 - **En Windows (PowerShell):**
   ```powershell
-  .\instalar_todas_las_caratulas.ps1 -DeviceIp "192.168.100.77:26101"
+  .\instalar_todas_las_caratulas.ps1 -DeviceIp "TU_IP:26101"
+  ```
+  *(Si `sdb.exe` está en una ruta personalizada:)*
+  ```powershell
+  .\instalar_todas_las_caratulas.ps1 -DeviceIp "TU_IP:26101" -SdbPath "C:\ruta\sdb.exe"
   ```
 - **En Linux / macOS / Git Bash:**
   ```bash
   chmod +x instalar_todas_las_caratulas.sh
-  ./instalar_todas_las_caratulas.sh 192.168.100.77:26101
+  ./instalar_todas_las_caratulas.sh TU_IP:26101
   ```
+
+---
+
+#### ⏱️ Opción 2: Instalar solo MoveToBeActive (Garmin Vivomove)
+- **PowerShell:** `.\install_movetobeactive.ps1 -DeviceIp "TU_IP:26101"`
+- **Bash:** `./install_movetobeactive.sh TU_IP:26101`
+
+#### 💻 Opción 3: Instalar solo Terminal Watchface (28px CLI)
+- **PowerShell:** `.\install_terminal.ps1 -DeviceIp "TU_IP:26101"`
+- **Bash:** `./install_terminal.sh TU_IP:26101`
+
+#### 🔵 Opción 4: Instalar solo Concentric (Pixel Watch)
+- **PowerShell:** `.\install_concentric.ps1 -DeviceIp "TU_IP:26101"`
+- **Bash:** `./install_concentric.sh TU_IP:26101`
 
 ---
 
 ## 🔄 Cómo alternar entre carátulas en el reloj
 Mantén presionada la pantalla del reloj durante **2 segundos**. Se abrirá el selector interactivo mostrando la miniatura de cada carátula. Gira el **bisel físico** o desliza el dedo hacia los lados para elegir la que desees usar.
+
+---
+
+## 🌙 Configuración Óptima del Modo Siempre Encendido (AOD)
+Para una experiencia perfecta sin distracciones visuales:
+1. **Activar AOD:** Desliza el dedo hacia abajo desde el borde superior de la pantalla para abrir el panel de accesos rápidos y toca el icono de reloj (centro de la fila inferior).
+2. **Ajustar Brillo Legible:** Ve a **Ajustes > Pantalla > Brillo** y selecciona nivel **5 o 6** (en nivel 1 el modo atenuado AOD resulta casi imperceptible).
+3. **Uso en Muñeca:** El Galaxy Watch 3 desactiva automáticamente el AOD cuando se coloca sobre una mesa o en el cargador inalámbrico para proteger la batería. En cuanto te lo colocas en la muñeca, el sensor óptico mantiene la carátula siempre visible con su diseño minimalista.
+4. **Desactivar Texto OPR de Depuración:** Asegúrate de que en **Ajustes > Opciones de desarrollador**, la opción *"En relación de píxeles: Mostrar en Reloj siempre activado"* esté en **Desactivado**.
+
+---
+
+## ❓ Solución de Problemas Frecuentes (FAQ)
+- **`failed to connect to 192.168.x.x:26101`:**
+  - Asegúrate de que tanto la PC como el reloj estén en la misma red Wi-Fi y no en una red de invitados con aislamiento entre clientes.
+  - Recuerda **reiniciar el reloj** tras activar la depuración en ajustes.
+  - Verifica que la IP del reloj no haya sido reasignada por el router Wi-Fi.
+- **`error: device unauthorized`:**
+  - Despierta la pantalla del reloj y acepta la autorización RSA con la marca de verificación ✔.
+- **La pantalla se apaga completamente en lugar de mostrar AOD:**
+  - El reloj no debe estar en el cargador ni sobre una mesa. Debe colocarse ceñido en la muñeca (o cubrir el sensor trasero de cristal).

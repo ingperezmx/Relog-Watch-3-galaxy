@@ -1,4 +1,4 @@
-# Port Nativo: Carátula MoveToBeActive (Estilo Garmin Vivomove) para Galaxy Watch 3
+﻿# Port Nativo: Carátula MoveToBeActive (Estilo Garmin Vivomove) para Galaxy Watch 3
 
 Se ha adaptado e instalado exitosamente la carátula de código abierto **MoveToBeActive** (original de Garmin Connect IQ / Monkey C por *fevieira27*) al motor nativo **Samsung Noblesse XML** del **Samsung Galaxy Watch 3** (`SM-R840`, Tizen OS `5.5.0.2`, pantalla AMOLED de 360×360 px).
 
