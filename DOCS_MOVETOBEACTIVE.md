@@ -65,6 +65,6 @@ El reloj ahora dispone de **tres carátulas nativas activas** en su carrusel de 
 
 Todos los archivos fuente, imágenes de alta resolución optimizadas, definiciones XML y configuraciones han sido versionados en el repositorio del usuario:
 
-- **Repositorio:** [ingperezmx/Relog-Watch-3-galaxy](https://github.com/ingperezmx/Relog-Watch-3-galaxy)
-- **Directorio nuevo:** [`tizen-native-movetobeactive`](https://github.com/ingperezmx/Relog-Watch-3-galaxy/tree/main/tizen-native-movetobeactive)
+- **Repositorio:** [ingperezmx/Reloj-Galaxy-Watch-3-Tizen](https://github.com/ingperezmx/Reloj-Galaxy-Watch-3-Tizen)
+- **Directorio nuevo:** [`tizen-native-movetobeactive`](https://github.com/ingperezmx/Reloj-Galaxy-Watch-3-Tizen/tree/main/tizen-native-movetobeactive)
 - **Commit:** `356cb89` (*feat(watchface): Port MoveToBeActive (Garmin Vivomove style) native watchface for Galaxy Watch 3*)
