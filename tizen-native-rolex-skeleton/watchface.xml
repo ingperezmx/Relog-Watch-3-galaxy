@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<watchface>
+	<metadata key="clock-type" value="com.samsung.watchface-noblesse-a1"/>
+	<metadata key="preview_time" value="10:10:42"/>
+	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
+
+	<groups>
+		<!-- 1. Fondo Arquitectónico Esqueletizado y Bisel Acanalado Rolex Fluted Gold -->
+		<group name="bg" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/skeleton_bg.png"/>
+			</part>
+			<!-- Toque en zona superior para Clima -->
+			<action on_event="tap" type="launch">
+				<launch preset="weather"/>
+			</action>
+		</group>
+
+		<!-- 2. Engranaje 1: Gran Rueda Central de Minutos/Horas (Centro 180, 180) -->
+		<group name="gear-center" x="90" y="90" width="180" height="180">
+			<part type="image" x="0" y="0" width="180" height="180">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_center.png"/>
+				<rotation center_x="90" center_y="90" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
+			</part>
+		</group>
+
+		<!-- 3. Engranaje 2: Rueda de Balance / Tourbillon a las 7:00 (Centro 130, 215) -->
+		<group name="gear-balance" x="65" y="150" width="130" height="130">
+			<part type="image" x="0" y="0" width="130" height="130">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_balance.png"/>
+				<rotation center_x="65" center_y="65" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
+			</part>
+			<!-- Toque en tourbillon / escape para Pulsómetro / Salud -->
+			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo">
+				<launch preset="heartrate"/>
+			</action>
+		</group>
+
+		<!-- 4. Engranaje 3: Rueda Intermedia de Segundos a las 4:30 en Contra-Rotación (Centro 245, 185) -->
+		<group name="gear-seconds" x="195" y="135" width="100" height="100">
+			<part type="image" x="0" y="0" width="100" height="100">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_seconds.png"/>
+				<rotation center_x="50" center_y="50" start_angle="360" end_angle="0" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
+			</part>
+		</group>
+
+		<!-- 5. Manecillas de Alta Relojería Rolex en Oro 18K -->
+		<group name="hands" x="0" y="0" width="360" height="360">
+			<!-- Manecilla de Horas con Facetas 3D y Lume Chromalight -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_hour.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
+			</part>
+
+			<!-- Manecilla de Minutos con Facetas 3D y Lume Chromalight -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_min.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
+			</part>
+
+			<!-- Segundero Ultrafino de Barrido Continuo a 60 fps con Contrapeso Calado -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_sec.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
+			</part>
+
+			<!-- Tapa Central del Eje Pulida a Espejo -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_pivot.png"/>
+			</part>
+
+			<!-- Toque central para Calendario / Agenda -->
+			<action on_event="tap" type="launch">
+				<launch preset="event"/>
+			</action>
+		</group>
+	</groups>
+
+	<!-- Modo Siempre Encendido (AOD / Ambient): Exclusivamente las manecillas sobre negro puro AMOLED -->
+	<groups type="ambient-fullcolor">
+		<!-- Fondo Negro Puro AMOLED (100% de píxeles apagados, consumo cero) -->
+		<group name="aod-bg" x="0" y="0" width="360" height="360" hide_when_transparent_background="true">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/skeleton_bg_aod.png"/>
+			</part>
+		</group>
+
+		<!-- Únicamente las Manecillas Lentejuela Chromalight en AOD -->
+		<group name="aod-hands" x="0" y="0" width="360" height="360">
+			<!-- Manecilla Horas Tenue -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_aod_hand_hour.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
+			</part>
+
+			<!-- Manecilla Minutos Tenue -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_aod_hand_min.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute"/>
+			</part>
+
+			<!-- Capuchón Central Tenue -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_aod_pivot.png"/>
+			</part>
+		</group>
+	</groups>
+</watchface>
