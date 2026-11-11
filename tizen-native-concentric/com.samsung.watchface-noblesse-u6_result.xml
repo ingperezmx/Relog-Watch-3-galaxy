@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Application type="clock">
     <PackageName>com.samsung.watchface-noblesse-u6</PackageName>
-    <DisplayName>@WDS_CLOCK_MBODY_LARGE</DisplayName>
+    <DisplayName>Concentric Pixel</DisplayName>
     <Preview/>
     <Result version="2.0">
         <Item name="color">

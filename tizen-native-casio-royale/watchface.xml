@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<watchface>
+	<metadata key="clock-type" value="com.samsung.watchface-noblesse-u3"/>
+	<metadata key="preview_time" value="14:10:28"/>
+	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
+
+	<!-- Audio disabled for zero-battery drain -->
+
+	<groups>
+		<!-- 1. Background Dial: Bezel, Casio Logos, World Map, Mini Dial Rim -->
+		<group name="bg" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_bg.png"/>
+			</part>
+		</group>
+
+		<!-- 2. Weather Capsule (01:00) -->
+		<group name="comp-weather" x="206" y="58" width="110" height="28">
+			<part type="image" x="14" y="3" width="22" height="22">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_ic_sunny.png">
+					<condition source="weather.condition">
+						<compare eq="1"><inline-image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_ic_sunny.png" width="22" height="22"/></compare>
+						<compare eq="2"><inline-image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_ic_cloudy.png" width="22" height="22"/></compare>
+						<compare eq="3"><inline-image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_ic_rain.png" width="22" height="22"/></compare>
+					</condition>
+				</image>
+			</part>
+			<part type="text" x="40" y="2" width="56" height="24">
+				<font code="AT10603"/>
+				<color code="#0c101a100%"/>
+				<text align="center"><format source="weather.currentTemperature"/>°</text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="weather"/></action>
+		</group>
+
+		<!-- 3. Date Window: Day of week (WED) and Date (16-4) -->
+		<group name="comp-date" x="176" y="172" width="148" height="34">
+			<part type="text" x="2" y="5" width="68" height="24">
+				<font code="A1T0232"/>
+				<color code="#0c101a100%"/>
+				<text align="center"><upper><icu-skeleton english_number="true">EEE</icu-skeleton></upper></text>
+			</part>
+			<part type="text" x="72" y="5" width="72" height="24">
+				<font code="A1T0232"/>
+				<color code="#0c101a100%"/>
+				<text align="center"><format source="day"/>-<format source="month"/></text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="event"/></action>
+		</group>
+
+		<!-- 4. Main Digital Time LCD -->
+		<group name="comp-time" x="72" y="206" width="252" height="78">
+			<part type="text" x="6" y="8" width="176" height="62">
+				<font code="AT10305"/>
+				<color code="#0c101a100%"/>
+				<text align="center">
+					<condition source="is24hour">
+						<compare eq="true"><format source="hour0-23.padded"/>:<format source="minute.padded"/></compare>
+						<compare eq="false"><format source="hour1-12.padded"/>:<format source="minute.padded"/></compare>
+					</condition>
+				</text>
+			</part>
+			<!-- Digital Seconds -->
+			<part type="text" x="182" y="24" width="60" height="36">
+				<font code="AT19004"/>
+				<color code="#0c101a100%"/>
+				<text align="center"><format source="second.padded"/></text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="alarm"/></action>
+		</group>
+
+		<!-- 5. Bottom Battery Level -->
+		<group name="comp-batt" x="130" y="328" width="100" height="24">
+			<part type="text" x="0" y="0" width="100" height="24">
+				<font code="AT10603"/>
+				<color code="#ffffff100%"/>
+				<text align="center"><format source="battery.percent"/>%</text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="battery"/></action>
+		</group>
+
+		<!-- 6. Mini Analog Clock (center: 126, 118) -->
+		<group name="mini-clock" x="78" y="70" width="96" height="96">
+			<part type="image" x="0" y="0" width="96" height="96">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_hand_hour.png"/>
+				<rotation center_x="48" center_y="48" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
+			</part>
+			<part type="image" x="0" y="0" width="96" height="96">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_hand_min.png"/>
+				<rotation center_x="48" center_y="48" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
+			</part>
+			<part type="image" x="0" y="0" width="96" height="96">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_pivot.png"/>
+			</part>
+		</group>
+	</groups>
+
+	<!-- Ambient Always-On Display (AOD) Mode -->
+	<groups type="ambient-fullcolor">
+		<!-- Pure black AOD background with minimal frame -->
+		<group name="aod-bg" x="0" y="0" width="360" height="360" hide_when_transparent_background="true">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_bg_aod.png"/>
+			</part>
+		</group>
+
+		<!-- AOD Digital Time (dimmed white/gray) -->
+		<group name="aod-time" x="72" y="206" width="252" height="78">
+			<part type="text" x="6" y="8" width="240" height="62">
+				<font code="AT10305"/>
+				<color code="#c8c8d0100%"/>
+				<text align="center">
+					<condition source="is24hour">
+						<compare eq="true"><format source="hour0-23.padded"/>:<format source="minute.padded"/></compare>
+						<compare eq="false"><format source="hour1-12.padded"/>:<format source="minute.padded"/></compare>
+					</condition>
+				</text>
+			</part>
+		</group>
+
+		<!-- AOD Date -->
+		<group name="aod-date" x="176" y="172" width="148" height="34">
+			<part type="text" x="2" y="5" width="68" height="24">
+				<font code="A1T0232"/>
+				<color code="#888890100%"/>
+				<text align="center"><upper><icu-skeleton english_number="true">EEE</icu-skeleton></upper></text>
+			</part>
+			<part type="text" x="72" y="5" width="72" height="24">
+				<font code="A1T0232"/>
+				<color code="#888890100%"/>
+				<text align="center"><format source="day"/>-<format source="month"/></text>
+			</part>
+		</group>
+
+		<!-- AOD Battery -->
+		<group name="aod-batt" x="130" y="328" width="100" height="24">
+			<part type="text" x="0" y="0" width="100" height="24">
+				<font code="AT10603"/>
+				<color code="#777780100%"/>
+				<text align="center"><format source="battery.percent"/>%</text>
+			</part>
+		</group>
+
+		<!-- AOD Mini Clock Hands -->
+		<group name="aod-mini-clock" x="78" y="70" width="96" height="96">
+			<part type="image" x="0" y="0" width="96" height="96">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_hand_hour.png"/>
+				<rotation center_x="48" center_y="48" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
+			</part>
+			<part type="image" x="0" y="0" width="96" height="96">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_hand_min.png"/>
+				<rotation center_x="48" center_y="48" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute"/>
+			</part>
+			<part type="image" x="0" y="0" width="96" height="96">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_pivot.png"/>
+			</part>
+		</group>
+	</groups>
+</watchface>
