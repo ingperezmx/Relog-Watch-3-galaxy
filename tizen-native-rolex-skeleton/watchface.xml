@@ -5,7 +5,7 @@
 	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
 
 	<groups>
-		<!-- 1. Fondo de Alta Definición: Hublot Classic Fusion Tourbillon Skeleton Titanium -->
+		<!-- 1. Fondo Base: Cavidad Mecánica con Pozos Oscuros y Bisel Perimetral -->
 		<group name="bg" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/skeleton_bg.png"/>
@@ -16,7 +16,55 @@
 			</action>
 		</group>
 
-		<!-- 2. Tourbillon: Rueda de Balance y Jaula Giratoria a 60 fps en tiempo real a las 6:00 (Centro 180, 277) -->
+		<!-- 2. Engranaje 1: Gran Rueda Central (Centro 180, 180) -->
+		<group name="gear-center" x="130" y="130" width="100" height="100">
+			<part type="image" x="0" y="0" width="100" height="100">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_center.png"/>
+				<rotation center_x="50" center_y="50" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
+			</part>
+		</group>
+
+		<!-- 3. Engranaje 2: Barrilete con motivo "H" a las 12:00 (Centro 180, 83) -->
+		<group name="gear-barrel" x="146" y="49" width="68" height="68">
+			<part type="image" x="0" y="0" width="68" height="68">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_barrel.png"/>
+				<rotation center_x="34" center_y="34" start_angle="0" end_angle="360" start_value="0" end_value="45" source="second.millisecond" animation="sweep60s"/>
+			</part>
+		</group>
+
+		<!-- 4. Engranaje 3: Rueda Superior Izquierda a las 10:00 (Centro 93, 115) -->
+		<group name="gear-left" x="63" y="85" width="60" height="60">
+			<part type="image" x="0" y="0" width="60" height="60">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_left.png"/>
+				<rotation center_x="30" center_y="30" start_angle="360" end_angle="0" start_value="0" end_value="30" source="second.millisecond" animation="sweep60s"/>
+			</part>
+		</group>
+
+		<!-- 5. Engranaje 4: Rueda Superior Derecha a las 2:00 (Centro 267, 115) -->
+		<group name="gear-right" x="237" y="85" width="60" height="60">
+			<part type="image" x="0" y="0" width="60" height="60">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_right.png"/>
+				<rotation center_x="30" center_y="30" start_angle="0" end_angle="360" start_value="0" end_value="30" source="second.millisecond" animation="sweep60s"/>
+			</part>
+		</group>
+
+		<!-- 6. Engranaje 5: Rueda Intermedia Inferior Izquierda a las 8:00 (Centro 98, 211) -->
+		<group name="gear-lower-left" x="69" y="182" width="58" height="58">
+			<part type="image" x="0" y="0" width="58" height="58">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_lower_left.png"/>
+				<rotation center_x="29" center_y="29" start_angle="0" end_angle="360" start_value="0" end_value="20" source="second.millisecond" animation="sweep60s"/>
+			</part>
+		</group>
+
+		<!-- 7. Engranaje 6: Rueda Intermedia Inferior Derecha a las 4:00 (Centro 262, 211) -->
+		<group name="gear-lower-right" x="233" y="182" width="58" height="58">
+			<part type="image" x="0" y="0" width="58" height="58">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_lower_right.png"/>
+				<rotation center_x="29" center_y="29" start_angle="360" end_angle="0" start_value="0" end_value="20" source="second.millisecond" animation="sweep60s"/>
+			</part>
+		</group>
+
+		<!-- 8. Engranaje 7: Jaula y Rueda de Balance del Tourbillon a las 6:00 (Centro 180, 277) -->
 		<group name="gear-balance" x="115" y="212" width="130" height="130">
 			<part type="image" x="0" y="0" width="130" height="130">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_balance.png"/>
@@ -28,14 +76,14 @@
 			</action>
 		</group>
 
-		<!-- 3. Puente Fijo Superior del Tourbillon con Rubí Central (Posicionado sobre la jaula rotatoria) -->
-		<group name="tourbillon-bridge" x="115" y="212" width="130" height="130">
-			<part type="image" x="0" y="0" width="130" height="130">
-				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_tourbillon_bridge.png"/>
+		<!-- 9. Capa Frontal de Puentes de Titanio y Rubíes (Superpuesta sobre todos los engranajes) -->
+		<group name="bridges-fg" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/skeleton_bridges_fg.png"/>
 			</part>
 		</group>
 
-		<!-- 4. Manecillas Esqueletizadas Hublot Magenta Super-LumiNova y Segundero Continuo -->
+		<!-- 10. Manecillas Esqueletizadas Hublot Magenta Super-LumiNova y Segundero Continuo -->
 		<group name="hands" x="0" y="0" width="360" height="360">
 			<!-- Manecilla de Horas Magenta Hublot -->
 			<part type="image" x="0" y="0" width="360" height="360">
