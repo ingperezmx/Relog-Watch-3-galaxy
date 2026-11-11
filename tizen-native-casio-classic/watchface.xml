@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<watchface schema_version="0.1" name="Casio Classic" width="360" height="360">
+	<metadata key="clock-type" value="com.samsung.watchface-noblesse-a5"/>
+	<metadata key="preview_time" value="10:58:50"/>
+	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
+
+	<groups>
+		<!-- 1. Background: Stainless Steel Bezel, Casio Logo, Water Resist, Vintage LCD Screen -->
+		<group name="bg" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_classic_bg.png"/>
+			</part>
+		</group>
+
+		<!-- 2. LCD Top Row: PM / 24H Indicator -->
+		<group name="comp-pm" x="90" y="118" width="60" height="22">
+			<part type="text" x="0" y="0" width="60" height="22">
+				<font code="AT10603"/>
+				<color code="#0e1410100%"/>
+				<text align="left">
+					<condition source="is24hour">
+						<compare eq="1">24H</compare>
+						<default>
+							<condition source="isAm">
+								<compare eq="1"></compare>
+								<default>PM</default>
+							</condition>
+						</default>
+					</condition>
+				</text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="alarm"/></action>
+		</group>
+
+		<!-- 3. LCD Top Row: Day of Week (SU, MO, TU, etc.) -->
+		<group name="comp-weekday" x="156" y="118" width="56" height="22">
+			<part type="text" x="0" y="0" width="56" height="22">
+				<font code="AT10603"/>
+				<color code="#0e1410100%"/>
+				<text align="center">
+					<upper><icu-skeleton english_number="true">EEE</icu-skeleton></upper>
+				</text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="event"/></action>
+		</group>
+
+		<!-- 4. LCD Top Row: Date (Day of Month, 1..31) -->
+		<group name="comp-date" x="220" y="118" width="56" height="22">
+			<part type="text" x="0" y="0" width="56" height="22">
+				<font code="AT10603"/>
+				<color code="#0e1410100%"/>
+				<text align="center">
+					<icu-skeleton english_number="true">d</icu-skeleton>
+				</text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="event"/></action>
+		</group>
+
+		<!-- 5. LCD Main Row: Digital Hours & Minutes -->
+		<group name="comp-time" x="84" y="146" width="144" height="54">
+			<part type="text" x="0" y="0" width="144" height="54">
+				<font code="AT10101"/>
+				<color code="#0e1410100%"/>
+				<text align="center">
+					<condition source="is24hour">
+						<compare eq="1"><icu-skeleton english_number="true">HH</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton></compare>
+						<default><icu-skeleton english_number="true">hh</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton></default>
+					</condition>
+				</text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="stopwatch"/></action>
+		</group>
+
+		<!-- 6. LCD Main Row: Digital Seconds -->
+		<group name="comp-sec" x="226" y="156" width="48" height="38">
+			<part type="text" x="0" y="0" width="48" height="38">
+				<font code="AT10602"/>
+				<color code="#0e1410100%"/>
+				<text align="center">
+					<icu-skeleton english_number="true">ss</icu-skeleton>
+				</text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="stopwatch"/></action>
+		</group>
+
+		<!-- 7. LCD Bottom Row: Battery % and Heart Rate -->
+		<group name="comp-status" x="86" y="210" width="188" height="20">
+			<part type="text" x="0" y="0" width="188" height="20">
+				<font code="AT10603"/>
+				<color code="#1a261e100%"/>
+				<text align="center">
+					BAT <format source="battery.percent"/>%  ●  <condition source="heartrate.recent"><compare eq="0">--</compare><default><format source="heartrate.recent"/></default></condition> BPM
+				</text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="battery"/></action>
+		</group>
+	</groups>
+
+	<!-- Ambient Always-On Display (AOD) Mode: Ultra low-power black OLED -->
+	<groups type="ambient-fullcolor">
+		<group name="aod-bg" x="0" y="0" width="360" height="360" hide_when_transparent_background="true">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_classic_aod_bg.png"/>
+			</part>
+		</group>
+
+		<!-- AOD Date -->
+		<group name="aod-date" x="140" y="118" width="140" height="22">
+			<part type="text" x="0" y="0" width="140" height="22">
+				<font code="AT10603"/>
+				<color code="#a0c8e0100%"/>
+				<text align="center">
+					<upper><icu-skeleton english_number="true">EEE</icu-skeleton></upper>  <icu-skeleton english_number="true">d</icu-skeleton>
+				</text>
+			</part>
+		</group>
+
+		<!-- AOD Time -->
+		<group name="aod-time" x="84" y="146" width="144" height="54">
+			<part type="text" x="0" y="0" width="144" height="54">
+				<font code="AT10101"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<condition source="is24hour">
+						<compare eq="1"><icu-skeleton english_number="true">HH</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton></compare>
+						<default><icu-skeleton english_number="true">hh</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton></default>
+					</condition>
+				</text>
+			</part>
+		</group>
+
+		<!-- AOD Battery -->
+		<group name="aod-batt" x="86" y="210" width="188" height="20">
+			<part type="text" x="0" y="0" width="188" height="20">
+				<font code="AT10603"/>
+				<color code="#8899aa100%"/>
+				<text align="center">BAT <format source="battery.percent"/>%</text>
+			</part>
+		</group>
+	</groups>
+</watchface>
