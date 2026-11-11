@@ -21,7 +21,7 @@ Write-Host "  4. Terminal Linux 34px  (noblesse-u1) -> 'Terminal Linux'" -Foregr
 Write-Host "  5. Concentric Pixel Quad(noblesse-u6) -> 'Concentric Pixel'" -ForegroundColor White
 Write-Host "  6. Odyssey Digital      (noblesse-a4) -> 'Odyssey Digital'" -ForegroundColor White
 Write-Host "  7. Casio Classic A158W  (noblesse-a5) -> 'Casio Classic'" -ForegroundColor White
-Write-Host "  8. Rolex Skeleton Tourb (noblesse-a1) -> 'Rolex Skeleton'" -ForegroundColor White
+Write-Host "  8. Hublot Big Bang Skel (noblesse-a1) -> 'Hublot Skeleton'" -ForegroundColor White
 Write-Host "==========================================================" -ForegroundColor Cyan
 
 function Ensure-SdbConnection {
@@ -135,7 +135,7 @@ UPDATE clock_order_info SET label='Terminal Linux', iconpath='/opt/usr/media/wat
 UPDATE clock_order_info SET label='Concentric Pixel', iconpath='/opt/usr/media/watchface_icons/concentric_pixel.png', rorder=5, corder=5 WHERE pkgid='com.samsung.watchface-noblesse-u6';
 UPDATE clock_order_info SET label='Odyssey Digital', iconpath='/opt/usr/media/watchface_icons/odyssey_digital.png', rorder=6, corder=6 WHERE pkgid='com.samsung.watchface-noblesse-a4';
 UPDATE clock_order_info SET label='Casio Classic', iconpath='/opt/usr/media/watchface_icons/casio_classic.png', rorder=7, corder=7 WHERE pkgid='com.samsung.watchface-noblesse-a5';
-UPDATE clock_order_info SET label='Rolex Skeleton', iconpath='/opt/usr/media/watchface_icons/rolex_skeleton.png', rorder=8, corder=8 WHERE pkgid='com.samsung.watchface-noblesse-a1';
+UPDATE clock_order_info SET label='Hublot Skeleton', iconpath='/opt/usr/media/watchface_icons/rolex_skeleton.png', rorder=8, corder=8 WHERE pkgid='com.samsung.watchface-noblesse-a1';
 "@
 $tempSql = Join-Path $env:TEMP "update_carousel.sql"
 [System.IO.File]::WriteAllText($tempSql, $sqlContent, [System.Text.Encoding]::ASCII)

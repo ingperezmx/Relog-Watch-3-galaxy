@@ -13,7 +13,7 @@ if (-not (Get-Command $SdbPath -ErrorAction SilentlyContinue)) {
 }
 
 Write-Host "==========================================================" -ForegroundColor Cyan
-Write-Host "   Instalador Nativo Rolex Skeleton Mechanical Tourbillon " -ForegroundColor Yellow
+Write-Host "   Instalador Nativo Hublot Big Bang Skeleton Animated   " -ForegroundColor Yellow
 Write-Host "   Samsung Galaxy Watch 3 (SM-R840, Tizen OS 5.5)         " -ForegroundColor Cyan
 Write-Host "==========================================================" -ForegroundColor Cyan
 
@@ -59,15 +59,15 @@ $iconPath = Join-Path $scriptDir "watchface_icons\rolex_skeleton.png"
 & $SdbPath shell "chmod 777 /opt/usr/media/watchface_icons/rolex_skeleton.png"
 
 # 6. Actualizar nombre en base de datos
-Write-Host "[5/6] Configurando 'Rolex Skeleton' en base de datos del reloj..." -ForegroundColor Green
-$sql = "UPDATE clock_order_info SET label='Rolex Skeleton', iconpath='/opt/usr/media/watchface_icons/rolex_skeleton.png', rorder=8, corder=8 WHERE pkgid='com.samsung.watchface-noblesse-a1';`n"
+Write-Host "[5/6] Configurando 'Hublot Skeleton' en base de datos del reloj..." -ForegroundColor Green
+$sql = "UPDATE clock_order_info SET label='Hublot Skeleton', iconpath='/opt/usr/media/watchface_icons/rolex_skeleton.png', rorder=8, corder=8 WHERE pkgid='com.samsung.watchface-noblesse-a1';`n"
 $tempSql = Join-Path $env:TEMP "rolex_skeleton_db.sql"
 [System.IO.File]::WriteAllText($tempSql, $sql, [System.Text.Encoding]::ASCII)
 & $SdbPath push $tempSql "/opt/usr/home/owner/media/rolex_skeleton_db.sql"
 & $SdbPath shell "cat /opt/usr/home/owner/media/rolex_skeleton_db.sql | sqlite3 /opt/dbspace/.clock_list_order.db"
 
 # 7. Configurar como carátula activa en result.xml
-Write-Host "[6/6] Activando Rolex Skeleton como carátula actual..." -ForegroundColor Green
+Write-Host "[6/6] Activando Hublot Skeleton como carátula actual..." -ForegroundColor Green
 & $SdbPath push "$sourceDir\com.samsung.watchface-noblesse-a1_result.xml" "/opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/result.xml"
 & $SdbPath shell "chmod 777 /opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/result.xml"
 
@@ -77,5 +77,5 @@ Write-Host "Recargando el servicio de pantalla de inicio..." -ForegroundColor Gr
 & $SdbPath shell "app_launcher -s com.samsung.w-home"
 
 Write-Host ""
-Write-Host "¡Rolex Skeleton instalada y activada exitosamente en el Galaxy Watch 3!" -ForegroundColor Green
-Write-Host "Maquinaria mecánica de alta gama con engranajes móviles reales a 60 fps y AOD con manecillas luminiscentes puras." -ForegroundColor Yellow
+Write-Host "¡Hublot Big Bang Skeleton instalada y activada exitosamente en el Galaxy Watch 3!" -ForegroundColor Green
+Write-Host "Maquinaria mecánica ultra densa con engranajes móviles reales a 60 fps y AOD con manecillas luminiscentes puras." -ForegroundColor Yellow

@@ -5,7 +5,7 @@
 	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
 
 	<groups>
-		<!-- 1. Fondo Arquitectónico Esqueletizado y Bisel Acanalado Rolex Fluted Gold -->
+		<!-- 1. Fondo de Máxima Densidad Mecánica y Bisel Hublot Big Bang con 6 Tornillos H -->
 		<group name="bg" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/skeleton_bg.png"/>
@@ -24,47 +24,47 @@
 			</part>
 		</group>
 
-		<!-- 3. Engranaje 2: Rueda de Balance / Tourbillon a las 7:00 (Centro 130, 215) -->
-		<group name="gear-balance" x="65" y="150" width="130" height="130">
+		<!-- 3. Engranaje 2: Rueda de Balance / Tourbillon a las 7:30 (Centro 115, 230) -->
+		<group name="gear-balance" x="50" y="165" width="130" height="130">
 			<part type="image" x="0" y="0" width="130" height="130">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_balance.png"/>
 				<rotation center_x="65" center_y="65" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
-			<!-- Toque en tourbillon / escape para Pulsómetro / Salud -->
+			<!-- Toque en tourbillon para Pulsómetro / Salud -->
 			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo">
 				<launch preset="heartrate"/>
 			</action>
 		</group>
 
-		<!-- 4. Engranaje 3: Rueda Intermedia de Segundos a las 4:30 en Contra-Rotación (Centro 245, 185) -->
-		<group name="gear-seconds" x="195" y="135" width="100" height="100">
+		<!-- 4. Engranaje 3: Rueda Intermedia de Segundos a las 4:30 en Contra-Rotación (Centro 250, 210) -->
+		<group name="gear-seconds" x="200" y="160" width="100" height="100">
 			<part type="image" x="0" y="0" width="100" height="100">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_seconds.png"/>
 				<rotation center_x="50" center_y="50" start_angle="360" end_angle="0" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 5. Manecillas de Alta Relojería Rolex en Oro 18K -->
+		<!-- 5. Manecillas Esqueletizadas Hublot Big Bang -->
 		<group name="hands" x="0" y="0" width="360" height="360">
-			<!-- Manecilla de Horas con Facetas 3D y Lume Chromalight -->
+			<!-- Manecilla de Horas Calada con Punta Super-LumiNova -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_hour.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
 			</part>
 
-			<!-- Manecilla de Minutos con Facetas 3D y Lume Chromalight -->
+			<!-- Manecilla de Minutos Calada con Punta Super-LumiNova -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_min.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
 			</part>
 
-			<!-- Segundero Ultrafino de Barrido Continuo a 60 fps con Contrapeso Calado -->
+			<!-- Segundero Rojo Deportivo de Barrido Continuo a 60 fps con Logo H Hublot -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_sec.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 
-			<!-- Tapa Central del Eje Pulida a Espejo -->
+			<!-- Tapa Central Cerámica Negra y Titanio -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_pivot.png"/>
 			</part>
@@ -85,7 +85,7 @@
 			</part>
 		</group>
 
-		<!-- Únicamente las Manecillas Lentejuela Chromalight en AOD -->
+		<!-- Únicamente las Manecillas Super-LumiNova en AOD -->
 		<group name="aod-hands" x="0" y="0" width="360" height="360">
 			<!-- Manecilla Horas Tenue -->
 			<part type="image" x="0" y="0" width="360" height="360">

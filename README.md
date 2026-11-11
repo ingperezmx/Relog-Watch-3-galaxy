@@ -8,10 +8,10 @@ Colección completa de 8 carátulas nativas de alto rendimiento optimizadas para
 
 ## 📸 Muestra Visual de las Carátulas (Pantalla Activa)
 
-| **Casio Royale** | **G-Shock GA-100** | **MoveToBeActive** | **Terminal Linux** | **Concentric Pixel** | **Odyssey Digital** | **Casio Classic** | **Rolex Skeleton** |
+| **Casio Royale** | **G-Shock GA-100** | **MoveToBeActive** | **Terminal Linux** | **Concentric Pixel** | **Odyssey Digital** | **Casio Classic** | **Hublot Skeleton** |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ![Casio Royale](assets/casio_royale_preview.png) | ![G-Shock GA-100](assets/ga100_preview.png) | ![MoveToBeActive](assets/movetobeactive_preview.png) | ![Terminal](assets/terminal_preview.png) | ![Concentric](assets/concentric_preview.png) | ![Odyssey Digital](assets/odyssey_preview.png) | ![Casio Classic](assets/casio_classic_preview.png) | ![Rolex Skeleton](assets/rolex_skeleton_preview.png) |
-| *World Time* | *Militar táctico* | *Deportivo Garmin* | *Consola hacker* | *Pixel Watch* | *Wear OS Port* | *Vintage A158W* | *Luxury Tourbillon* |
+| ![Casio Royale](assets/casio_royale_preview.png) | ![G-Shock GA-100](assets/ga100_preview.png) | ![MoveToBeActive](assets/movetobeactive_preview.png) | ![Terminal](assets/terminal_preview.png) | ![Concentric](assets/concentric_preview.png) | ![Odyssey Digital](assets/odyssey_preview.png) | ![Casio Classic](assets/casio_classic_preview.png) | ![Hublot Skeleton](assets/rolex_skeleton_preview.png) |
+| *World Time* | *Militar táctico* | *Deportivo Garmin* | *Consola hacker* | *Pixel Watch* | *Wear OS Port* | *Vintage A158W* | *Big Bang Animated* |
 
 ---
 
@@ -21,9 +21,9 @@ Colección completa de 8 carátulas nativas de alto rendimiento optimizadas para
 
 Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físicamente apagados para máxima autonomía y protección contra quemado de pantalla (*burn-in*):
 
-| **Casio Royale (AOD)** | **G-Shock GA-100 (AOD)** | **MoveToBeActive (AOD)** | **Terminal Linux (AOD)** | **Concentric Pixel (AOD)** | **Odyssey Digital (AOD)** | **Casio Classic (AOD)** | **Rolex Skeleton (AOD)** |
+| **Casio Royale (AOD)** | **G-Shock GA-100 (AOD)** | **MoveToBeActive (AOD)** | **Terminal Linux (AOD)** | **Concentric Pixel (AOD)** | **Odyssey Digital (AOD)** | **Casio Classic (AOD)** | **Hublot Skeleton (AOD)** |
 |:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-| ![Casio Royale AOD](assets/casio_royale_aod_preview.png) | ![G-Shock GA-100 AOD](assets/ga100_aod_preview.png) | ![MoveToBeActive AOD](assets/movetobeactive_aod_preview.png) | ![Terminal AOD](assets/terminal_aod_preview.png) | ![Concentric AOD](assets/concentric_aod_preview.png) | ![Odyssey Digital AOD](assets/odyssey_aod_preview.png) | ![Casio Classic AOD](assets/casio_classic_aod_preview.png) | ![Rolex Skeleton AOD](assets/rolex_skeleton_aod_preview.png) |
+| ![Casio Royale AOD](assets/casio_royale_aod_preview.png) | ![G-Shock GA-100 AOD](assets/ga100_aod_preview.png) | ![MoveToBeActive AOD](assets/movetobeactive_aod_preview.png) | ![Terminal AOD](assets/terminal_aod_preview.png) | ![Concentric AOD](assets/concentric_aod_preview.png) | ![Odyssey Digital AOD](assets/odyssey_aod_preview.png) | ![Casio Classic AOD](assets/casio_classic_aod_preview.png) | ![Hublot Skeleton AOD](assets/rolex_skeleton_aod_preview.png) |
 | *Marco LCD y hora* | *Lume en manecillas* | *Manecillas flotantes* | *[time] centrado* | *Hora y minutos* | *OLED minimalista* | *Marco LCD y hora* | *Manecillas exclusivas* |
 
 ---
@@ -39,7 +39,7 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
 | **Concentric** | `Concentric Pixel` | `com.samsung.watchface-noblesse-u6` | Google Pixel Watch a 60 fps |
 | **Odyssey Digital** | `Odyssey Digital` | `com.samsung.watchface-noblesse-a4` | Wear OS Liberty Port / Neon Yellow Card |
 | **Casio Classic A158W** | `Casio Classic` | `com.samsung.watchface-noblesse-a5` | Digital Vintage Retro / Water Resist |
-| **Rolex Skeleton Tourbillon** | `Rolex Skeleton` | `com.samsung.watchface-noblesse-a1` | Alta Relojería Mecánica / Engranajes Móviles |
+| **Hublot Big Bang Skeleton** | `Hublot Skeleton` | `com.samsung.watchface-noblesse-a1` | Alta Relojería Mecánica / Engranajes Animados |
 
 ---
 
@@ -92,19 +92,19 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
 
 ---
 
-### 8. Rolex Skeleton Tourbillon (Mecánica Viva en Tiempo Real)
+### 8. Hublot Big Bang Skeleton (Mecánica Viva en Tiempo Real)
 - **Directorio:** [`tizen-native-rolex-skeleton/`](tizen-native-rolex-skeleton/)
 - **Slot Nativo:** `com.samsung.watchface-noblesse-a1`
-- **Nombre en Reloj:** `Rolex Skeleton`
+- **Nombre en Reloj:** `Hublot Skeleton`
 - **Características:**
-  - **Bisel Acanalado de Oro 18K (Fluted Bezel):** 72 facetas talladas con reflejos dorados y sombras tridimensionales en alta definición.
-  - **Corona Rolex y Rehaut:** Icónica corona de 5 puntas a las 12:00, anillo perimetral con minutería fina e índices horarios facetados de oro con material luminiscente Chromalight blanco puro.
-  - **Maquinaria Esqueletizada Viva (3 Engranajes Móviles Reales):**
-    - **Rueda de Balance / Tourbillon (7:00):** Volante de inercia con 4 brazos y rubí central en chatón de oro que gira de forma continua a 60 fps sincronizado con el escape (`sweep60s`).
-    - **Rueda Intermedia de Segundos (4:30):** Engranaje de bronce esqueletizado que contra-rota continuamente sincronizado con los segundos mecánicos.
-    - **Gran Rueda Central (Eje 180, 180):** Engranaje dorado de minutos que rota suavemente con el tren de rodaje de la hora.
-  - **Manecillas Rolex de Alta Gama:** Agujas facetadas en oro con hendiduras de Chromalight blanco, segundero de barrido continuo ultrafino a 60 fps y pivote central pulido a espejo.
-  - **Modo AOD (Always-On Display):** Cumplimiento estricto de ahorro de energía AMOLED; el fondo y los engranajes se apagan por completo (`#000000`), mostrando **exclusivamente las manecillas con lumen tenue** en la oscuridad absoluta para una autonomía prolongada.
+  - **Bisel Hublot Big Bang con 6 Tornillos en H:** Bisel de titanio satinado con los 6 icónicos tornillos H a las 12, 2, 4, 6, 8 y 10 horas.
+  - **Maquinaria Ultra Elaborada:** Tapiz mecánico de alta densidad con decenas de engranajes reales, puentes satinados de titanio con biselado espejo, barrilete con muelle real en espiral visible, sub-esfera calada a las 2:30 y rubíes en chatones de oro.
+  - **3 Engranajes Móviles Reales en Tiempo Real:**
+    - **Rueda de Balance / Tourbillon (7:30):** Volante de inercia con 4 brazos calados, contrapesos perimetrales y rubí central que gira suavemente a 60 fps sincronizado con el escape (`sweep60s`).
+    - **Rueda Intermedia de Segundos (4:30):** Engranaje de bronce esqueletizado de 28 dientes que contra-rota continuamente sincronizado con los segundos mecánicos.
+    - **Gran Rueda Central (Eje 180, 180):** Engranaje de 48 dientes de oro fino que rota suavemente con el tren de rodaje de los minutos.
+  - **Manecillas Esqueletizadas Hublot:** Agujas caladas tipo espada en titanio cepillado con puntas de Super-LumiNova, segundero rojo deportivo con contrapeso de la "H" de Hublot a 60 fps y pivote central de cerámica negra.
+  - **Modo AOD (Always-On Display):** Fondo negro puro AMOLED (`#000000`), mostrando **exclusivamente las manecillas con lumen tenue** en la oscuridad absoluta para máxima autonomía.
 
 ---
 
@@ -120,7 +120,7 @@ O en Linux / macOS:
 ./instalar_todas_las_caratulas.sh 192.168.100.77:26101
 ```
 
-### Opción B: Instalar Rolex Skeleton individualmente
+### Opción B: Instalar Hublot Skeleton individualmente
 ```powershell
 .\install_rolex_skeleton.ps1 -DeviceIp "192.168.100.77:26101"
 ```

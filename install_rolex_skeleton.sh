@@ -47,11 +47,11 @@ echo "[4/6] Instalando miniatura en /opt/usr/media/watchface_icons/..."
 "$SDB_PATH" push "$SCRIPT_DIR/watchface_icons/rolex_skeleton.png" "/opt/usr/media/watchface_icons/rolex_skeleton.png"
 "$SDB_PATH" shell "chmod 777 /opt/usr/media/watchface_icons/rolex_skeleton.png"
 
-echo "[5/6] Configurando 'Rolex Skeleton' en base de datos del reloj..."
-SQL="UPDATE clock_order_info SET label='Rolex Skeleton', iconpath='/opt/usr/media/watchface_icons/rolex_skeleton.png', rorder=8, corder=8 WHERE pkgid='com.samsung.watchface-noblesse-a1';"
+echo "[5/6] Configurando 'Hublot Skeleton' en base de datos del reloj..."
+SQL="UPDATE clock_order_info SET label='Hublot Skeleton', iconpath='/opt/usr/media/watchface_icons/rolex_skeleton.png', rorder=8, corder=8 WHERE pkgid='com.samsung.watchface-noblesse-a1';"
 "$SDB_PATH" shell "echo \"$SQL\" | sqlite3 /opt/dbspace/.clock_list_order.db"
 
-echo "[6/6] Activando Rolex Skeleton como carátula actual..."
+echo "[6/6] Activando Hublot Skeleton como carátula actual..."
 "$SDB_PATH" push "$SOURCE_DIR/com.samsung.watchface-noblesse-a1_result.xml" "/opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/result.xml"
 "$SDB_PATH" shell "chmod 777 /opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/result.xml"
 

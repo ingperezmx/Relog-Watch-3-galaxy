@@ -20,7 +20,7 @@ echo "  4. Terminal Linux 34px  (noblesse-u1) -> 'Terminal Linux'"
 echo "  5. Concentric Pixel Quad(noblesse-u6) -> 'Concentric Pixel'"
 echo "  6. Odyssey Digital      (noblesse-a4) -> 'Odyssey Digital'"
 echo "  7. Casio Classic A158W  (noblesse-a5) -> 'Casio Classic'"
-echo "  8. Rolex Skeleton Tourb (noblesse-a1) -> 'Rolex Skeleton'"
+echo "  8. Hublot Big Bang Skel (noblesse-a1) -> 'Hublot Skeleton'"
 echo "=========================================================="
 
 ensure_sdb() {
@@ -104,7 +104,7 @@ UPDATE clock_order_info SET label='Terminal Linux', iconpath='/opt/usr/media/wat
 UPDATE clock_order_info SET label='Concentric Pixel', iconpath='/opt/usr/media/watchface_icons/concentric_pixel.png', rorder=5, corder=5 WHERE pkgid='com.samsung.watchface-noblesse-u6';
 UPDATE clock_order_info SET label='Odyssey Digital', iconpath='/opt/usr/media/watchface_icons/odyssey_digital.png', rorder=6, corder=6 WHERE pkgid='com.samsung.watchface-noblesse-a4';
 UPDATE clock_order_info SET label='Casio Classic', iconpath='/opt/usr/media/watchface_icons/casio_classic.png', rorder=7, corder=7 WHERE pkgid='com.samsung.watchface-noblesse-a5';
-UPDATE clock_order_info SET label='Rolex Skeleton', iconpath='/opt/usr/media/watchface_icons/rolex_skeleton.png', rorder=8, corder=8 WHERE pkgid='com.samsung.watchface-noblesse-a1';
+UPDATE clock_order_info SET label='Hublot Skeleton', iconpath='/opt/usr/media/watchface_icons/rolex_skeleton.png', rorder=8, corder=8 WHERE pkgid='com.samsung.watchface-noblesse-a1';
 "
 "$SDB_PATH" shell "echo \"$SQL\" | sqlite3 /opt/dbspace/.clock_list_order.db"
 
