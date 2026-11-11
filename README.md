@@ -92,19 +92,18 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
 
 ---
 
-### 8. Hublot Big Bang Skeleton (Mecánica Viva en Tiempo Real)
+### 8. Hublot Classic Fusion Tourbillon Skeleton (Mecánica Viva en Tiempo Real)
 - **Directorio:** [`tizen-native-rolex-skeleton/`](tizen-native-rolex-skeleton/)
 - **Slot Nativo:** `com.samsung.watchface-noblesse-a1`
 - **Nombre en Reloj:** `Hublot Skeleton`
 - **Características:**
-  - **Bisel Hublot Big Bang con 6 Tornillos en H:** Bisel de titanio satinado con los 6 icónicos tornillos H a las 12, 2, 4, 6, 8 y 10 horas.
-  - **Maquinaria Ultra Elaborada:** Tapiz mecánico de alta densidad con decenas de engranajes reales, puentes satinados de titanio con biselado espejo, barrilete con muelle real en espiral visible, sub-esfera calada a las 2:30 y rubíes en chatones de oro.
-  - **3 Engranajes Móviles Reales en Tiempo Real:**
-    - **Rueda de Balance / Tourbillon (7:30):** Volante de inercia con 4 brazos calados, contrapesos perimetrales y rubí central que gira suavemente a 60 fps sincronizado con el escape (`sweep60s`).
-    - **Rueda Intermedia de Segundos (4:30):** Engranaje de bronce esqueletizado de 28 dientes que contra-rota continuamente sincronizado con los segundos mecánicos.
-    - **Gran Rueda Central (Eje 180, 180):** Engranaje de 48 dientes de oro fino que rota suavemente con el tren de rodaje de los minutos.
-  - **Manecillas Esqueletizadas Hublot:** Agujas caladas tipo espada en titanio cepillado con puntas de Super-LumiNova, segundero rojo deportivo con contrapeso de la "H" de Hublot a 60 fps y pivote central de cerámica negra.
-  - **Modo AOD (Always-On Display):** Fondo negro puro AMOLED (`#000000`), mostrando **exclusivamente las manecillas con lumen tenue** en la oscuridad absoluta para máxima autonomía.
+  - **Dial Calibre HUB6010 de Titanio Satinado:** Estructura esqueletizada abierta con puentes arácnidos de titanio, tren de rodaje visible, barrilete con motivo "H" a las 12:00 y auténticos rubíes en chatones de oro.
+  - **Tourbillon Funcional en Capas a las 6:00:**
+    - **Pozo Mecánico Profundo:** Cavidad oscura con sombreado de profundidad radial y aro exterior graduado.
+    - **Jaula y Rueda de Balance Giratoria:** Rotación continua a 60 fps en tiempo real sincronizada con el escape mecánico (`source="second.millisecond" animation="sweep60s"`).
+    - **Puente Fijo Superior de Titanio:** Arco de titanio con rubí central montado estáticamente por encima de la jaula giratoria.
+  - **Manecillas Esqueletizadas Magenta Hublot:** Agujas con marco de titanio negro carbón y relleno de Super-LumiNova fucsia/magenta (`#BA1384`), segundero de aguja negra ultra fina de barrido suave a 60 fps y pivote central de titanio oscuro con remache de acero pulido.
+  - **Modo AOD (Always-On Display):** Fondo negro puro AMOLED (`#000000`) con píxeles 100% apagados, mostrando **únicamente las manecillas luminiscentes magenta** para mínima emisión energética.
 
 ---
 
