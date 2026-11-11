@@ -1,16 +1,17 @@
-﻿# Script para desplegar las 5 carátulas legendarias en Samsung Galaxy Watch 3
+﻿# Script para desplegar las 6 carátulas legendarias en Samsung Galaxy Watch 3
 param(
     [string]$DeviceIp = "192.168.100.77:26101",
     [string]$SdbPath = "sdb"
 )
 
 Write-Host "==========================================================" -ForegroundColor Cyan
-Write-Host " Desplegando Carrusel Quíntuple de Carátulas en Galaxy Watch" -ForegroundColor Yellow
+Write-Host " Desplegando Carrusel Séxtuple de Carátulas en Galaxy Watch" -ForegroundColor Yellow
 Write-Host "  1. Casio Royale AE-1200 (noblesse-u3) -> 'Casio Royale'" -ForegroundColor White
 Write-Host "  2. G-Shock GA-100       (noblesse-a8) -> 'G-Shock GA-100'" -ForegroundColor White
 Write-Host "  3. MoveToBeActive Garmin(noblesse-a7) -> 'MoveToBeActive'" -ForegroundColor White
 Write-Host "  4. Terminal Linux 34px  (noblesse-u1) -> 'Terminal Linux'" -ForegroundColor White
 Write-Host "  5. Concentric Pixel Quad(noblesse-u6) -> 'Concentric Pixel'" -ForegroundColor White
+Write-Host "  6. Odyssey Digital      (noblesse-a4) -> 'Odyssey Digital'" -ForegroundColor White
 Write-Host "==========================================================" -ForegroundColor Cyan
 
 # 1. Conexión SDB con reintentos automáticos
@@ -69,44 +70,53 @@ $termRemote = "$baseRemote/com.samsung.watchface-noblesse-u1"
 & $SdbPath shell "chmod -R 777 $termRemote"
 
 # 6. Desplegar Concentric
-Write-Host "[6/8] Instalando Concentric Watchface (slot noblesse-u6)..." -ForegroundColor Green
+Write-Host "[6/9] Instalando Concentric Watchface (slot noblesse-u6)..." -ForegroundColor Green
 $concLocal = Join-Path $scriptDir "tizen-native-concentric"
 $concRemote = "$baseRemote/com.samsung.watchface-noblesse-u6"
 & $SdbPath shell "mkdir -p $concRemote"
 & $SdbPath push "$concLocal\*" "$concRemote/"
 & $SdbPath shell "chmod -R 777 $concRemote"
 
-# 7. Desplegar iconos de previsualización para el carrusel
-Write-Host "[7/10] Instalando miniaturas personalizadas en /opt/usr/media/watchface_icons/..." -ForegroundColor Green
+# 7. Desplegar Odyssey Digital
+Write-Host "[7/9] Instalando Odyssey Digital (slot noblesse-a4)..." -ForegroundColor Green
+$odyLocal = Join-Path $scriptDir "tizen-native-odyssey-digital"
+$odyRemote = "$baseRemote/com.samsung.watchface-noblesse-a4"
+& $SdbPath shell "mkdir -p $odyRemote"
+& $SdbPath push "$odyLocal\*" "$odyRemote/"
+& $SdbPath shell "chmod -R 777 $odyRemote"
+
+# 8. Desplegar iconos de previsualización para el carrusel
+Write-Host "[8/11] Instalando miniaturas personalizadas en /opt/usr/media/watchface_icons/..." -ForegroundColor Green
 $iconsLocal = Join-Path $scriptDir "watchface_icons"
 & $SdbPath shell "mkdir -p /opt/usr/media/watchface_icons"
 & $SdbPath push "$iconsLocal\*" "/opt/usr/media/watchface_icons/"
 & $SdbPath shell "chmod -R 777 /opt/usr/media/watchface_icons"
 
-# 8. Actualizar base de datos del carrusel (.clock_list_order.db)
-Write-Host "[8/10] Configurando nombres reales e iconos en el carrusel del reloj..." -ForegroundColor Green
+# 9. Actualizar base de datos del carrusel (.clock_list_order.db)
+Write-Host "[9/11] Configurando nombres reales e iconos en el carrusel del reloj..." -ForegroundColor Green
 $sqlContent = @"
 UPDATE clock_order_info SET label='Casio Royale', iconpath='/opt/usr/media/watchface_icons/casio_royale.png', rorder=1, corder=1 WHERE pkgid='com.samsung.watchface-noblesse-u3';
 UPDATE clock_order_info SET label='G-Shock GA-100', iconpath='/opt/usr/media/watchface_icons/gshock_ga100.png', rorder=2, corder=2 WHERE pkgid='com.samsung.watchface-noblesse-a8';
 UPDATE clock_order_info SET label='MoveToBeActive', iconpath='/opt/usr/media/watchface_icons/movetobeactive.png', rorder=3, corder=3 WHERE pkgid='com.samsung.watchface-noblesse-a7';
 UPDATE clock_order_info SET label='Terminal Linux', iconpath='/opt/usr/media/watchface_icons/terminal_linux.png', rorder=4, corder=4 WHERE pkgid='com.samsung.watchface-noblesse-u1';
 UPDATE clock_order_info SET label='Concentric Pixel', iconpath='/opt/usr/media/watchface_icons/concentric_pixel.png', rorder=5, corder=5 WHERE pkgid='com.samsung.watchface-noblesse-u6';
+UPDATE clock_order_info SET label='Odyssey Digital', iconpath='/opt/usr/media/watchface_icons/odyssey_digital.png', rorder=6, corder=6 WHERE pkgid='com.samsung.watchface-noblesse-a4';
 "@
 $tempSql = Join-Path $env:TEMP "update_carousel.sql"
 Set-Content -Path $tempSql -Value $sqlContent -Encoding UTF8
 & $SdbPath push $tempSql "/opt/usr/home/owner/media/update_carousel.sql"
 & $SdbPath shell "cat /opt/usr/home/owner/media/update_carousel.sql | sqlite3 /opt/dbspace/.clock_list_order.db"
 
-# 9. Activar Casio Royale por defecto
-Write-Host "[9/10] Configurando Casio Royale como carátula inicial activa..." -ForegroundColor Green
+# 10. Activar Casio Royale por defecto
+Write-Host "[10/11] Configurando Casio Royale como carátula inicial activa..." -ForegroundColor Green
 & $SdbPath push "$casioLocal\com.samsung.watchface-noblesse-u3_result.xml" "/opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/result.xml"
 & $SdbPath shell "chmod 777 /opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/result.xml"
 
-# 10. Reiniciar servicios de carátula
-Write-Host "[10/10] Reiniciando servicios de reloj..." -ForegroundColor Green
+# 11. Reiniciar servicios de carátula
+Write-Host "[11/11] Reiniciando servicios de reloj..." -ForegroundColor Green
 & $SdbPath shell "pkgcmd -k -n com.samsung.watchface"
 & $SdbPath shell "app_launcher -s com.samsung.w-home"
 
 Write-Host ""
-Write-Host "¡Las 5 carátulas están listas con sus nombres personalizados y miniaturas reales!" -ForegroundColor Green
+Write-Host "¡Las 6 carátulas están listas con sus nombres personalizados y miniaturas reales!" -ForegroundColor Green
 Write-Host "Mantén pulsada la pantalla 2 segundos para rotar entre ellas con el bisel físico." -ForegroundColor Yellow

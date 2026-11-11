@@ -1,34 +1,34 @@
 # Reloj Galaxy Watch 3 Tizen
 
-![Galaxy Watch 3 Showcase](assets/showcase_penta_watchfaces.png)
+![Galaxy Watch 3 Showcase](assets/showcase_hexa_watchfaces.png)
 
-Colección completa de 5 carátulas nativas de alto rendimiento optimizadas para la pantalla circular AMOLED de **360×360 px** del **Samsung Galaxy Watch 3 (`SM-R840`, Tizen OS 5.5.0.2)**, con nombres personalizados en el carrusel y scripts de instalación automatizada vía Wi-Fi (SDB).
+Colección completa de 6 carátulas nativas de alto rendimiento optimizadas para la pantalla circular AMOLED de **360×360 px** del **Samsung Galaxy Watch 3 (`SM-R840`, Tizen OS 5.5.0.2)**, con nombres personalizados en el carrusel, miniaturas reales y scripts de instalación automatizada vía Wi-Fi (SDB).
 
 ---
 
 ## 📸 Muestra Visual de las Carátulas (Pantalla Activa)
 
-| **MoveToBeActive** | **Terminal Linux** | **Concentric Pixel** | **G-Shock GA-100** | **Casio Royale** |
-|:---:|:---:|:---:|:---:|:---:|
-| ![MoveToBeActive](assets/movetobeactive_preview.png) | ![Terminal](assets/terminal_preview.png) | ![Concentric](assets/concentric_preview.png) | ![G-Shock GA-100](assets/ga100_preview.png) | ![Casio Royale](assets/casio_royale_preview.png) |
-| *Analógico deportivo Garmin* | *Consola hacker CLI 34px* | *Doble disco Pixel 60 fps* | *Militar táctico ana-digi* | *James Bond World Time* |
+| **Casio Royale** | **G-Shock GA-100** | **MoveToBeActive** | **Terminal Linux** | **Concentric Pixel** | **Odyssey Digital** |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| ![Casio Royale](assets/casio_royale_preview.png) | ![G-Shock GA-100](assets/ga100_preview.png) | ![MoveToBeActive](assets/movetobeactive_preview.png) | ![Terminal](assets/terminal_preview.png) | ![Concentric](assets/concentric_preview.png) | ![Odyssey Digital](assets/odyssey_preview.png) |
+| *James Bond World Time* | *Militar táctico ana-digi* | *Analógico deportivo Garmin* | *Consola hacker CLI 34px* | *Doble disco Pixel 60 fps* | *Odyssey Wear OS Port* |
 
 ---
 
 ## 🌙 Modo Siempre Encendido (AOD / Ambient Display)
 
-![Galaxy Watch 3 AOD Showcase](assets/showcase_penta_aod.png)
+![Galaxy Watch 3 AOD Showcase](assets/showcase_hexa_aod.png)
 
 Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físicamente apagados para máxima autonomía y protección contra quemado de pantalla (*burn-in*):
 
-| **MoveToBeActive (AOD)** | **Terminal Linux (AOD)** | **Concentric Pixel (AOD)** | **G-Shock GA-100 (AOD)** | **Casio Royale (AOD)** |
-|:---:|:---:|:---:|:---:|:---:|
-| ![MoveToBeActive AOD](assets/movetobeactive_aod_preview.png) | ![Terminal AOD](assets/terminal_aod_preview.png) | ![Concentric AOD](assets/concentric_aod_preview.png) | ![G-Shock GA-100 AOD](assets/ga100_aod_preview.png) | ![Casio Royale AOD](assets/casio_royale_aod_preview.png) |
-| *Manecillas flotantes* | *[time] centrado en 34px* | *Hora y minutos centrales* | *Lume tenue en manecillas* | *Marco LCD y hora tenue* |
+| **Casio Royale (AOD)** | **G-Shock GA-100 (AOD)** | **MoveToBeActive (AOD)** | **Terminal Linux (AOD)** | **Concentric Pixel (AOD)** | **Odyssey Digital (AOD)** |
+|:---:|:---:|:---:|:---:|:---:|:---:|
+| ![Casio Royale AOD](assets/casio_royale_aod_preview.png) | ![G-Shock GA-100 AOD](assets/ga100_aod_preview.png) | ![MoveToBeActive AOD](assets/movetobeactive_aod_preview.png) | ![Terminal AOD](assets/terminal_aod_preview.png) | ![Concentric AOD](assets/concentric_aod_preview.png) | ![Odyssey Digital AOD](assets/odyssey_aod_preview.png) |
+| *Marco LCD y hora tenue* | *Lume tenue en manecillas* | *Manecillas flotantes* | *[time] centrado en 34px* | *Hora y minutos centrales* | *Digital minimalista OLED* |
 
 ---
 
-## 🌟 Las 5 Carátulas y sus Nombres en el Reloj
+## 🌟 Las 6 Carátulas y sus Nombres en el Reloj
 
 | Carátula | Nombre en Pantalla (`DisplayName`) | Ranura Nativa Tizen | Estilo Principal |
 | :--- | :--- | :--- | :--- |
@@ -37,6 +37,7 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
 | **MoveToBeActive** | `MoveToBeActive` | `com.samsung.watchface-noblesse-a7` | Híbrido Salud / Garmin Vivomove |
 | **Terminal Watchface** | `Terminal Linux` | `com.samsung.watchface-noblesse-u1` | Hacker CLI Minimalista 34px |
 | **Concentric** | `Concentric Pixel` | `com.samsung.watchface-noblesse-u6` | Google Pixel Watch a 60 fps |
+| **Odyssey Digital** | `Odyssey Digital` | `com.samsung.watchface-noblesse-a4` | Wear OS Liberty Port / Neon Yellow Card |
 
 ---
 
@@ -90,10 +91,28 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
 
 ---
 
+### 6. Odyssey Digital (Wear OS Port)
+- **Directorio:** [`tizen-native-odyssey-digital/`](tizen-native-odyssey-digital/)
+- **Slot Nativo:** `com.samsung.watchface-noblesse-a4`
+- **Nombre en Reloj:** `Odyssey Digital`
+- **Características:**
+  - **Cabecera (12:00):** Selector visual `AM PM 24H` y fila del clima con icono solar, temperatura en vivo (`22°`) y flechas min/max en amarillo neón (`▼ 18°  ▲ 30°`).
+  - **Reloj Digital Principal (10:08):** Tipografía digital Samsung bold en blanco puro ultra nítido.
+  - **Fila de Fecha y Segundero:** Día completo (`MIÉRCOLES`), insignia cápsula amarilla neón con fecha (`11/11`), etiqueta `SEC` y segundero digital continuo en amarillo neón (`#e6ff00`).
+  - **Fase Lunar 3D (08:00):** Esfera lunar fotorrealista con iluminación creciente lateral y cráteres detallados.
+  - **Tarjeta de Salud y Fitness:** Recuadro redondeado oscuro con métricas dinámicas:
+    - Fila 1: `CALORIE <kcal>` | `<distancia> KM`
+    - Fila 2: `HEART <ppm>` | `DISTANCE`
+  - **Medidor de Batería Power:** Etiqueta `POWER`, barra de progreso horizontal con relleno blanco y porcentaje exacto en amarillo neón (`89%`).
+  - **Contador de Pasos (06:00):** Silueta de corredor en amarillo lima neón con recuento dinámico del podómetro.
+  - **Accesos directos táctiles nativos:** Clima (abre app del tiempo), Hora (abre alarmas), Fecha (abre agenda/calendario), Salud (abre Samsung Health), Batería (abre opciones de energía), Pasos (abre podómetro).
+
+---
+
 ## 🚀 Instalación Automatizada vía Wi-Fi (SDB)
 
-### 🏆 Opción 1: Carrusel Quíntuple Completo (Recomendado)
-Instala las 5 carátulas simultáneamente en el reloj y configura sus nombres personalizados:
+### 🏆 Opción 1: Carrusel Séxtuple Completo (Recomendado)
+Instala las 6 carátulas simultáneamente en el reloj y configura sus nombres personalizados:
 - **En Windows (PowerShell):**
   ```powershell
   .\instalar_todas_las_caratulas.ps1 -DeviceIp "TU_IP:26101"
@@ -112,8 +131,9 @@ Instala las 5 carátulas simultáneamente en el reloj y configura sus nombres pe
 - **MoveToBeActive:** `.\install_movetobeactive.ps1 -DeviceIp "TU_IP:26101"`
 - **Terminal Linux:** `.\install_terminal.ps1 -DeviceIp "TU_IP:26101"`
 - **Concentric:** `.\install_concentric.ps1 -DeviceIp "TU_IP:26101"`
+- **Odyssey Digital:** `.\install_odyssey_digital.ps1 -DeviceIp "TU_IP:26101"`
 
 ---
 
 ## 🔄 Cómo alternar entre carátulas en el reloj
-Mantén presionada la pantalla del reloj durante **2 segundos**. Verás aparecer cada una de las 5 carátulas con su **nombre real** en la parte superior (`Casio Royale`, `G-Shock GA-100`, `MoveToBeActive`, `Terminal Linux`, `Concentric Pixel`). Gira el bisel físico para elegir tu favorita.
+Mantén presionada la pantalla del reloj durante **2 segundos**. Verás aparecer cada una de las 6 carátulas con su **nombre real** en la parte superior (`Casio Royale`, `G-Shock GA-100`, `MoveToBeActive`, `Terminal Linux`, `Concentric Pixel`, `Odyssey Digital`). Gira el bisel físico para elegir tu favorita.
