@@ -13,9 +13,25 @@ Write-Host "  4. Terminal Linux 34px  (noblesse-u1) -> 'Terminal Linux'" -Foregr
 Write-Host "  5. Concentric Pixel Quad(noblesse-u6) -> 'Concentric Pixel'" -ForegroundColor White
 Write-Host "==========================================================" -ForegroundColor Cyan
 
-# 1. Conexión SDB
+# 1. Conexión SDB con reintentos automáticos
 Write-Host "[1/8] Conectando a $DeviceIp..." -ForegroundColor Green
-& $SdbPath connect $DeviceIp
+$connected = $false
+for ($i = 1; $i -le 5; $i++) {
+    Write-Host "Intento $i de 5: Conectando a $DeviceIp (despierta la pantalla del reloj si está en reposo)..." -ForegroundColor Yellow
+    $res = & $SdbPath connect $DeviceIp 2>&1 | Out-String
+    Start-Sleep -Seconds 1
+    $devs = & $SdbPath devices 2>&1 | Out-String
+    if ($devs -match "$DeviceIp\s+device") {
+        Write-Host "¡Conectado exitosamente al Galaxy Watch 3!" -ForegroundColor Green
+        $connected = $true
+        break
+    }
+    Start-Sleep -Seconds 1
+}
+
+if (-not $connected) {
+    Write-Host "AVISO: No se pudo conectar de inmediato. Asegúrate de encender la pantalla del reloj o verificar su IP en Ajustes > Conexiones > Wi-Fi." -ForegroundColor Red
+}
 
 $scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $baseRemote = "/opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist"
