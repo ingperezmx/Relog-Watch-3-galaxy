@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Application type="clock">
+<PackageName>com.samsung.watchface-noblesse-a8</PackageName>
+<DisplayName>G-Shock GA-100 TacBlack</DisplayName>
+<Preview/>
+<Result version="2.0">
+    <Item name="complication-top">
+        <Selection id="comp_battery"/>
+    </Item>
+    <Item name="complication-bottom">
+        <Selection id="comp_steps"/>
+    </Item>
+</Result>
+</Application>

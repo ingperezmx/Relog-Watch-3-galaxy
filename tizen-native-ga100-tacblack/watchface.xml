@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<watchface>
+	<metadata key="clock-type" value="com.samsung.watchface-noblesse-a8"/>
+	<metadata key="preview_time" value="10:10:45"/>
+	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
+
+	<!-- Audio disabled for zero-battery drain (prevents waking audio hardware 60 times/min) -->
+
+	<groups>
+		<!-- 1. Tactical Dial Background (Bezel, Indices, Waffle Texture, Subdials, G-Shock Engravings) -->
+		<group name="bg" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_bg.png"/>
+			</part>
+		</group>
+
+		<!-- 2. Top Center Subdial (12:00): Heart Rate (BPM) & Temperature -->
+		<group name="sub-hr" x="150" y="68" width="60" height="18">
+			<part type="text" x="0" y="0" width="60" height="18">
+				<font code="AT10603"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<condition expr="true">
+						<exprs>
+							<expr name="show_data"><![CDATA[ _[privacylock.isLocked] == 0 && _[heartrate.recent] != 0 ]]></expr>
+						</exprs>
+						<compare expr="show_data">
+							<format source="heartrate.recent"/> HR
+						</compare>
+						<default>-- HR</default>
+					</condition>
+				</text>
+			</part>
+			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo">
+				<launch preset="heartrate"/>
+			</action>
+		</group>
+
+		<group name="sub-temp" x="150" y="94" width="60" height="18">
+			<part type="text" x="0" y="0" width="60" height="18">
+				<font code="AT10603"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<format source="weather.currentTemperature"/>°
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="weather"/>
+			</action>
+		</group>
+
+		<!-- Top Subdial Tachymeter Needle (Rotates with Heart Rate) -->
+		<group name="sub-needle" x="148" y="62" width="64" height="64">
+			<part type="image" x="0" y="0" width="64" height="64">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_needle.png"/>
+				<rotation center_x="32" center_y="32" start_angle="-110" end_angle="110" start_value="50" end_value="160" source="heartrate.recent"/>
+			</part>
+		</group>
+
+		<!-- 3. Top Left Subdial (10:00): Weather Condition Icon -->
+		<group name="sub-weather" x="65" y="101" width="50" height="50">
+			<part type="image" x="10" y="10" width="30" height="30">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_ic_rain.png">
+					<condition source="weather.condition">
+						<compare eq="1"><inline-image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_ic_sunny.png" width="30" height="30"/></compare>
+						<compare eq="2"><inline-image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_ic_cloudy.png" width="30" height="30"/></compare>
+						<compare eq="3"><inline-image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_ic_rain.png" width="30" height="30"/></compare>
+					</condition>
+				</image>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="weather"/>
+			</action>
+		</group>
+
+		<!-- 4. Top Right Subdial (02:00): Battery Percentage & Steps Count -->
+		<group name="sub-batt" x="242" y="103" width="56" height="20">
+			<part type="text" x="0" y="0" width="56" height="20">
+				<font code="AT10603"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<format source="battery.percent"/>%
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="battery"/>
+			</action>
+		</group>
+
+		<group name="sub-steps" x="242" y="122" width="56" height="20">
+			<part type="text" x="0" y="0" width="56" height="20">
+				<font code="AT10603"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<format source="pedometer.step"/>
+				</text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="pedometer"/>
+			</action>
+		</group>
+
+		<!-- 5. Bottom Left Negative LCD (08:00): Digital Time, Timezone & Seconds -->
+		<group name="lcd-time" x="50" y="172" width="104" height="88">
+			<!-- Digital Hour & Minute -->
+			<part type="text" x="4" y="6" width="96" height="34">
+				<font code="A1T0232"/>
+				<color code="#ffffff100%"/>
+				<text align="center">
+					<condition source="is24hour">
+						<compare eq="true"><format source="hour0-23.padded"/>:<format source="minute.padded"/></compare>
+						<compare eq="false"><format source="hour1-12.padded"/>:<format source="minute.padded"/></compare>
+					</condition>
+				</text>
+			</part>
+			<!-- Timezone Abbreviation -->
+			<part type="text" x="14" y="44" width="36" height="20">
+				<font code="AT10603"/>
+				<color code="#888888100%"/>
+				<text align="left"><upper><format source="timezone.abbr"/></upper></text>
+			</part>
+			<!-- Digital Seconds -->
+			<part type="text" x="50" y="40" width="42" height="24">
+				<font code="AT19004"/>
+				<color code="#ffffff100%"/>
+				<text align="right"><format source="second.padded"/></text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="alarm"/>
+			</action>
+		</group>
+
+		<!-- 6. Bottom Right Negative LCD (04:00): Full Calendar -->
+		<group name="lcd-date" x="206" y="172" width="104" height="88">
+			<!-- Day of week: TUESDAY -->
+			<part type="text" x="4" y="8" width="96" height="20">
+				<font code="AT10603"/>
+				<color code="#ffffff100%"/>
+				<text align="center"><upper><icu-skeleton english_number="true">EEEE</icu-skeleton></upper></text>
+			</part>
+			<!-- Month & Day: DEC 22 -->
+			<part type="text" x="4" y="28" width="96" height="20">
+				<font code="AT10603"/>
+				<color code="#ffffff100%"/>
+				<text align="center"><upper><icu-skeleton english_number="true">MMM d</icu-skeleton></upper></text>
+			</part>
+			<!-- Year: 2026 -->
+			<part type="text" x="4" y="48" width="96" height="20">
+				<font code="AT10603"/>
+				<color code="#ffffff100%"/>
+				<text align="center"><upper><icu-skeleton english_number="true">yyyy</icu-skeleton></upper></text>
+			</part>
+			<action on_event="tap" type="launch">
+				<launch preset="event"/>
+			</action>
+		</group>
+
+		<!-- 7. G-Shock GA-100 Drilled Skeleton Tactical Hands -->
+		<group name="hands" x="0" y="0" width="360" height="360">
+			<!-- Skeleton Hour Hand -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_hand_hour.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
+			</part>
+
+			<!-- Skeleton Minute Hand -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_hand_min.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
+			</part>
+
+			<!-- Center Pivot Rivet Cap -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_pivot.png"/>
+			</part>
+		</group>
+	</groups>
+
+	<!-- Ambient Always-On Display (AOD) Mode: Pure AMOLED Black, Dimmed Lume & Low OPR (< 2%) -->
+	<groups type="ambient-fullcolor">
+		<!-- Pure Black AOD Background with minimal stealth indices -->
+		<group name="aod-bg" x="0" y="0" width="360" height="360" hide_when_transparent_background="true">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_bg_aod.png"/>
+			</part>
+		</group>
+
+		<!-- AOD Digital Time (Hour & Minute only, zero-wakeups) -->
+		<group name="aod-lcd-time" x="50" y="172" width="104" height="88">
+			<part type="text" x="4" y="24" width="96" height="34">
+				<font code="A1T0232"/>
+				<color code="#b0b0b0100%"/>
+				<text align="center">
+					<condition source="is24hour">
+						<compare eq="true"><format source="hour0-23.padded"/>:<format source="minute.padded"/></compare>
+						<compare eq="false"><format source="hour1-12.padded"/>:<format source="minute.padded"/></compare>
+					</condition>
+				</text>
+			</part>
+		</group>
+
+		<!-- AOD Calendar (Abbreviated, Dimmed) -->
+		<group name="aod-lcd-date" x="206" y="172" width="104" height="88">
+			<part type="text" x="4" y="28" width="96" height="20">
+				<font code="AT10603"/>
+				<color code="#777777100%"/>
+				<text align="center"><upper><icu-skeleton english_number="true">EEE d</icu-skeleton></upper></text>
+			</part>
+		</group>
+
+		<!-- AOD Battery Level -->
+		<group name="aod-sub-batt" x="242" y="112" width="56" height="20">
+			<part type="text" x="0" y="0" width="56" height="20">
+				<font code="AT10603"/>
+				<color code="#777777100%"/>
+				<text align="center"><format source="battery.percent"/>%</text>
+			</part>
+		</group>
+
+		<!-- AOD Skeleton Hands -->
+		<group name="aod-hands" x="0" y="0" width="360" height="360">
+			<!-- Hour Hand -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_hand_hour.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
+			</part>
+
+			<!-- Minute Hand -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_hand_min.png"/>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute"/>
+			</part>
+
+			<!-- Pivot Cap -->
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/ga100_pivot.png"/>
+			</part>
+		</group>
+	</groups>
+</watchface>

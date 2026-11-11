@@ -1,144 +1,135 @@
 # Reloj Galaxy Watch 3 Tizen
 
-![Galaxy Watch 3 Showcase](assets/showcase_triple_watchfaces.png)
+![Galaxy Watch 3 Showcase](assets/showcase_quad_watchfaces.png)
 
-Colección completa de carátulas nativas de alto rendimiento optimizadas para la pantalla circular AMOLED de **360×360 px** del **Samsung Galaxy Watch 3 (`SM-R840`, Tizen OS 5.5.0.2)**, con scripts de instalación automatizada vía Wi-Fi (SDB) tanto de forma individual como en carrusel triple.
+Colección completa de carátulas nativas de alto rendimiento optimizadas para la pantalla circular AMOLED de **360×360 px** del **Samsung Galaxy Watch 3 (`SM-R840`, Tizen OS 5.5.0.2)**, con scripts de instalación automatizada vía Wi-Fi (SDB) tanto de forma individual como en carrusel cuádruple.
 
 ---
 
 ## 📸 Muestra Visual de las Carátulas (Pantalla Activa)
 
-| **MoveToBeActive (Garmin Vivomove)** | **Terminal Watchface (28px CLI)** | **Concentric (Google Pixel)** |
-|:---:|:---:|:---:|
-| ![MoveToBeActive](assets/movetobeactive_preview.png) | ![Terminal](assets/terminal_preview.png) | ![Concentric](assets/concentric_preview.png) |
-| *Analógico híbrido con suite de salud y clima* | *Consola minimalista hacker a 28 px* | *Doble disco concéntrico fluido a 60 fps* |
+| **MoveToBeActive (Garmin)** | **Terminal CLI (34px)** | **Concentric (Pixel Quad)** | **G-Shock GA-100 (TacBlack)** |
+|:---:|:---:|:---:|:---:|
+| ![MoveToBeActive](assets/movetobeactive_preview.png) | ![Terminal](assets/terminal_preview.png) | ![Concentric](assets/concentric_preview.png) | ![G-Shock GA-100](assets/ga100_preview.png) |
+| *Analógico híbrido con suite de salud y clima* | *Consola minimalista hacker CLI 34px* | *Doble disco concéntrico fluido a 60 fps* | *Táctico militar ana-digi con manecillas esqueleto* |
 
 ---
 
 ## 🌙 Modo Siempre Encendido (AOD / Ambient Display)
 
-![Galaxy Watch 3 AOD Showcase](assets/showcase_triple_aod.png)
+![Galaxy Watch 3 AOD Showcase](assets/showcase_quad_aod.png)
 
-Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físicamente apagados para máxima autonomía y protección de pantalla:
+Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físicamente apagados para máxima autonomía y protección contra quemado de pantalla (*burn-in*):
 
-| **MoveToBeActive (AOD)** | **Terminal Watchface (AOD)** | **Concentric (AOD)** |
-|:---:|:---:|:---:|
-| ![MoveToBeActive AOD](assets/movetobeactive_aod_preview.png) | ![Terminal AOD](assets/terminal_aod_preview.png) | ![Concentric AOD](assets/concentric_aod_preview.png) |
-| *Solo manecillas analógicas flotantes* | *sudo@watch ~ root + [time]* | *Solo números centrales de hora y minutos* |
+| **MoveToBeActive (AOD)** | **Terminal CLI (AOD)** | **Concentric (AOD)** | **G-Shock GA-100 (AOD)** |
+|:---:|:---:|:---:|:---:|
+| ![MoveToBeActive AOD](assets/movetobeactive_aod_preview.png) | ![Terminal AOD](assets/terminal_aod_preview.png) | ![Concentric AOD](assets/concentric_aod_preview.png) | ![G-Shock GA-100 AOD](assets/ga100_aod_preview.png) |
+| *Manecillas analógicas flotantes* | *sudo@watch ~ root + [time] 34px* | *Números centrales de hora y minutos* | *Lume tenue en manecillas + LCDs apagados* |
 
 ---
 
 ## 🌟 Características de las Carátulas
 
-### 1. MoveToBeActive (Estilo Garmin Vivomove)
+### 1. G-Shock GA-100 TacBlack (Militar Táctico Ana-Digi)
+- **Directorio:** [`tizen-native-ga100-tacblack/`](tizen-native-ga100-tacblack/)
+- **Slot Nativo:** `com.samsung.watchface-noblesse-a8`
+- **Origen:** Inspirado en *TacBlack* de **joeheeger** (Facer), recreación táctica oficial del icónico **Casio G-Shock GA-100-1A1 "Military Black / Stealth"**.
+- **Arquitectura Ana-Digi (Dual Dial):**
+  - **Manecillas Esqueleto Tácticas:** Agujas principales troqueladas (*drilled skeleton*) en blanco puro con borde carbón y centro perforado que deja ver la esfera inferior.
+  - **Sub-dial Superior (12:00 - Tacómetro / Velocímetro):** Muestra el pulso cardíaco en tiempo real (`heartrate.recent HR`), temperatura ambiente (`weather.currentTemperature°`) y aguja tacométrica que rota dinámicamente con el ritmo cardíaco.
+  - **Sub-dial Izquierdo (10:00 - Radar Meteorológico):** Retícula táctica con icono meteorológico en vivo (sol, lluvia, nubes).
+  - **Sub-dial Derecho (02:00 - Medidor de Rendimiento):** Batería en porcentaje (`battery.percent%`) y pasos totales del día (`pedometer.step`) sobre escala de velocidad `1000 500`.
+  - **LCD Inferior Izquierdo (08:00 - Reloj Negativo):** Hora digital nítida (`HH:mm`), abreviatura de zona horaria (`timezone.abbr`) y segundos continuos (`second.padded`).
+  - **LCD Inferior Derecho (04:00 - Calendario Completo):** Día de la semana en mayúsculas (`EEEE`), mes y día (`MMM d`), y año actual (`yyyy`).
+  - **Fondo Táctico Texturizado:** Bisel tridimensional con grabado `G-SHOCK`, marcas horarias en gris sigiloso y textura central tipo panal (*carbon waffle*).
+- **AOD (Always-On Display):** Fondo negro absoluto AMOLED (`#000000`), agujas con lume suave y números digitales tenues en bajo consumo (OPR < 1.8%).
+
+---
+
+### 2. MoveToBeActive (Estilo Garmin Vivomove)
 - **Directorio:** [`tizen-native-movetobeactive/`](tizen-native-movetobeactive/)
 - **Slot Nativo:** `com.samsung.watchface-noblesse-a7`
 - **Dial:** Fondo negro puro AMOLED (`#000000`), 60 marcas con índices horarios en verde lima Vivomove (`#AAFF00`) en horas 1, 2, 4, 5, 7, 8, 10 y 11; numerales `12`, `3`, `6` y `9`.
 - **Manecillas:** Horaria blanca biselada, minutero verde lima y segundero mecánico con animación de latido continuo (`animation="tick"`).
 - **Logotipo:** Insignia oficial de `GARMIN` con triángulo cian/azul (`#00C4FF`).
-- **Métricas en Vivo (Números y Porcentajes Optimizados):**
-  - **Izquierda:** Calorías activas en kcal (`pedometer.activeKiloCalorie`), Distancia en kilómetros calculada (`pedometer.distance`), Pasos con número exacto y porcentaje de meta cumplida (`pedometer.step (XX%)`).
-  - **Derecha:** Ritmo Cardíaco en tiempo real (`heartrate.recent` bpm), Batería con número y porcentaje (`battery.percent%`), Notificaciones no leídas (`notification.count`).
-  - **Inferior:** Clima (icono dinámico + `weather.currentTemperature°`), Ciudad (`weather.cityName`), Fecha completa interactiva (`EEE, MMM d`).
-- **Optimización de Batería Extrema:** Eliminado el servicio de audio en segundo plano (tic-tac analógico continuo) para evitar despertar el DSP de sonido cada segundo; visualización con píxeles negros apagados.
-- **AOD (Always-On Display):** Consumo ultra bajo con solo las manecillas flotantes sobre negro puro AMOLED (OPR < 2.5%).
+- **Métricas en Vivo:** Calorías kcal, distancia km, pasos y porcentaje diario, ritmo cardíaco, batería, notificaciones pendientes, clima y ciudad.
+- **AOD:** Manecillas flotantes sobre negro puro AMOLED (OPR < 2.5%).
 
 ---
 
-### 2. Terminal Watchface (28 px)
+### 3. Terminal Watchface (Linux CLI 34px)
 - **Directorio:** [`tizen-native-terminal/`](tizen-native-terminal/)
 - **Slot Nativo:** `com.samsung.watchface-noblesse-u1`
 - **Encabezado:** `sudo@watch ~ root` en pantalla activa y AOD.
-- **Diseño:** Fuente monoespaciada aumentada a **28 px** (`A1T0232`), con etiquetas alineadas uniformemente:
+- **Diseño:** Consola monoespaciada hacker con etiquetas alineadas:
   - `[date]` — Fecha interactiva (abre Calendario).
   - `[time]` — Hora digital en formato 12h/24h con segundos parpadeantes (abre Alarma).
   - `[batt]` — Nivel y estado de batería en % (abre Estado de Batería).
   - `[temp]` — Temperatura meteorológica actual (abre Clima).
   - `[hr]  ` — Frecuencia cardíaca en tiempo real (abre Ritmo Cardíaco).
-- **AOD (Always-On Display):** Modo minimalista centrado con únicamente `sudo@watch ~ root` y la hora (`[time]`) en tipografía nativa de **34 px** (`AT24002`) con espaciado equilibrado y compacto entre etiqueta y hora.
+- **AOD:** Minimalismo absoluto con `sudo@watch ~ root` y la hora (`[time]`) en tipografía nativa de **34 px** (`AT24002`).
 
 ---
 
-### 3. Concentric (Google Pixel Watch)
+### 4. Concentric (Google Pixel Watch)
 - **Directorio:** [`tizen-native-concentric/`](tizen-native-concentric/)
 - **Slot Nativo:** `com.samsung.watchface-noblesse-u6`
 - **Diseño:**
   - Anillo exterior de segundos con barrido fluido continuo a 60 fps (`second.millisecond`).
   - Anillo interior de minutos con rotación suave.
   - Cápsula central con hora digital en gran tamaño (92 px).
-  - 4 complicaciones limpias y simétricas sin barras perimetrales intrusivas: fecha actual en formato "DIA/MES" (`dd/MM`, ej. `09/11`), batería con porcentaje explícito (`XX%`) en Verde Lima de alta visibilidad, frecuencia cardíaca en tiempo real (`XX bpm`) con ícono de corazón, y clima con temperatura actual.
-- **AOD (Always-On Display):** Modo minimalista con únicamente los números centrales de la hora y minutos (sin ruedas ni cápsula).
+  - 4 complicaciones limpias y simétricas: fecha ("DIA/MES"), batería con porcentaje explícito (`XX%`), frecuencia cardíaca con icono de corazón y temperatura meteorológica.
+- **AOD:** Píldora horizontal minimalista con números de hora y minutos en tono blanco/gris suave.
 
 ---
 
-## 🛠️ Guía Completa de Instalación Local Paso a Paso
+## 🚀 Guía de Instalación Rápida Paso a Paso
 
-Sigue estos sencillos pasos para clonar el repositorio, configurar tu Galaxy Watch 3 e instalar las carátulas localmente desde tu computadora.
-
-### 1. Prerrequisitos en tu Computadora (PC / Mac / Linux)
-1. **Clonar este Repositorio con Git:**
-   Abre una terminal (PowerShell, Git Bash o Terminal) y ejecuta:
-   ```bash
-   git clone https://github.com/ingperezmx/Reloj-Galaxy-Watch-3-Tizen.git
-   cd Reloj-Galaxy-Watch-3-Tizen
-   ```
-2. **Herramienta SDB (`sdb`):**
-   El comando `sdb` (Samsung Smart Development Bridge) es el puente oficial de comunicación con Tizen.
-   - **Opción A (Oficial con Tizen Studio):** Descarga [Tizen Studio](https://developer.samsung.com/galaxy-watch-design/studio/overview.html). La herramienta se ubica en:
-     - Windows: `C:\tizen-studio\tools\sdb.exe`
-     - macOS / Linux: `~/tizen-studio/tools/sdb`
-   - **Opción B (Binario portable):** Si tienes el binario `sdb` en otra ubicación, puedes agregarlo al `PATH` de tu sistema o pasarlo como parámetro `-SdbPath "C:\ruta\a\sdb.exe"` en los scripts de PowerShell.
+### 1. Requisitos Previos en tu Computadora
+- Disponer de la herramienta **SDB (Samsung Smart Development Bridge)** en el PATH o en la carpeta del proyecto.
+- Disponer de PowerShell en Windows o Bash en macOS/Linux.
 
 ---
 
-### 2. Configuración en el Reloj (Samsung Galaxy Watch 3)
-1. **Habilitar Modo de Desarrollador:**
-   - En el reloj, entra a **Ajustes > Acerca del reloj > Software**.
-   - Toca repetidamente **Versión de software** (5 veces seguidas) hasta que aparezca el mensaje en pantalla: *"Modo de desarrollador activado"*.
+### 2. Preparar el Galaxy Watch 3
+1. **Activar Opciones de Desarrollador:**
+   - En el reloj ve a **Ajustes > Información del reloj > Software**.
+   - Pulsa repetidamente sobre **Versión de software** unas 5 a 7 veces hasta que aparezca el aviso *"El modo de desarrollador está activado"*.
 2. **Activar Depuración SDB:**
-   - Vuelve a **Ajustes > Acerca del reloj**.
-   - Desplázate hacia abajo hasta **Depuración** y asegúrate de que esté en **Activado**.
+   - Regresa al menú anterior y entra a **Opciones de desarrollador** (al final de la lista).
+   - Busca **Depuración** y asegúrate de que esté en **Activado**.
 3. **Conectar a la misma red Wi-Fi:**
    - Ve a **Ajustes > Conexiones > Wi-Fi**.
-   - Configura el Wi-Fi en **Siempre activado** y conéctate a la **misma red Wi-Fi** donde está tu computadora (ambos dispositivos deben estar en la misma red local).
+   - Configura el Wi-Fi en **Siempre activado** y conéctate a la **misma red Wi-Fi** donde está tu computadora.
 4. **Consultar la IP del Reloj:**
-   - En **Ajustes > Conexiones > Wi-Fi**, pulsa sobre tu red Wi-Fi conectada y baja hasta ver **Dirección IP** (ejemplo: `192.168.100.77` o `192.168.1.15`).
+   - En **Ajustes > Conexiones > Wi-Fi**, pulsa sobre tu red Wi-Fi conectada y baja hasta ver **Dirección IP** (ejemplo: `192.168.100.77`).
 5. **Reiniciar el Reloj (Obligatorio en Tizen):**
    - Mantén presionado el botón inferior derecho (**Power/Home**) durante 8 segundos hasta que la pantalla muestre *"Reiniciando..."* (Rebooting).
-   > **Nota importante:** Tizen requiere este reinicio para activar el daemon de escucha SDB en el puerto Wi-Fi.
 
 ---
 
 ### 3. Conexión y Autorización RSA (Primera Vez)
-1. Con el reloj ya reiniciado y conectado al Wi-Fi, abre tu terminal en la PC y ejecuta:
+1. Con el reloj reiniciado y con la pantalla encendida, ejecuta en tu terminal:
    ```bash
    sdb connect <IP_DEL_RELOJ>:26101
    ```
-   *(Ejemplo: `sdb connect 192.168.100.77:26101`)*
-2. **Mira inmediatamente la pantalla del reloj**:
-   - Aparecerá un cuadro emergente:
-     > **"¿Permitir depuración SDB desde este equipo?"**  
-     > *(Huella digital RSA: ...)*
+2. En la pantalla del reloj aparecerá la confirmación RSA:
+   > **"¿Permitir depuración SDB desde este equipo?"**  
    - Marca la casilla **"Permitir siempre desde este equipo"** y pulsa la palomita **✔**.
-3. Verifica la autorización ejecutando:
+3. Confirma la conexión con:
    ```bash
    sdb devices
    ```
-   Debe mostrar el identificador de tu reloj con el estado `device` (no `unauthorized`).
 
 ---
 
-### 4. Scripts de Instalación Local
+### 4. Scripts de Instalación
 
-#### 🏆 Opción 1: Carrusel Triple Completo (Recomendado)
-Instala las 3 carátulas simultáneamente en el reloj y las deja disponibles en el carrusel para alternar entre ellas con el bisel físico:
+#### 🏆 Opción 1: Carrusel Cuádruple Completo (Recomendado)
+Instala las 4 carátulas simultáneamente en el reloj y las deja disponibles en el carrusel para alternar entre ellas con el bisel físico:
 - **En Windows (PowerShell):**
   ```powershell
   .\instalar_todas_las_caratulas.ps1 -DeviceIp "TU_IP:26101"
-  ```
-  *(Si `sdb.exe` está en una ruta personalizada:)*
-  ```powershell
-  .\instalar_todas_las_caratulas.ps1 -DeviceIp "TU_IP:26101" -SdbPath "C:\ruta\sdb.exe"
   ```
 - **En Linux / macOS / Git Bash:**
   ```bash
@@ -148,15 +139,19 @@ Instala las 3 carátulas simultáneamente en el reloj y las deja disponibles en 
 
 ---
 
-#### ⏱️ Opción 2: Instalar solo MoveToBeActive (Garmin Vivomove)
+#### 🪖 Opción 2: Instalar solo G-Shock GA-100 TacBlack
+- **PowerShell:** `.\install_ga100_tacblack.ps1 -DeviceIp "TU_IP:26101"`
+- **Bash:** `./install_ga100_tacblack.sh TU_IP:26101`
+
+#### ⏱️ Opción 3: Instalar solo MoveToBeActive (Garmin)
 - **PowerShell:** `.\install_movetobeactive.ps1 -DeviceIp "TU_IP:26101"`
 - **Bash:** `./install_movetobeactive.sh TU_IP:26101`
 
-#### 💻 Opción 3: Instalar solo Terminal Watchface (28px CLI)
+#### 💻 Opción 4: Instalar solo Terminal Watchface (Linux CLI)
 - **PowerShell:** `.\install_terminal.ps1 -DeviceIp "TU_IP:26101"`
 - **Bash:** `./install_terminal.sh TU_IP:26101`
 
-#### 🔵 Opción 4: Instalar solo Concentric (Pixel Watch)
+#### 🔵 Opción 5: Instalar solo Concentric (Pixel Watch)
 - **PowerShell:** `.\install_concentric.ps1 -DeviceIp "TU_IP:26101"`
 - **Bash:** `./install_concentric.sh TU_IP:26101`
 
@@ -167,21 +162,7 @@ Mantén presionada la pantalla del reloj durante **2 segundos**. Se abrirá el s
 
 ---
 
-## 🌙 Configuración Óptima del Modo Siempre Encendido (AOD)
-Para una experiencia perfecta sin distracciones visuales:
-1. **Activar AOD:** Desliza el dedo hacia abajo desde el borde superior de la pantalla para abrir el panel de accesos rápidos y toca el icono de reloj (centro de la fila inferior).
-2. **Ajustar Brillo Legible:** Ve a **Ajustes > Pantalla > Brillo** y selecciona nivel **5 o 6** (en nivel 1 el modo atenuado AOD resulta casi imperceptible).
-3. **Uso en Muñeca:** El Galaxy Watch 3 desactiva automáticamente el AOD cuando se coloca sobre una mesa o en el cargador inalámbrico para proteger la batería. En cuanto te lo colocas en la muñeca, el sensor óptico mantiene la carátula siempre visible con su diseño minimalista.
-4. **Desactivar Texto OPR de Depuración:** Asegúrate de que en **Ajustes > Opciones de desarrollador**, la opción *"En relación de píxeles: Mostrar en Reloj siempre activado"* esté en **Desactivado**.
-
----
-
-## ❓ Solución de Problemas Frecuentes (FAQ)
-- **`failed to connect to 192.168.x.x:26101`:**
-  - Asegúrate de que tanto la PC como el reloj estén en la misma red Wi-Fi y no en una red de invitados con aislamiento entre clientes.
-  - Recuerda **reiniciar el reloj** tras activar la depuración en ajustes.
-  - Verifica que la IP del reloj no haya sido reasignada por el router Wi-Fi.
-- **`error: device unauthorized`:**
-  - Despierta la pantalla del reloj y acepta la autorización RSA con la marca de verificación ✔.
-- **La pantalla se apaga completamente en lugar de mostrar AOD:**
-  - El reloj no debe estar en el cargador ni sobre una mesa. Debe colocarse ceñido en la muñeca (o cubrir el sensor trasero de cristal).
+## 🌙 Configuración del Modo Siempre Encendido (AOD)
+1. **Activar AOD:** Desliza hacia abajo desde el borde superior de la pantalla y toca el icono de reloj.
+2. **Ajustar Brillo Legible:** Ve a **Ajustes > Pantalla > Brillo** y selecciona nivel **5 o 6**.
+3. **Uso en Muñeca:** El Galaxy Watch 3 activa el AOD automáticamente al estar colocado en la muñeca (cubriendo el sensor trasero).
