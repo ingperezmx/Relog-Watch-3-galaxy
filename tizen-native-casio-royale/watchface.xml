@@ -7,7 +7,7 @@
 	<!-- Audio disabled for zero-battery drain -->
 
 	<groups>
-		<!-- 1. Background Dial: Bezel, Casio Logos, World Map, Mini Dial Rim -->
+		<!-- 1. Background Dial: Perfectly Centered Bezel, Casio Logos, World Map, Mini Dial Rim -->
 		<group name="bg" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_bg.png"/>
@@ -15,7 +15,7 @@
 		</group>
 
 		<!-- 2. Weather Capsule (01:00) -->
-		<group name="comp-weather" x="206" y="58" width="110" height="28">
+		<group name="comp-weather" x="186" y="52" width="110" height="28">
 			<part type="image" x="12" y="4" width="20" height="20">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_ic_sunny.png"/>
 			</part>
@@ -27,14 +27,14 @@
 			<action on_event="tap" type="launch"><launch preset="weather"/></action>
 		</group>
 
-		<!-- 3. Date Window: Day of week (WED) and Date (16-4) - Small, crisp Casio LCD font -->
-		<group name="comp-date" x="176" y="174" width="148" height="30">
-			<part type="text" x="4" y="5" width="66" height="20">
+		<!-- 3. Date Window: Day of week (WED) and Date (16-4) - Centered Casio LCD boxes -->
+		<group name="comp-date" x="162" y="164" width="142" height="30">
+			<part type="text" x="2" y="5" width="68" height="20">
 				<font code="AT10603"/>
 				<color code="#0c101a100%"/>
 				<text align="center"><upper><icu-skeleton english_number="true">EEE</icu-skeleton></upper></text>
 			</part>
-			<part type="text" x="74" y="5" width="70" height="20">
+			<part type="text" x="72" y="5" width="68" height="20">
 				<font code="AT10603"/>
 				<color code="#0c101a100%"/>
 				<text align="center"><icu-skeleton english_number="true">d-M</icu-skeleton></text>
@@ -42,9 +42,9 @@
 			<action on_event="tap" type="launch"><launch preset="event"/></action>
 		</group>
 
-		<!-- 4. Main Digital Time LCD - Clean standard digital font (No Alarm) -->
-		<group name="comp-time" x="72" y="212" width="252" height="70">
-			<part type="text" x="4" y="4" width="176" height="62">
+		<!-- 4. Main Digital Time LCD - Perfectly Centered (No Alarm) -->
+		<group name="comp-time" x="58" y="202" width="248" height="68">
+			<part type="text" x="4" y="4" width="176" height="60">
 				<font code="AT10101"/>
 				<color code="#0c101a100%"/>
 				<text align="center">
@@ -67,7 +67,7 @@
 		</group>
 
 		<!-- 5. Bottom Battery Level -->
-		<group name="comp-batt" x="130" y="326" width="100" height="24">
+		<group name="comp-batt" x="130" y="320" width="100" height="24">
 			<part type="text" x="0" y="2" width="100" height="20">
 				<font code="AT10603"/>
 				<color code="#ffffff100%"/>
@@ -76,8 +76,8 @@
 			<action on_event="tap" type="launch"><launch preset="battery"/></action>
 		</group>
 
-		<!-- 6. Mini Analog Clock (center: 126, 118) -->
-		<group name="mini-clock" x="78" y="70" width="96" height="96">
+		<!-- 6. Mini Analog Clock (center: 114, 116) -->
+		<group name="mini-clock" x="66" y="68" width="96" height="96">
 			<part type="image" x="0" y="0" width="96" height="96">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_hand_hour.png"/>
 				<rotation center_x="48" center_y="48" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
@@ -102,8 +102,8 @@
 		</group>
 
 		<!-- AOD Digital Time (clean white SamsungOneUI font) -->
-		<group name="aod-time" x="72" y="212" width="252" height="70">
-			<part type="text" x="4" y="4" width="240" height="62">
+		<group name="aod-time" x="58" y="202" width="248" height="68">
+			<part type="text" x="4" y="4" width="236" height="60">
 				<font code="AT10101"/>
 				<color code="#ffffff100%"/>
 				<text align="center">
@@ -120,13 +120,13 @@
 		</group>
 
 		<!-- AOD Date (small crisp font) -->
-		<group name="aod-date" x="176" y="174" width="148" height="30">
-			<part type="text" x="4" y="5" width="66" height="20">
+		<group name="aod-date" x="162" y="164" width="142" height="30">
+			<part type="text" x="2" y="5" width="68" height="20">
 				<font code="AT10603"/>
 				<color code="#888890100%"/>
 				<text align="center"><upper><icu-skeleton english_number="true">EEE</icu-skeleton></upper></text>
 			</part>
-			<part type="text" x="74" y="5" width="70" height="20">
+			<part type="text" x="72" y="5" width="68" height="20">
 				<font code="AT10603"/>
 				<color code="#888890100%"/>
 				<text align="center"><icu-skeleton english_number="true">d-M</icu-skeleton></text>
@@ -134,7 +134,7 @@
 		</group>
 
 		<!-- AOD Battery -->
-		<group name="aod-batt" x="130" y="326" width="100" height="24">
+		<group name="aod-batt" x="130" y="320" width="100" height="24">
 			<part type="text" x="0" y="2" width="100" height="20">
 				<font code="AT10603"/>
 				<color code="#777780100%"/>
@@ -143,7 +143,7 @@
 		</group>
 
 		<!-- AOD Mini Clock Hands -->
-		<group name="aod-mini-clock" x="78" y="70" width="96" height="96">
+		<group name="aod-mini-clock" x="66" y="68" width="96" height="96">
 			<part type="image" x="0" y="0" width="96" height="96">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-u3/casio_hand_hour.png"/>
 				<rotation center_x="48" center_y="48" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
