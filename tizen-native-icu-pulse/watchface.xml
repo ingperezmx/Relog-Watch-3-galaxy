@@ -61,10 +61,10 @@
 			</part>
 		</group>
 
-		<!-- 6. Animated ECG Heartbeat Pulse Monitor (Exact math from hearth rate.html, 26 seamless frames @ 40ms) -->
+		<!-- 6. Animated ECG Heartbeat Pulse Monitor (Exact 120 BPM from hearth rate.html, 30 frames @ 33ms) -->
 		<group name="comp-ecg-pulse" x="50" y="126" width="260" height="60">
 			<part type="image" x="0" y="0" width="260" height="60">
-				<image-set delay="40" autostart="true" repeat="0" rewind="0">
+				<image-set delay="33" autostart="true" repeat="0" rewind="0">
 					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_00.png"/>
 					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_01.png"/>
 					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_02.png"/>
@@ -91,6 +91,10 @@
 					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_23.png"/>
 					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_24.png"/>
 					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_25.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_26.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_27.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_28.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_29.png"/>
 				</image-set>
 			</part>
 		</group>
@@ -134,7 +138,7 @@
 						<compare expr="show_hr">
 							<format source="heartrate.recent"/>
 						</compare>
-						<default>72</default>
+						<default>120</default>
 					</condition>
 				</text>
 			</part>
