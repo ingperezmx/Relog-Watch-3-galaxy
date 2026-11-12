@@ -16,59 +16,59 @@
 			</action>
 		</group>
 
-		<!-- 2. Engranaje 1: Gran Rueda Central (Centro 180, 180) -->
+		<!-- 2. Engranaje 1: Gran Rueda Central (Triple Velocidad: 360° cada 20s) -->
 		<group name="gear-center" x="130" y="130" width="100" height="100">
 			<part type="image" x="0" y="0" width="100" height="100">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_center.png"/>
-				<rotation center_x="50" center_y="50" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="50" center_y="50" start_angle="0" end_angle="360" start_value="0" end_value="20" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 3. Engranaje 2: Barrilete con motivo "H" a las 12:00 (Centro 180, 83) -->
+		<!-- 3. Engranaje 2: Barrilete con motivo "H" a las 12:00 (Triple Velocidad: 360° cada 15s) -->
 		<group name="gear-barrel" x="146" y="49" width="68" height="68">
 			<part type="image" x="0" y="0" width="68" height="68">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_barrel.png"/>
-				<rotation center_x="34" center_y="34" start_angle="0" end_angle="360" start_value="0" end_value="45" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="34" center_y="34" start_angle="0" end_angle="360" start_value="0" end_value="15" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 4. Engranaje 3: Rueda Superior Izquierda a las 10:00 (Centro 93, 115) -->
+		<!-- 4. Engranaje 3: Rueda Superior Izquierda a las 10:00 (Triple Velocidad: 360° cada 10s antihorario) -->
 		<group name="gear-left" x="63" y="85" width="60" height="60">
 			<part type="image" x="0" y="0" width="60" height="60">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_left.png"/>
-				<rotation center_x="30" center_y="30" start_angle="360" end_angle="0" start_value="0" end_value="30" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="30" center_y="30" start_angle="360" end_angle="0" start_value="0" end_value="10" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 5. Engranaje 4: Rueda Superior Derecha a las 2:00 (Centro 267, 115) -->
+		<!-- 5. Engranaje 4: Rueda Superior Derecha a las 2:00 (Triple Velocidad: 360° cada 10s horario) -->
 		<group name="gear-right" x="237" y="85" width="60" height="60">
 			<part type="image" x="0" y="0" width="60" height="60">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_right.png"/>
-				<rotation center_x="30" center_y="30" start_angle="0" end_angle="360" start_value="0" end_value="30" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="30" center_y="30" start_angle="0" end_angle="360" start_value="0" end_value="10" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 6. Engranaje 5: Rueda Intermedia Inferior Izquierda a las 8:00 (Centro 98, 211) -->
+		<!-- 6. Engranaje 5: Rueda Intermedia Inferior Izquierda a las 8:00 (Triple Velocidad: 360° cada 6.66s) -->
 		<group name="gear-lower-left" x="69" y="182" width="58" height="58">
 			<part type="image" x="0" y="0" width="58" height="58">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_lower_left.png"/>
-				<rotation center_x="29" center_y="29" start_angle="0" end_angle="360" start_value="0" end_value="20" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="29" center_y="29" start_angle="0" end_angle="360" start_value="0" end_value="6.666" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 7. Engranaje 6: Rueda Intermedia Inferior Derecha a las 4:00 (Centro 262, 211) -->
+		<!-- 7. Engranaje 6: Rueda Intermedia Inferior Derecha a las 4:00 (Triple Velocidad: 360° cada 6.66s antihorario) -->
 		<group name="gear-lower-right" x="233" y="182" width="58" height="58">
 			<part type="image" x="0" y="0" width="58" height="58">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_lower_right.png"/>
-				<rotation center_x="29" center_y="29" start_angle="360" end_angle="0" start_value="0" end_value="20" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="29" center_y="29" start_angle="360" end_angle="0" start_value="0" end_value="6.666" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 8. Engranaje 7: Jaula y Rueda de Balance del Tourbillon a las 6:00 (Centro 180, 277) -->
+		<!-- 8. Engranaje 7: Tourbillon a las 6:00 (Triple Velocidad: 360° cada 20s) -->
 		<group name="gear-balance" x="115" y="212" width="130" height="130">
 			<part type="image" x="0" y="0" width="130" height="130">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_balance.png"/>
-				<rotation center_x="65" center_y="65" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="65" center_y="65" start_angle="0" end_angle="360" start_value="0" end_value="20" source="second.millisecond" animation="sweep60s"/>
 			</part>
 			<!-- Toque en tourbillon para Pulsómetro / Salud -->
 			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo">
@@ -76,28 +76,28 @@
 			</action>
 		</group>
 
-		<!-- 9. Capa Frontal de Puentes de Titanio y Rubíes (Superpuesta sobre todos los engranajes) -->
+		<!-- 9. Capa Frontal de Puentes de Titanio, Rubíes y NÚMEROS EN LA ORILLA (1 al 12) -->
 		<group name="bridges-fg" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/skeleton_bridges_fg.png"/>
 			</part>
 		</group>
 
-		<!-- 10. Manecillas Esqueletizadas Hublot Magenta Super-LumiNova y Segundero Continuo -->
+		<!-- 10. Manecillas Esqueletizadas Hublot Magenta (HORA REAL EXACTA SIN AFECTAR) -->
 		<group name="hands" x="0" y="0" width="360" height="360">
-			<!-- Manecilla de Horas Magenta Hublot -->
+			<!-- Manecilla de Horas Magenta (12 horas exactas) -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_hour.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
 			</part>
 
-			<!-- Manecilla de Minutos Magenta Hublot -->
+			<!-- Manecilla de Minutos Magenta (60 minutos exactos) -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_min.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
 			</part>
 
-			<!-- Segundero Aguja Negra de Barrido Continuo a 60 fps -->
+			<!-- Segundero Aguja Negra de Barrido Continuo (60 segundos exactos) -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_sec.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
