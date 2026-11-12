@@ -14,9 +14,9 @@
 			</part>
 		</group>
 
-		<!-- 2. Date Status Row (Top Bar) -->
-		<group name="comp-date" x="80" y="38" width="200" height="28">
-			<part type="text" x="0" y="2" width="200" height="24">
+		<!-- 2. Date Status Row (Top Bar, above Time Box) -->
+		<group name="comp-date" x="80" y="38" width="200" height="24">
+			<part type="text" x="0" y="0" width="200" height="24">
 				<font code="AT10603"/>
 				<color code="#a0a7a1100%"/>
 				<text align="center"><upper><icu-skeleton english_number="true">EEE d MMM</icu-skeleton></upper></text>
@@ -24,10 +24,10 @@
 			<action on_event="tap" type="launch"><launch preset="event"/></action>
 		</group>
 
-		<!-- 3. Main Digital Time: High-Contrast Phosphor Green CRT Digits -->
-		<group name="comp-time" x="70" y="74" width="220" height="48">
-			<part type="text" x="0" y="2" width="220" height="44">
-				<font code="AT10101"/>
+		<!-- 3. Main Digital Time: High-Contrast Phosphor Green CRT Digits (Never cut off: font AT10105 in 60px box) -->
+		<group name="comp-time" x="104" y="65" width="180" height="60">
+			<part type="text" x="0" y="0" width="180" height="60">
+				<font code="AT10105"/>
 				<color code="#39ff88100%"/>
 				<text align="center">
 					<condition source="is24hour">
@@ -43,37 +43,90 @@
 			<action on_event="tap" type="launch"><launch preset="alarm"/></action>
 		</group>
 
-		<!-- 4. Oscilloscope ECG Animated Pulse Beam (Linear 2.0s continuous sweep) -->
-		<group name="comp-ecg-beam" x="0" y="0" width="360" height="360">
-			<part type="image" x="0" y="0" width="360" height="360">
-				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_pulse_beam.png"/>
-				<transform type="rotate">
-					<rotate period="4.0" mode="linear" direction="cw"/>
-				</transform>
+		<!-- 4. Digital Time Seconds Display (Right of Time Box) -->
+		<group name="comp-time-sec" x="286" y="70" width="34" height="24">
+			<part type="text" x="0" y="0" width="34" height="24">
+				<font code="AT10603"/>
+				<color code="#39ff88100%"/>
+				<text align="left"><icu-skeleton english_number="true">ss</icu-skeleton></text>
 			</part>
 		</group>
 
-		<!-- 5. Outer Bezel Seconds Dot (Smooth 60-Second Rotation) -->
+		<!-- 5. Digital Time AM/PM Display (Right of Time Box) -->
+		<group name="comp-time-ampm" x="286" y="94" width="34" height="24">
+			<part type="text" x="0" y="0" width="34" height="24">
+				<font code="AT10603"/>
+				<color code="#a0a7a1100%"/>
+				<text align="left"><format source="ampm.shortString2"/></text>
+			</part>
+		</group>
+
+		<!-- 6. Animated ECG Heartbeat Pulse Monitor (Exact math from hearth rate.html, 26 seamless frames @ 40ms) -->
+		<group name="comp-ecg-pulse" x="50" y="126" width="260" height="60">
+			<part type="image" x="0" y="0" width="260" height="60">
+				<image-set delay="40" autostart="true" repeat="0" rewind="0">
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_00.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_01.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_02.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_03.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_04.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_05.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_06.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_07.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_08.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_09.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_10.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_11.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_12.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_13.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_14.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_15.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_16.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_17.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_18.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_19.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_20.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_21.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_22.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_23.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_24.png"/>
+					<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ecg_25.png"/>
+				</image-set>
+			</part>
+		</group>
+
+		<!-- 7. Outer Bezel Seconds Dot (Smooth 60-Second Real-Time Rotation at 60 fps) -->
 		<group name="comp-sec-dot" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_sec_dot.png"/>
-				<transform type="rotate">
-					<rotate source="second.millisecond" direction="cw"/>
-				</transform>
+				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 6. Heart Rate Monitor: Heart Icon + Live BPM in Medical Coral Red -->
-		<group name="comp-heartrate" x="110" y="212" width="140" height="32">
-			<!-- Heart Icon -->
-			<part type="image" x="16" y="4" width="22" height="22">
-				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_ic_heart.png"/>
+		<!-- 8. Medical Radar Continuous Sweep (Bottom Right Radar at 232, 292) -->
+		<group name="comp-radar-sweep" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a2/icu_radar_beam.png"/>
+				<rotation center_x="232" center_y="292" start_angle="0" end_angle="360" start_value="0" end_value="3" source="second.millisecond" animation="sweep60s"/>
 			</part>
-			<!-- Heart Rate Numeric BPM -->
-			<part type="text" x="42" y="2" width="80" height="26">
+		</group>
+
+		<!-- 9. Steps Monitor -->
+		<group name="comp-steps" x="54" y="222" width="80" height="28">
+			<part type="text" x="0" y="0" width="80" height="28">
+				<font code="AT10602"/>
+				<color code="#39ff88100%"/>
+				<text align="center"><format source="pedometer.step"/></text>
+			</part>
+			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo"><launch preset="shealth"/></action>
+		</group>
+
+		<!-- 10. Heart Rate Monitor: Live Numeric BPM in Medical Red -->
+		<group name="comp-heartrate" x="145" y="222" width="80" height="28">
+			<part type="text" x="0" y="0" width="80" height="28">
 				<font code="AT10602"/>
 				<color code="#ff4f5e100%"/>
-				<text align="left">
+				<text align="center">
 					<condition expr="true">
 						<exprs>
 							<expr name="show_hr"><![CDATA[ _[privacylock.isLocked] == 0 && _[heartrate.recent] != 0 ]]></expr>
@@ -83,7 +136,6 @@
 						</compare>
 						<default>72</default>
 					</condition>
-					<span color="#ff4f5e80%"> BPM</span>
 				</text>
 			</part>
 			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo">
@@ -91,19 +143,12 @@
 			</action>
 		</group>
 
-		<!-- 7. Bottom Stats: Battery (%) & Pedometer Steps -->
-		<group name="comp-bottom-stats" x="60" y="266" width="240" height="26">
-			<!-- Battery Level in Phosphor Green -->
-			<part type="text" x="10" y="2" width="100" height="22">
-				<font code="AT10603"/>
-				<color code="#39ff88100%"/>
-				<text align="left">BAT <format source="battery.percent"/>%</text>
-			</part>
-			<!-- Steps Count in Phosphor Gray -->
-			<part type="text" x="130" y="2" width="100" height="22">
-				<font code="AT10603"/>
-				<color code="#a0a7a1100%"/>
-				<text align="right"><format source="pedometer.step"/> STP</text>
+		<!-- 11. Battery Gauge (%) in Medical Red -->
+		<group name="comp-battery" x="220" y="222" width="80" height="28">
+			<part type="text" x="0" y="0" width="80" height="28">
+				<font code="AT10602"/>
+				<color code="#ff4f5e100%"/>
+				<text align="center"><format source="battery.percent"/>%</text>
 			</part>
 			<action on_event="tap" type="launch"><launch preset="battery"/></action>
 		</group>
@@ -119,8 +164,8 @@
 		</group>
 
 		<!-- 2. Ambient Date -->
-		<group name="aod-date" x="80" y="44" width="200" height="26">
-			<part type="text" x="0" y="2" width="200" height="22">
+		<group name="aod-date" x="80" y="42" width="200" height="24">
+			<part type="text" x="0" y="0" width="200" height="24">
 				<font code="AT10603"/>
 				<color code="#707771100%"/>
 				<text align="center"><upper><icu-skeleton english_number="true">EEE d MMM</icu-skeleton></upper></text>
@@ -128,9 +173,9 @@
 		</group>
 
 		<!-- 3. Ambient Digital Time -->
-		<group name="aod-time" x="70" y="80" width="220" height="48">
-			<part type="text" x="0" y="2" width="220" height="44">
-				<font code="AT10101"/>
+		<group name="aod-time" x="104" y="65" width="180" height="60">
+			<part type="text" x="0" y="0" width="180" height="60">
+				<font code="AT10105"/>
 				<color code="#2abe65100%"/>
 				<text align="center">
 					<condition source="is24hour">
