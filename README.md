@@ -91,10 +91,14 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
 
 ---
 
-### 7. Casio Classic A158W / F-91W (Vintage Alarm Chrono)
+### 7. Casio Classic Vintage 205 Gold & Black (Port Vintage Retro)
 - **Directorio:** [`tizen-native-casio-classic/`](tizen-native-casio-classic/)
 - **Slot Nativo:** `com.samsung.watchface-noblesse-a5`
 - **Nombre en Reloj:** `Casio Classic`
+- **Características:**
+  - **Diseño Vintage FASTER 205:** Dial negro brillante con anillos dorados de alta precisión, logotipo vintage **CASIO** en blanco centrado en la parte superior, línea y denominación `205` en oro, e indicador de protección `WATER RESIST` dorado.
+  - **Pantalla LCD Multifunción:** Hora digital 7 segmentos nítida en formato 12h/24h, segundos en tiempo real, día del mes en recuadro dedicado, nivel de batería con ícono de rayo (`⚡`), contador de pasos diarios con silueta de calzado deportivo (`👟`) y pulsaciones cardíacas BPM con corazón (`❤️`).
+  - **AOD Ultraeficiente:** Modo Always-On Display sobre negro AMOLED absoluto con líneas tenues en oro cepillado y bajo consumo (<8% OPR).
 
 ---
 
@@ -105,7 +109,7 @@ Diseño ultralimpio sobre fondo negro puro AMOLED (`#000000`) con píxeles físi
 - **Características:**
   - **Números en la orilla:** Horas del 1 al 12 nítidas y legibles a lo largo del anillo perimetral exterior con sombra suave.
   - **Engranajes a triple velocidad (3x):** Todos los 7 engranajes mecánicos internos (barrilete, rueda central, tren de escape, volante tourbillon) giran al triple de velocidad para un efecto visual dinámico e hipnótico, sin afectar en absoluto la precisión de la hora de las manecillas.
-  - **Manecillas deportivas de alta visibilidad:** En fucsia vibrante con centro luminiscente y segundero continuo a 60 fps.
+  - **Manecillas de alta relojería:** En oro King Gold 18K con centro luminiscente Super-LumiNova blanco y segundero continuo a 60 fps (sin tonos rosas).
   - **AOD ultralimpio:** Manecillas flotantes luminiscentes sobre negro absoluto.
 
 ---
