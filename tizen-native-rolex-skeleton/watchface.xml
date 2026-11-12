@@ -83,21 +83,21 @@
 			</part>
 		</group>
 
-		<!-- 10. Manecillas Esqueletizadas Hublot Magenta (HORA REAL EXACTA SIN AFECTAR) -->
+		<!-- 10. Manecillas Esqueletizadas de Alta Relojería: Acero Rodio Pulido y Super-LumiNova Blanco (HORA REAL EXACTA SIN AFECTAR) -->
 		<group name="hands" x="0" y="0" width="360" height="360">
-			<!-- Manecilla de Horas Magenta (12 horas exactas) -->
+			<!-- Manecilla de Horas: Acero Rodio y Super-LumiNova Blanco (12 horas exactas) -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_hour.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
 			</part>
 
-			<!-- Manecilla de Minutos Magenta (60 minutos exactos) -->
+			<!-- Manecilla de Minutos: Acero Rodio y Super-LumiNova Blanco (60 minutos exactos) -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_min.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute.second"/>
 			</part>
 
-			<!-- Segundero Aguja Negra de Barrido Continuo (60 segundos exactos) -->
+			<!-- Segundero Aguja de Acero y Punta Roja de Barrido Continuo (60 segundos exactos) -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_hand_sec.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
@@ -124,15 +124,15 @@
 			</part>
 		</group>
 
-		<!-- Únicamente las Manecillas Super-LumiNova en AOD -->
+		<!-- Únicamente las Manecillas Super-LumiNova Blanco en AOD -->
 		<group name="aod-hands" x="0" y="0" width="360" height="360">
-			<!-- Manecilla Horas Tenue Magenta -->
+			<!-- Manecilla Horas Blanco Super-LumiNova -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_aod_hand_hour.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="12" source="hour0-11.minute"/>
 			</part>
 
-			<!-- Manecilla Minutos Tenue Magenta -->
+			<!-- Manecilla Minutos Blanco Super-LumiNova -->
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_aod_hand_min.png"/>
 				<rotation center_x="180" center_y="180" start_angle="0" end_angle="360" start_value="0" end_value="60" source="minute"/>
