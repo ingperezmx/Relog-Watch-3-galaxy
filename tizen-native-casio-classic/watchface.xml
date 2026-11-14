@@ -4,19 +4,35 @@
 	<metadata key="preview_time" value="10:10:35"/>
 	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
 
-	<!-- Audio disabled for zero battery drain -->
-
 	<groups>
-		<!-- 1. Background Dial: Authentic Vintage Casio 205 Gold & Black Dial -->
+		<!-- 1. Background Dial: Expanded Vintage Casio 205 Dial without faded outer bezel -->
 		<group name="bg" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_bg.png"/>
 			</part>
 		</group>
 
+		<!-- 1b. Day of Week Indicator Bar (SU MO TU WE TH FR SA) -->
+		<group name="comp-dow" x="70" y="99" width="218" height="22">
+			<part type="image" x="0" y="0" width="218" height="22">
+				<image>
+					<condition source="dayOfWeek">
+						<compare eq="1"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_dow_1.png"/></compare>
+						<compare eq="2"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_dow_2.png"/></compare>
+						<compare eq="3"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_dow_3.png"/></compare>
+						<compare eq="4"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_dow_4.png"/></compare>
+						<compare eq="5"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_dow_5.png"/></compare>
+						<compare eq="6"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_dow_6.png"/></compare>
+						<compare eq="7"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_dow_7.png"/></compare>
+						<default><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_dow_5.png"/></default>
+					</condition>
+				</image>
+			</part>
+		</group>
+
 		<!-- 2. Date Sub-Box (Upper Right of LCD) -->
-		<group name="comp-date" x="245" y="127" width="28" height="28">
-			<part type="text" x="0" y="2" width="28" height="24">
+		<group name="comp-date" x="250" y="114" width="36" height="26">
+			<part type="text" x="0" y="0" width="36" height="26">
 				<font code="AT10603"/>
 				<color code="#12181c100%"/>
 				<text align="center"><icu-skeleton english_number="true">d</icu-skeleton></text>
@@ -25,8 +41,8 @@
 		</group>
 
 		<!-- 3. Seconds Sub-Box (Below Date in LCD) -->
-		<group name="comp-seconds" x="245" y="159" width="28" height="28">
-			<part type="text" x="0" y="2" width="28" height="24">
+		<group name="comp-seconds" x="244" y="166" width="50" height="28">
+			<part type="text" x="0" y="0" width="50" height="28">
 				<font code="AT10603"/>
 				<color code="#12181c100%"/>
 				<text align="center"><icu-skeleton english_number="true">ss</icu-skeleton></text>
@@ -34,28 +50,137 @@
 			<action on_event="tap" type="launch"><launch preset="stopwatch"/></action>
 		</group>
 
-		<!-- 4. Main Digital Time LCD: Large 7-Segment Numbers (HH:mm / hh:mm) -->
-		<group name="comp-main-time" x="90" y="142" width="152" height="54">
-			<part type="text" x="0" y="0" width="152" height="54">
-				<font code="AT10101"/>
-				<color code="#12181c100%"/>
-				<text align="center">
-					<condition source="is24hour">
-						<compare eq="1">
-							<icu-skeleton english_number="true">HH</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton>
-						</compare>
-						<default>
-							<icu-skeleton english_number="true">hh</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton>
-						</default>
+		<!-- 4. Main Digital Time LCD: Foto 2 7-Segment Numbers (HH:mm) -->
+		<group name="comp-main-time" x="85" y="134" width="130" height="54">
+			<part type="image" x="0" y="1" width="27" height="52">
+				<image>
+					<condition source="hour0-23">
+						<compare lt="10"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare lt="20"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<default><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></default>
 					</condition>
-				</text>
+				</image>
 			</part>
+			<part type="image" x="29" y="1" width="27" height="52">
+				<image>
+					<condition source="hour0-23">
+						<compare eq="0"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare eq="1"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<compare eq="2"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></compare>
+						<compare eq="3"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_3.png"/></compare>
+						<compare eq="4"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_4.png"/></compare>
+						<compare eq="5"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_5.png"/></compare>
+						<compare eq="6"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_6.png"/></compare>
+						<compare eq="7"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_7.png"/></compare>
+						<compare eq="8"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_8.png"/></compare>
+						<compare eq="9"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_9.png"/></compare>
+						<compare eq="10"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare eq="11"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<compare eq="12"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></compare>
+						<compare eq="13"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_3.png"/></compare>
+						<compare eq="14"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_4.png"/></compare>
+						<compare eq="15"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_5.png"/></compare>
+						<compare eq="16"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_6.png"/></compare>
+						<compare eq="17"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_7.png"/></compare>
+						<compare eq="18"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_8.png"/></compare>
+						<compare eq="19"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_9.png"/></compare>
+						<compare eq="20"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare eq="21"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<compare eq="22"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></compare>
+						<compare eq="23"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_3.png"/></compare>
+						<default><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></default>
+					</condition>
+				</image>
+			</part>
+			<part type="image" x="58" y="1" width="12" height="52">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_colon.png"/>
+			</part>
+			<part type="image" x="72" y="1" width="27" height="52">
+				<image>
+					<condition source="minute">
+						<compare lt="10"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare lt="20"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<compare lt="30"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></compare>
+						<compare lt="40"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_3.png"/></compare>
+						<compare lt="50"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_4.png"/></compare>
+						<default><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_5.png"/></default>
+					</condition>
+				</image>
+			</part>
+			<part type="image" x="101" y="1" width="27" height="52">
+				<image>
+					<condition source="minute">
+						<compare eq="0"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare eq="1"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<compare eq="2"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></compare>
+						<compare eq="3"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_3.png"/></compare>
+						<compare eq="4"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_4.png"/></compare>
+						<compare eq="5"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_5.png"/></compare>
+						<compare eq="6"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_6.png"/></compare>
+						<compare eq="7"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_7.png"/></compare>
+						<compare eq="8"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_8.png"/></compare>
+						<compare eq="9"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_9.png"/></compare>
+						<compare eq="10"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare eq="11"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<compare eq="12"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></compare>
+						<compare eq="13"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_3.png"/></compare>
+						<compare eq="14"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_4.png"/></compare>
+						<compare eq="15"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_5.png"/></compare>
+						<compare eq="16"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_6.png"/></compare>
+						<compare eq="17"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_7.png"/></compare>
+						<compare eq="18"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_8.png"/></compare>
+						<compare eq="19"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_9.png"/></compare>
+						<compare eq="20"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare eq="21"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<compare eq="22"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></compare>
+						<compare eq="23"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_3.png"/></compare>
+						<compare eq="24"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_4.png"/></compare>
+						<compare eq="25"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_5.png"/></compare>
+						<compare eq="26"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_6.png"/></compare>
+						<compare eq="27"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_7.png"/></compare>
+						<compare eq="28"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_8.png"/></compare>
+						<compare eq="29"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_9.png"/></compare>
+						<compare eq="30"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare eq="31"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<compare eq="32"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></compare>
+						<compare eq="33"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_3.png"/></compare>
+						<compare eq="34"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_4.png"/></compare>
+						<compare eq="35"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_5.png"/></compare>
+						<compare eq="36"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_6.png"/></compare>
+						<compare eq="37"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_7.png"/></compare>
+						<compare eq="38"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_8.png"/></compare>
+						<compare eq="39"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_9.png"/></compare>
+						<compare eq="40"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare eq="41"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<compare eq="42"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></compare>
+						<compare eq="43"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_3.png"/></compare>
+						<compare eq="44"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_4.png"/></compare>
+						<compare eq="45"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_5.png"/></compare>
+						<compare eq="46"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_6.png"/></compare>
+						<compare eq="47"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_7.png"/></compare>
+						<compare eq="48"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_8.png"/></compare>
+						<compare eq="49"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_9.png"/></compare>
+						<compare eq="50"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></compare>
+						<compare eq="51"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_1.png"/></compare>
+						<compare eq="52"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_2.png"/></compare>
+						<compare eq="53"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_3.png"/></compare>
+						<compare eq="54"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_4.png"/></compare>
+						<compare eq="55"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_5.png"/></compare>
+						<compare eq="56"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_6.png"/></compare>
+						<compare eq="57"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_7.png"/></compare>
+						<compare eq="58"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_8.png"/></compare>
+						<compare eq="59"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_9.png"/></compare>
+						<default><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_num_0.png"/></default>
+					</condition>
+				</image>
+			</part>
+
 			<action on_event="tap" type="launch"><launch preset="alarm"/></action>
 		</group>
 
-		<!-- 5. Battery Level (Lower Left Compartment, next to bolt icon) -->
-		<group name="comp-battery" x="118" y="204" width="56" height="30">
-			<part type="text" x="0" y="2" width="56" height="26">
+		<!-- 5. Battery Level (Lower Left Compartment) -->
+		<group name="comp-battery" x="105" y="218" width="60" height="28">
+			<part type="text" x="0" y="2" width="60" height="24">
 				<font code="AT10603"/>
 				<color code="#12181c100%"/>
 				<text align="center"><format source="battery.percent"/>%</text>
@@ -63,76 +188,201 @@
 			<action on_event="tap" type="launch"><launch preset="battery"/></action>
 		</group>
 
-		<!-- 6. Steps Counter (Lower Right Compartment, top row next to shoe icon) -->
-		<group name="comp-steps" x="206" y="202" width="64" height="16">
-			<part type="text" x="0" y="0" width="64" height="16">
-				<font code="AT10605"/>
+		<!-- 6. Steps Counter (Lower Right Compartment, beside shoe icon) -->
+		<group name="comp-steps" x="210" y="214" width="86" height="18">
+			<part type="text" x="0" y="0" width="86" height="18">
+				<font code="AT10603"/>
 				<color code="#12181c100%"/>
-				<text align="right"><format source="pedometer.step"/></text>
+				<text align="left"><format source="pedometer.step"/></text>
 			</part>
-			<action on_event="tap" type="launch"><launch preset="pedometer"/></action>
+			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo"><launch preset="pedometer"/></action>
 		</group>
 
-		<!-- 7. Heart Rate BPM (Lower Right Compartment, bottom row next to heart icon) -->
-		<group name="comp-heart-rate" x="206" y="219" width="64" height="16">
-			<part type="text" x="0" y="0" width="64" height="16">
-				<font code="AT10605"/>
+		<!-- 7. Heart Rate (Lower Right Compartment, beside heart icon) -->
+		<group name="comp-heart-rate" x="210" y="233" width="86" height="18">
+			<part type="text" x="0" y="0" width="86" height="18">
+				<font code="AT10603"/>
 				<color code="#12181c100%"/>
-				<text align="right"><format source="heartrate.rate"/></text>
+				<text align="left"><format source="heartrate.recent"/> bpm</text>
 			</part>
-			<action on_event="tap" type="launch"><launch preset="heartrate"/></action>
+			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo"><launch preset="heartrate"/></action>
+		</group>
+
+		<!-- 8. Interactive App Launcher Touch Zones -->
+		<group name="btn-lcd" x="15" y="90" width="60" height="50">
+			<action on_event="tap" type="launch"><launch preset="alarm"/></action>
+		</group>
+		<group name="btn-alarm" x="15" y="160" width="60" height="50">
+			<action on_event="tap" type="launch"><launch preset="alarm"/></action>
+		</group>
+		<group name="btn-memo" x="285" y="90" width="60" height="50">
+			<action on_event="tap" type="launch"><launch preset="voicenote"/></action>
+		</group>
+		<group name="btn-phone" x="285" y="160" width="60" height="50">
+			<action on_event="tap" type="launch"><launch preset="call"/></action>
+		</group>
+		<group name="btn-themes" x="120" y="300" width="120" height="50">
+			<action on_event="tap" type="launch"><launch preset="weather"/></action>
 		</group>
 	</groups>
 
-	<!-- Ambient Always-On Display (AOD) Mode: Ultra-low power Pure AMOLED -->
+	<!-- Ambient Always-On Display (AOD) Mode -->
 	<groups type="ambient-fullcolor">
-		<!-- 1. Ambient Background -->
 		<group name="aod-bg" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_bg_aod.png"/>
 			</part>
 		</group>
 
-		<!-- 2. Ambient Date -->
-		<group name="aod-date" x="245" y="127" width="28" height="28">
-			<part type="text" x="0" y="2" width="28" height="24">
+		<!-- AOD Day of Week Indicator -->
+		
+
+		<group name="aod-date" x="250" y="114" width="36" height="26">
+			<part type="text" x="0" y="0" width="36" height="26">
 				<font code="AT10603"/>
 				<color code="#dcd8c8100%"/>
 				<text align="center"><icu-skeleton english_number="true">d</icu-skeleton></text>
 			</part>
 		</group>
 
-		<!-- 3. Ambient Digital Time -->
-		<group name="aod-time" x="90" y="142" width="152" height="54">
-			<part type="text" x="0" y="0" width="152" height="54">
-				<font code="AT10101"/>
-				<color code="#dcd8c8100%"/>
-				<text align="center">
-					<condition source="is24hour">
-						<compare eq="1">
-							<icu-skeleton english_number="true">HH</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton>
-						</compare>
-						<default>
-							<icu-skeleton english_number="true">hh</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton>
-						</default>
+		<!-- AOD Digital Time with Foto 2 Digits -->
+		<group name="aod-time" x="85" y="134" width="130" height="54">
+			<part type="image" x="0" y="1" width="27" height="52">
+				<image>
+					<condition source="hour0-23">
+						<compare lt="10"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare lt="20"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<default><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></default>
 					</condition>
-				</text>
+				</image>
 			</part>
+			<part type="image" x="29" y="1" width="27" height="52">
+				<image>
+					<condition source="hour0-23">
+						<compare eq="0"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare eq="1"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<compare eq="2"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></compare>
+						<compare eq="3"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_3.png"/></compare>
+						<compare eq="4"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_4.png"/></compare>
+						<compare eq="5"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_5.png"/></compare>
+						<compare eq="6"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_6.png"/></compare>
+						<compare eq="7"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_7.png"/></compare>
+						<compare eq="8"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_8.png"/></compare>
+						<compare eq="9"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_9.png"/></compare>
+						<compare eq="10"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare eq="11"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<compare eq="12"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></compare>
+						<compare eq="13"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_3.png"/></compare>
+						<compare eq="14"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_4.png"/></compare>
+						<compare eq="15"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_5.png"/></compare>
+						<compare eq="16"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_6.png"/></compare>
+						<compare eq="17"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_7.png"/></compare>
+						<compare eq="18"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_8.png"/></compare>
+						<compare eq="19"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_9.png"/></compare>
+						<compare eq="20"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare eq="21"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<compare eq="22"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></compare>
+						<compare eq="23"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_3.png"/></compare>
+						<default><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></default>
+					</condition>
+				</image>
+			</part>
+			<part type="image" x="58" y="1" width="12" height="52">
+				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_colon.png"/>
+			</part>
+			<part type="image" x="72" y="1" width="27" height="52">
+				<image>
+					<condition source="minute">
+						<compare lt="10"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare lt="20"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<compare lt="30"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></compare>
+						<compare lt="40"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_3.png"/></compare>
+						<compare lt="50"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_4.png"/></compare>
+						<default><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_5.png"/></default>
+					</condition>
+				</image>
+			</part>
+			<part type="image" x="101" y="1" width="27" height="52">
+				<image>
+					<condition source="minute">
+						<compare eq="0"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare eq="1"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<compare eq="2"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></compare>
+						<compare eq="3"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_3.png"/></compare>
+						<compare eq="4"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_4.png"/></compare>
+						<compare eq="5"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_5.png"/></compare>
+						<compare eq="6"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_6.png"/></compare>
+						<compare eq="7"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_7.png"/></compare>
+						<compare eq="8"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_8.png"/></compare>
+						<compare eq="9"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_9.png"/></compare>
+						<compare eq="10"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare eq="11"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<compare eq="12"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></compare>
+						<compare eq="13"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_3.png"/></compare>
+						<compare eq="14"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_4.png"/></compare>
+						<compare eq="15"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_5.png"/></compare>
+						<compare eq="16"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_6.png"/></compare>
+						<compare eq="17"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_7.png"/></compare>
+						<compare eq="18"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_8.png"/></compare>
+						<compare eq="19"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_9.png"/></compare>
+						<compare eq="20"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare eq="21"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<compare eq="22"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></compare>
+						<compare eq="23"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_3.png"/></compare>
+						<compare eq="24"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_4.png"/></compare>
+						<compare eq="25"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_5.png"/></compare>
+						<compare eq="26"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_6.png"/></compare>
+						<compare eq="27"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_7.png"/></compare>
+						<compare eq="28"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_8.png"/></compare>
+						<compare eq="29"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_9.png"/></compare>
+						<compare eq="30"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare eq="31"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<compare eq="32"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></compare>
+						<compare eq="33"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_3.png"/></compare>
+						<compare eq="34"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_4.png"/></compare>
+						<compare eq="35"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_5.png"/></compare>
+						<compare eq="36"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_6.png"/></compare>
+						<compare eq="37"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_7.png"/></compare>
+						<compare eq="38"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_8.png"/></compare>
+						<compare eq="39"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_9.png"/></compare>
+						<compare eq="40"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare eq="41"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<compare eq="42"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></compare>
+						<compare eq="43"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_3.png"/></compare>
+						<compare eq="44"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_4.png"/></compare>
+						<compare eq="45"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_5.png"/></compare>
+						<compare eq="46"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_6.png"/></compare>
+						<compare eq="47"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_7.png"/></compare>
+						<compare eq="48"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_8.png"/></compare>
+						<compare eq="49"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_9.png"/></compare>
+						<compare eq="50"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></compare>
+						<compare eq="51"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_1.png"/></compare>
+						<compare eq="52"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_2.png"/></compare>
+						<compare eq="53"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_3.png"/></compare>
+						<compare eq="54"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_4.png"/></compare>
+						<compare eq="55"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_5.png"/></compare>
+						<compare eq="56"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_6.png"/></compare>
+						<compare eq="57"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_7.png"/></compare>
+						<compare eq="58"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_8.png"/></compare>
+						<compare eq="59"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_9.png"/></compare>
+						<default><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a5/casio_aod_num_0.png"/></default>
+					</condition>
+				</image>
+			</part>
+
 		</group>
 
-		<!-- 4. Ambient Battery -->
-		<group name="aod-battery" x="118" y="204" width="56" height="30">
-			<part type="text" x="0" y="2" width="56" height="26">
+		<group name="aod-battery" x="105" y="218" width="60" height="28">
+			<part type="text" x="0" y="2" width="60" height="24">
 				<font code="AT10603"/>
 				<color code="#dcd8c8100%"/>
 				<text align="center"><format source="battery.percent"/>%</text>
 			</part>
 		</group>
 
-		<!-- 5. Ambient Steps -->
-		<group name="aod-steps" x="206" y="202" width="64" height="16">
-			<part type="text" x="0" y="0" width="64" height="16">
-				<font code="AT10605"/>
+		<group name="aod-steps" x="235" y="210" width="64" height="20">
+			<part type="text" x="0" y="0" width="64" height="20">
+				<font code="AT10603"/>
 				<color code="#dcd8c8100%"/>
 				<text align="right"><format source="pedometer.step"/></text>
 			</part>

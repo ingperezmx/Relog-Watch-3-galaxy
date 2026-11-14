@@ -1,19 +1,63 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <watchface>
 	<metadata key="clock-type" value="com.samsung.watchface-noblesse-a8"/>
 	<metadata key="preview_time" value="10:10:42"/>
 	<metadata key="model_samsung_health_save_values_to_pref" value="true"/>
 
 	<groups>
-		<!-- 1. Fondo Laberinto PAC-MAN Arcade Retro -->
+		<!-- 1. Fondo Laberinto PAC-MAN Arcade Retro (Sin steps) -->
 		<group name="bg" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/pacman_bg.png"/>
 			</part>
-			<!-- Toque en pasos para Samsung Health -->
-			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo">
-				<launch preset="pedometer"/>
-			</action>
+		</group>
+
+		<!-- 2. Día de la Semana Dinámico en Español (Curvado en el Arco) -->
+		<group name="comp-dow" x="0" y="0" width="360" height="360">
+			<part type="image" x="0" y="0" width="360" height="360">
+				<image>
+					<condition source="dayOfWeek">
+						<compare eq="1"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/pacman_dow_1.png"/></compare>
+						<compare eq="2"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/pacman_dow_2.png"/></compare>
+						<compare eq="3"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/pacman_dow_3.png"/></compare>
+						<compare eq="4"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/pacman_dow_4.png"/></compare>
+						<compare eq="5"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/pacman_dow_5.png"/></compare>
+						<compare eq="6"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/pacman_dow_6.png"/></compare>
+						<compare eq="7"><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/pacman_dow_7.png"/></compare>
+						<default><image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/pacman_dow_5.png"/></default>
+					</condition>
+				</image>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="event"/></action>
+		</group>
+
+		<!-- 3. Número de Día del Mes Dinámico (e.g. 12) en el Centro del Arco -->
+		<group name="comp-day-num" x="150" y="142" width="60" height="22">
+			<part type="text" x="0" y="0" width="60" height="22">
+				<font code="AT10603"/>
+				<color code="#ffffff100%"/>
+				<text align="center"><icu-skeleton english_number="true">d</icu-skeleton></text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="event"/></action>
+		</group>
+
+		<!-- 4. Hora Digital Real Exacta 00:00 (Estilo Arcade Retro Amarillo) -->
+		<group name="comp-digital-time" x="80" y="214" width="200" height="70">
+			<part type="text" x="0" y="0" width="200" height="70">
+				<font code="AT10101"/>
+				<color code="#ffdf00100%"/>
+				<text align="center">
+					<condition source="is24hour">
+						<compare eq="1">
+							<icu-skeleton english_number="true">HH</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton>
+						</compare>
+						<default>
+							<icu-skeleton english_number="true">hh</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton>
+						</default>
+					</condition>
+				</text>
+			</part>
+			<action on_event="tap" type="launch"><launch preset="alarm"/></action>
 		</group>
 
 		<!-- 2. Manecillas y PAC-MAN Animado a 60 FPS -->
@@ -58,6 +102,27 @@
 		</group>
 
 		<!-- Manecillas en AOD -->
+				<!-- Día de la semana y fecha en AOD -->
+		
+		
+
+		<!-- Hora Digital en AOD -->
+		<group name="aod-digital-time" x="80" y="214" width="200" height="70">
+			<part type="text" x="0" y="0" width="200" height="70">
+				<font code="AT10101"/>
+				<color code="#ffdf00100%"/>
+				<text align="center">
+					<condition source="is24hour">
+						<compare eq="1">
+							<icu-skeleton english_number="true">HH</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton>
+						</compare>
+						<default>
+							<icu-skeleton english_number="true">hh</icu-skeleton>:<icu-skeleton english_number="true">mm</icu-skeleton>
+						</default>
+					</condition>
+				</text>
+			</part>
+		</group>
 		<group name="aod-hands" x="0" y="0" width="360" height="360">
 			<part type="image" x="0" y="0" width="360" height="360">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a8/pacman_hand_hour.png"/>

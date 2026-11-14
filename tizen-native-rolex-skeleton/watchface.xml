@@ -16,59 +16,59 @@
 			</action>
 		</group>
 
-		<!-- 2. Engranaje 1: Gran Rueda Central (Triple Velocidad: 360° cada 20s) -->
+		<!-- 2. Engranaje 1: Gran Rueda Central (Rotación continua sin pausa: 3 vueltas/min) -->
 		<group name="gear-center" x="130" y="130" width="100" height="100">
 			<part type="image" x="0" y="0" width="100" height="100">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_center.png"/>
-				<rotation center_x="50" center_y="50" start_angle="0" end_angle="360" start_value="0" end_value="20" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="50" center_y="50" start_angle="0" end_angle="1080" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 3. Engranaje 2: Barrilete con motivo "H" a las 12:00 (Triple Velocidad: 360° cada 15s) -->
+		<!-- 3. Engranaje 2: Barrilete con motivo "H" a las 12:00 (Rotación continua sin pausa: 4 vueltas/min) -->
 		<group name="gear-barrel" x="146" y="49" width="68" height="68">
 			<part type="image" x="0" y="0" width="68" height="68">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_barrel.png"/>
-				<rotation center_x="34" center_y="34" start_angle="0" end_angle="360" start_value="0" end_value="15" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="34" center_y="34" start_angle="0" end_angle="1440" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 4. Engranaje 3: Rueda Superior Izquierda a las 10:00 (Triple Velocidad: 360° cada 10s antihorario) -->
+		<!-- 4. Engranaje 3: Rueda Superior Izquierda a las 10:00 (Rotación continua antihorario: 6 vueltas/min) -->
 		<group name="gear-left" x="63" y="85" width="60" height="60">
 			<part type="image" x="0" y="0" width="60" height="60">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_left.png"/>
-				<rotation center_x="30" center_y="30" start_angle="360" end_angle="0" start_value="0" end_value="10" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="30" center_y="30" start_angle="2160" end_angle="0" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 5. Engranaje 4: Rueda Superior Derecha a las 2:00 (Triple Velocidad: 360° cada 10s horario) -->
+		<!-- 5. Engranaje 4: Rueda Superior Derecha a las 2:00 (Rotación continua horario: 6 vueltas/min) -->
 		<group name="gear-right" x="237" y="85" width="60" height="60">
 			<part type="image" x="0" y="0" width="60" height="60">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_right.png"/>
-				<rotation center_x="30" center_y="30" start_angle="0" end_angle="360" start_value="0" end_value="10" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="30" center_y="30" start_angle="0" end_angle="2160" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 6. Engranaje 5: Rueda Intermedia Inferior Izquierda a las 8:00 (Triple Velocidad: 360° cada 6.66s) -->
+		<!-- 6. Engranaje 5: Rueda Intermedia Inferior Izquierda a las 8:00 (Rotación continua: 9 vueltas/min) -->
 		<group name="gear-lower-left" x="69" y="182" width="58" height="58">
 			<part type="image" x="0" y="0" width="58" height="58">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_lower_left.png"/>
-				<rotation center_x="29" center_y="29" start_angle="0" end_angle="360" start_value="0" end_value="6.666" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="29" center_y="29" start_angle="0" end_angle="3240" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 7. Engranaje 6: Rueda Intermedia Inferior Derecha a las 4:00 (Triple Velocidad: 360° cada 6.66s antihorario) -->
+		<!-- 7. Engranaje 6: Rueda Intermedia Inferior Derecha a las 4:00 (Rotación continua antihorario: 9 vueltas/min) -->
 		<group name="gear-lower-right" x="233" y="182" width="58" height="58">
 			<part type="image" x="0" y="0" width="58" height="58">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_lower_right.png"/>
-				<rotation center_x="29" center_y="29" start_angle="360" end_angle="0" start_value="0" end_value="6.666" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="29" center_y="29" start_angle="3240" end_angle="0" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 		</group>
 
-		<!-- 8. Engranaje 7: Tourbillon a las 6:00 (Triple Velocidad: 360° cada 20s) -->
+		<!-- 8. Engranaje 7: Tourbillon a las 6:00 (Rotación continua: 3 vueltas/min) -->
 		<group name="gear-balance" x="115" y="212" width="130" height="130">
 			<part type="image" x="0" y="0" width="130" height="130">
 				<image filepath="../../../../../../../../../../opt/usr/home/owner/apps_rw/.shared/com.samsung.watchface/data/watchlist/com.samsung.watchface-noblesse-a1/rolex_gear_balance.png"/>
-				<rotation center_x="65" center_y="65" start_angle="0" end_angle="360" start_value="0" end_value="20" source="second.millisecond" animation="sweep60s"/>
+				<rotation center_x="65" center_y="65" start_angle="0" end_angle="1080" start_value="0" end_value="60" source="second.millisecond" animation="sweep60s"/>
 			</part>
 			<!-- Toque en tourbillon para Pulsómetro / Salud -->
 			<action on_event="tap" type="launch" privilege="http://tizen.org/privilege/healthinfo">
